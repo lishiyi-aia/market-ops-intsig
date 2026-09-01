@@ -2,8 +2,8 @@
 title: ZUS Everywhere 新品上市活动与市场传播
 banner: works/covers/zus-everywhere.jpg
 year: 2024
-role: 新品首发 / Instagram / 英文物料 / 零售渠道 / 数据复盘
-tags: [新品上市, Instagram, 传播物料, 渠道协同, 数据复盘]
+role: 上市策划 / Instagram / 英文物料 / 零售渠道 / 效果复盘
+tags: [新品上市, 活动节奏, 传播物料, 渠道协同, 数据复盘]
 link: projects/zus-everywhere/case_study.html
 ---
 
@@ -17,7 +17,7 @@ link: projects/zus-everywhere/case_study.html
 
 ## 我的职责
 
-参与新品传播定位、竞品 Instagram 活动拆解、英文 caption、Story / Reels 脚本、发布排期与素材整理；参与完成 50 条内容策划、拍摄、剪辑及英文文案，并配合线上首发和 FamilyMart 线下零售传播完成 15+ 轮复盘。
+参与竞品活动拆解、新品卖点提炼、预热与发布节奏梳理、英文 caption、Story / Reels 脚本、发布排期与素材整理；参与完成 50 条内容策划、拍摄、剪辑及英文文案，并配合线上首发和 FamilyMart 线下零售传播完成 15+ 轮复盘。
 
 ## 数据驱动路径
 

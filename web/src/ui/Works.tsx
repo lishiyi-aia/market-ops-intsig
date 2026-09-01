@@ -46,6 +46,16 @@ function WorkLine({
           {content}
         </span>
       )}
+      {item.tags && item.tags.length > 0 && (
+        <ul className="wk-proof-list" aria-label="项目证据">
+          {item.tags.map((tag, index) => (
+            <li key={tag}>
+              <span>{String(index + 1).padStart(2, '0')}</span>
+              <p>{tag}</p>
+            </li>
+          ))}
+        </ul>
+      )}
     </li>
   )
 }

@@ -53,7 +53,7 @@ export interface WorksLang {
 
 export const WORKS: Record<'zh' | 'en', WorksLang> = {
   zh: {
-    title: '市场运营项目',
+    title: '三个项目，三类岗位证据',
     closeLabel: '返回',
     openLabel: '展开作品',
     hint: '继续下滑',
@@ -67,18 +67,18 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
       {
         id: 'project-1',
         no: '01',
-        title: '生成式AI教育产品高校试点与机构合作',
-        tagline: '高校渠道｜合作资料｜产品演示｜试点推进',
+        title: '机构合作与高校试点',
+        tagline: '合作资源｜宣讲资料｜试点执行｜反馈闭环',
         items: [
           {
             name: '生成式AI教育产品高校试点与机构合作',
             meta: 'Generative AI Education Partnerships & Pilots',
             slug: 'ai-education-product',
             tags: [
-              '整理100+条高校用户与试点反馈，识别教学、备课和自学场景中的高频需求',
-              '输出30+篇指南、FAQ、功能教程与教师案例，形成面向不同角色的宣讲内容',
-              '协助整理产品演示、课程方案与合作资料，支持海内外高校和教育机构试点推进',
-              '沉淀10+项产品与运营建议，推动核心功能使用率提升30%',
+              '合作对象：高校教师、学生与教育机构试点团队；整理100+条需求与反馈',
+              '合作资料：产品演示、教师案例、课程方案、FAQ及30+篇使用内容',
+              '执行协同：连接产品、内容与业务团队，支持海内外高校试点沟通和推进',
+              '项目复盘：沉淀10+项产品与运营建议，推动核心功能使用率提升30%',
             ],
           },
         ],
@@ -86,18 +86,18 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
       {
         id: 'project-2',
         no: '02',
-        title: 'AI资讯产品线上活动与渠道运营',
-        tagline: '活动策划｜渠道分发｜达人合作｜数据复盘',
+        title: '线上活动与渠道运营',
+        tagline: '活动方案｜传播物料｜达人合作｜效果评估',
         items: [
           {
             name: 'AI资讯产品线上活动与渠道运营',
             meta: 'AI Information Product Campaign & Channel Operations',
             slug: 'ai-news-dashboard',
             tags: [
-              '策划7日AI热点追踪挑战、行业专题模板包与周报共创三套线上活动路径',
-              '输出100+篇公众号、小红书及社群内容，并协同准备活动规则、招募和激活物料',
-              '管理科技媒体、社区与KOL/KOC渠道，完成筛选、报价、Brief、发布及投后复盘',
-              '通过Campaign ID跟踪触达、注册和激活，按渠道质量调整后续资源投入',
+              '活动方案：策划7日AI热点追踪挑战、行业专题模板包与周报共创3套路径',
+              '传播物料：完成活动规则、参与流程、招募海报及100+条社媒与社群内容',
+              '渠道合作：管理科技媒体、产品社区与KOL/KOC的筛选、报价、Brief和发布',
+              '效果评估：按Campaign ID跟踪触达、注册和激活，并据此调整资源投入',
             ],
           },
         ],
@@ -105,18 +105,18 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
       {
         id: 'project-3',
         no: '03',
-        title: 'ZUS Everywhere 新品上市活动与市场传播',
-        tagline: '新品首发｜物料协同｜零售渠道｜传播复盘',
+        title: '新品上市与全渠道传播',
+        tagline: '上市节奏｜内容物料｜零售渠道｜传播复盘',
         items: [
           {
             name: 'ZUS Everywhere 新品上市活动与市场传播',
             meta: 'New Product Launch & Market Communication',
             slug: 'zus-everywhere',
             tags: [
-              '参与COFFIZZ等新品首发传播，梳理预热、发布、品类教育和零售到货节奏',
-              '协同完成50条Instagram内容的选题、拍摄、剪辑、英文文案与素材整理',
-              '配合FamilyMart线下零售传播，统一产品信息、渠道入口与发布排期',
-              '完成15+轮内容复盘；项目期账号粉丝规模达到1.1w+',
+              '活动节奏：参与COFFIZZ等新品预热、发布、品类教育和零售到货传播',
+              '物料执行：完成50条Instagram内容的选题、拍摄、剪辑、英文文案与排期',
+              '渠道协同：配合FamilyMart线下传播，统一产品信息、购买入口和发布时间',
+              '效果复盘：完成15+轮内容复盘；项目期账号粉丝规模达到1.1w+',
             ],
           },
         ],
@@ -124,7 +124,7 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
     ],
   },
   en: {
-    title: 'Market Operations Projects',
+    title: 'Three Projects, Three Role Proofs',
     closeLabel: 'Back',
     openLabel: 'Explore',
     hint: 'Keep scrolling',
@@ -138,8 +138,8 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
       {
         id: 'project-1',
         no: '01',
-        title: 'Generative AI Education Partnerships & Pilots',
-        tagline: 'University Channels · Materials · Demos · Pilots',
+        title: 'Institution Partnerships & University Pilots',
+        tagline: 'Resources · Materials · Execution · Review',
         items: [
           {
             name: 'Generative AI Education Partnerships & Pilots',
@@ -157,8 +157,8 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
       {
         id: 'project-2',
         no: '02',
-        title: 'AI Information Product Campaign & Channel Operations',
-        tagline: 'Campaigns · Distribution · Creators · Review',
+        title: 'Online Campaign & Channel Operations',
+        tagline: 'Plan · Materials · Creators · Evaluation',
         items: [
           {
             name: 'AI Information Product Campaign & Channel Operations',
@@ -176,8 +176,8 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
       {
         id: 'project-3',
         no: '03',
-        title: 'ZUS Everywhere Product Launch & Market Communication',
-        tagline: 'Launch · Materials · Retail Channels · Review',
+        title: 'Product Launch & Omnichannel Communication',
+        tagline: 'Launch · Materials · Retail · Review',
         items: [
           {
             name: 'ZUS Everywhere Product Launch & Market Communication',

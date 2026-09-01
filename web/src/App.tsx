@@ -24,15 +24,68 @@ type Lang = 'en' | 'zh'
 
 const COPY = {
   en: {
-    title: 'About Shiyi',
+    title: 'Market Operations',
     paragraphs: [
-      "I'm Shiyi, a 2027 Master of Marketing candidate at the University of Sydney with experience in AI product operations, B2B pilot support, and overseas content marketing. I turn user and market insights into event plans, partner proposals, campaign materials, channel execution, and measurable post-campaign reviews.",
+      "Shiyi Li · 2027 Master of Marketing candidate. I turn product and audience insights into campaign plans, partnership materials, channel execution, and measurable reviews.",
     ],
   },
   zh: {
-    title: 'About Shiyi',
+    title: '市场运营',
     paragraphs: [
-      '我是李世怡，悉尼大学市场营销硕士在读，预计于2027年毕业，拥有AI产品运营、B端试点支持与海外内容营销经验。我擅长把用户和市场洞察转化为活动方案、合作提案、传播物料、渠道执行与可量化复盘，并协同产品、设计和业务团队推进落地。',
+      '李世怡｜2027届市场营销硕士。将产品与用户洞察转化为活动方案、合作资料、传播物料、渠道执行和可量化复盘。',
+    ],
+  },
+}
+
+const ROLE_FOCUS = {
+  zh: {
+    eyebrow: 'ROLE MATCH · 项目证据',
+    title: '活动、合作与渠道复盘，分别由真实项目支撑',
+    intro: '围绕市场运营的三项核心任务，展示从方案准备、资源协同到效果评估的完整执行证据。',
+    items: [
+      {
+        no: '01',
+        title: '活动策划与执行',
+        proof: 'AI资讯产品 × ZUS Everywhere',
+        points: ['3套线上活动路径', '新品首发与零售传播', '规则、流程、排期与传播物料'],
+      },
+      {
+        no: '02',
+        title: '机构与渠道合作',
+        proof: '生成式AI教育产品',
+        points: ['高校与教育机构试点', '产品演示、课程与合作资料', '跨产品、内容和业务协同'],
+      },
+      {
+        no: '03',
+        title: '渠道运营与数据复盘',
+        proof: 'AI资讯产品 × ZUS Everywhere',
+        points: ['科技媒体、社区与KOL/KOC', 'Campaign ID与转化漏斗', '15+轮内容复盘与资源调整'],
+      },
+    ],
+  },
+  en: {
+    eyebrow: 'ROLE MATCH · PROJECT EVIDENCE',
+    title: 'Campaigns, partnerships, and channel reviews backed by real projects',
+    intro: 'Evidence from campaign planning and resource coordination through execution and performance evaluation.',
+    items: [
+      {
+        no: '01',
+        title: 'Campaign Planning & Execution',
+        proof: 'AI Information Product × ZUS Everywhere',
+        points: ['Three online campaign journeys', 'Product launch and retail communication', 'Rules, flows, schedules, and materials'],
+      },
+      {
+        no: '02',
+        title: 'Institution & Channel Partnerships',
+        proof: 'Generative AI Education Product',
+        points: ['University and institution pilots', 'Demos, course, and cooperation materials', 'Cross-functional coordination'],
+      },
+      {
+        no: '03',
+        title: 'Channel Operations & Review',
+        proof: 'AI Information Product × ZUS Everywhere',
+        points: ['Tech media, communities, and creators', 'Campaign IDs and conversion funnels', '15+ review cycles and allocation changes'],
+      },
     ],
   },
 }
@@ -88,6 +141,44 @@ function LangToggle({ lang, onToggle }: { lang: Lang; onToggle: () => void }) {
     <button className="lang-toggle" onClick={onToggle} aria-label="切换语言 / Switch language">
       {lang === 'en' ? '中文' : 'EN'}
     </button>
+  )
+}
+
+function RoleFocus({ lang }: { lang: Lang }) {
+  const data = ROLE_FOCUS[lang]
+  return (
+    <section className="role-focus" lang={lang}>
+      <motion.header
+        className="role-focus-head"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-15% 0px' }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <span>{data.eyebrow}</span>
+        <h2>{data.title}</h2>
+        <p>{data.intro}</p>
+      </motion.header>
+      <div className="role-focus-grid">
+        {data.items.map((item, index) => (
+          <motion.article
+            key={item.no}
+            className="role-focus-item"
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-12% 0px' }}
+            transition={{ duration: 0.65, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <span className="role-focus-no">{item.no}</span>
+            <h3>{item.title}</h3>
+            <strong>{item.proof}</strong>
+            <ul>
+              {item.points.map((point) => <li key={point}>{point}</li>)}
+            </ul>
+          </motion.article>
+        ))}
+      </div>
+    </section>
   )
 }
 
@@ -171,11 +262,11 @@ export default function App() {
         <span className="hero-mark br">+</span>
         <div className="hero-meta hm-tl">
           <span className="hm-name">Shiyi Li 李世怡</span>
-          <span>MARKETING · MARKET OPERATIONS</span>
+          <span>ACTIVITIES · PARTNERSHIPS · CHANNELS</span>
         </div>
         <div className="hero-meta hm-tr">2026</div>
-        <div className="hero-meta hm-bl">Events · Partnerships · Channels</div>
-        <div className="hero-meta hm-right">Based in Shanghai</div>
+        <div className="hero-meta hm-bl">Planning · Execution · Performance Review</div>
+        <div className="hero-meta hm-right">Shanghai · 2027 Campus Recruitment</div>
       </motion.div>
 
       {/* 全屏胶片噪点蒙层（multiply 混合） */}
@@ -184,6 +275,7 @@ export default function App() {
       {/* 可滚动内容 */}
       <main className="content">
         <Hero lang={lang} cueOpacity={cueOpacity} />
+        <RoleFocus lang={lang} />
         <Resume lang={lang} />
         <Works lang={lang} innerRef={worksRef} />
       </main>
