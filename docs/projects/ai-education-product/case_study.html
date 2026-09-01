@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="生成式AI教育产品用户反馈、指标分析、内容建设与高校试点案例。">
+  <title>生成式AI教育产品高校试点与机构合作</title>
+  <style>
+    :root {
+      --navy: #0b1f3a;
+      --blue: #1f6fe5;
+      --teal: #16a69b;
+      --orange: #f28a3a;
+      --ink: #13233d;
+      --muted: #60708a;
+      --line: #d8e1ed;
+      --paper: #ffffff;
+      --bg: #f3f6fa;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
+    }
+    a { color: inherit; }
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 64px;
+      background: rgba(11, 31, 58, .96);
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+    }
+    .nav-inner {
+      width: min(var(--max), calc(100% - 40px));
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { font-weight: 800; text-decoration: none; white-space: nowrap; }
+    .nav-links { display: flex; gap: 22px; font-size: 14px; }
+    .nav-links a { color: rgba(255,255,255,.78); text-decoration: none; }
+    .nav-links a:hover { color: #fff; }
+    .hero {
+      position: relative;
+      min-height: min(760px, 80vh);
+      color: #fff;
+      background: var(--navy) url("../../works/covers/education-pilot.png") center / cover no-repeat;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 20, 40, .84);
+    }
+    .hero-inner {
+      position: relative;
+      width: min(var(--max), calc(100% - 40px));
+      min-height: min(760px, 80vh);
+      margin: 0 auto;
+      padding: 86px 0 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .eyebrow { margin: 0 0 18px; color: #8ec5ff; font-size: 14px; font-weight: 800; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 900px; margin-bottom: 24px; font-size: clamp(42px, 6.4vw, 84px); line-height: 1.06; }
+    .hero-copy { max-width: 760px; color: rgba(255,255,255,.78); font-size: 20px; }
+    .hero-meta { margin-top: 28px; color: rgba(255,255,255,.68); font-size: 14px; }
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      border-top: 1px solid rgba(255,255,255,.22);
+      border-bottom: 1px solid rgba(255,255,255,.22);
+    }
+    .metric { min-height: 130px; padding: 24px; border-right: 1px solid rgba(255,255,255,.22); }
+    .metric:last-child { border-right: 0; }
+    .metric strong { display: block; font-size: 42px; line-height: 1; }
+    .metric span { display: block; margin-top: 12px; color: rgba(255,255,255,.68); font-size: 14px; }
+    .band { padding: 92px 0; }
+    .band.white { background: var(--paper); }
+    .band.navy { background: var(--navy); color: #fff; }
+    .inner { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(260px,.75fr) minmax(0,1.25fr);
+      gap: 56px;
+      align-items: start;
+      margin-bottom: 48px;
+    }
+    .kicker { margin-bottom: 12px; color: var(--blue); font-size: 13px; font-weight: 800; text-transform: uppercase; }
+    .navy .kicker { color: #71c9ff; }
+    h2 { margin-bottom: 0; font-size: clamp(32px, 4vw, 54px); line-height: 1.16; }
+    .lead { color: var(--muted); font-size: 18px; }
+    .navy .lead { color: rgba(255,255,255,.7); }
+    .context-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-top: 1px solid var(--line); }
+    .context-item { padding: 28px 24px 6px 0; border-right: 1px solid var(--line); }
+    .context-item + .context-item { padding-left: 24px; }
+    .context-item:last-child { border-right: 0; }
+    .context-item span { color: var(--blue); font-size: 13px; font-weight: 800; }
+    .context-item h3 { margin: 10px 0; font-size: 23px; }
+    .context-item p { color: var(--muted); }
+    .loop {
+      display: grid;
+      grid-template-columns: repeat(5,minmax(0,1fr));
+      gap: 10px;
+    }
+    .loop-step {
+      position: relative;
+      min-height: 190px;
+      padding: 24px;
+      background: #fff;
+      color: var(--ink);
+      border-top: 5px solid var(--blue);
+      border-radius: 6px;
+    }
+    .loop-step:nth-child(2) { border-color: var(--teal); }
+    .loop-step:nth-child(3) { border-color: var(--orange); }
+    .loop-step:nth-child(4) { border-color: #7d6be8; }
+    .loop-step:nth-child(5) { border-color: #3e9d64; }
+    .loop-step b { display: block; margin-bottom: 18px; color: var(--muted); font-size: 12px; }
+    .loop-step h3 { margin-bottom: 8px; font-size: 20px; }
+    .loop-step p { color: var(--muted); font-size: 14px; }
+    .feedback-table { width: 100%; border-collapse: collapse; background: #fff; }
+    .feedback-table th, .feedback-table td { padding: 20px 18px; text-align: left; border-bottom: 1px solid var(--line); }
+    .feedback-table th { color: var(--muted); font-size: 13px; }
+    .feedback-table td:first-child { width: 22%; font-weight: 800; }
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(6,minmax(0,1fr));
+      border: 1px solid rgba(255,255,255,.22);
+    }
+    .journey-step { min-height: 170px; padding: 22px; border-right: 1px solid rgba(255,255,255,.22); }
+    .journey-step:last-child { border-right: 0; }
+    .journey-step span { color: #71c9ff; font-weight: 800; }
+    .journey-step h3 { margin: 28px 0 8px; font-size: 18px; }
+    .journey-step p { color: rgba(255,255,255,.62); font-size: 13px; }
+    .metric-tree { display: grid; grid-template-columns: 1.05fr 1.95fr; gap: 24px; }
+    .north-star { padding: 32px; color: #fff; background: var(--blue); border-radius: 6px; }
+    .north-star strong { display: block; margin: 12px 0; font-size: 52px; }
+    .north-star p { color: rgba(255,255,255,.78); }
+    .metric-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+    .metric-card { padding: 24px; background: #fff; border: 1px solid var(--line); border-radius: 6px; }
+    .metric-card b { color: var(--blue); }
+    .metric-card h3 { margin: 10px 0; font-size: 20px; }
+    .metric-card p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .content-system { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; }
+    .content-level { min-height: 245px; padding: 26px; background: #fff; border: 1px solid var(--line); border-radius: 6px; }
+    .content-level span { color: var(--blue); font-size: 12px; font-weight: 800; }
+    .content-level h3 { margin: 22px 0 10px; font-size: 22px; }
+    .content-level p { color: var(--muted); font-size: 14px; }
+    .pilot-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 36px; align-items: stretch; }
+    .pilot-photo { width: 100%; height: 100%; min-height: 440px; object-fit: cover; border-radius: 6px; }
+    .pilot-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+    .pilot-item { min-height: 190px; padding: 24px; color: #fff; border: 1px solid rgba(255,255,255,.2); border-radius: 6px; }
+    .pilot-item span { color: #71c9ff; font-size: 12px; font-weight: 800; }
+    .pilot-item h3 { margin: 18px 0 8px; }
+    .pilot-item p { color: rgba(255,255,255,.65); font-size: 14px; }
+    .result-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .result { min-height: 190px; padding: 30px 24px; border-right: 1px solid var(--line); }
+    .result:last-child { border-right: 0; }
+    .result strong { display: block; margin-bottom: 16px; color: var(--blue); font-size: 42px; }
+    .result p { margin: 0; color: var(--muted); }
+    .closing { margin-top: 42px; padding-left: 20px; border-left: 5px solid var(--orange); font-size: 23px; font-weight: 750; }
+    footer { padding: 34px 20px; color: rgba(255,255,255,.58); background: #07162b; text-align: center; font-size: 13px; }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .metric-row, .context-grid, .result-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .metric:nth-child(2), .result:nth-child(2) { border-right: 0; }
+      .metric:nth-child(-n+2), .result:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.22); }
+      .section-head, .metric-tree, .pilot-grid { grid-template-columns: 1fr; }
+      .loop { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .journey { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .journey-step:nth-child(3) { border-right: 0; }
+      .content-system { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width: 600px) {
+      .nav-inner, .hero-inner, .inner { width: min(100% - 28px, var(--max)); }
+      .hero, .hero-inner { min-height: 720px; }
+      .hero-inner { padding-top: 64px; }
+      .hero-copy { font-size: 17px; }
+      .metric { min-height: 112px; padding: 18px 14px; }
+      .metric strong { font-size: 34px; }
+      .band { padding: 64px 0; }
+      .context-grid, .loop, .metric-list, .content-system, .pilot-list, .result-grid { grid-template-columns: 1fr; }
+      .context-item, .context-item + .context-item { padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .journey { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .journey-step:nth-child(2n) { border-right: 0; }
+      .feedback-table { display: block; overflow-x: auto; }
+      .result, .result:nth-child(2) { border-right: 0; border-bottom: 1px solid var(--line); }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="../../">Sylvia Li · Market Operations</a>
+      <div class="nav-links">
+        <a href="#feedback">机构需求</a><a href="#journey">试点路径</a><a href="#content">宣讲内容</a><a href="#pilot">高校合作</a><a href="#results">结果</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div>
+        <p class="eyebrow">University Channels · Partnership Materials · B2B Pilots</p>
+        <h1>生成式AI教育产品<br>高校试点与机构合作</h1>
+        <p class="hero-copy">从高校和教育机构需求出发，把教师、学生与试点反馈转化为产品演示、教师案例、课程方案与合作资料，协同产品、内容和业务团队推进试点落地。</p>
+        <p class="hero-meta">AI产品运营实习 · 2024.10–2025.05 · 高校渠道 / 机构需求 / 宣讲材料 / B2B试点</p>
+      </div>
+      <div class="metric-row" aria-label="项目核心结果">
+        <div class="metric"><strong>100+</strong><span>用户反馈整理</span></div>
+        <div class="metric"><strong>30+</strong><span>指南、FAQ与教程</span></div>
+        <div class="metric"><strong>+30%</strong><span>核心功能使用率</span></div>
+        <div class="metric"><strong>10+</strong><span>产品与运营建议</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="band white">
+      <div class="inner">
+        <div class="section-head">
+          <div><p class="kicker">01 · Context</p><h2>先理解机构需求，再组织合作表达</h2></div>
+          <p class="lead">产品服务高校教师、学生与院校客户，覆盖教学、备课、自学和内容生成等场景。市场运营需要同时理解终端用户任务与院校采购、试用和教学落地诉求，再决定产品演示、案例内容和合作资料如何组织。</p>
+        </div>
+        <div class="context-grid">
+          <article class="context-item"><span>用户</span><h3>教师与学生</h3><p>角色、任务和AI使用基础差异明显，需要不同的上手路径。</p></article>
+          <article class="context-item"><span>产品</span><h3>生成式AI能力</h3><p>功能价值依赖输入方式、结果预期与具体教学任务的清晰连接。</p></article>
+          <article class="context-item"><span>运营</span><h3>院校试点</h3><p>需要同时承接终端用户问题、教师案例和客户侧产品宣讲。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band navy" id="feedback">
+      <div class="inner">
+        <div class="section-head">
+          <div><p class="kicker">02 · Feedback Loop</p><h2>从100+条反馈建立处理闭环</h2></div>
+          <p class="lead">以用户角色、任务场景、问题类型和影响程度为基础完成标签化整理，避免反馈停留在零散记录，并让产品与运营动作拥有一致的优先级。</p>
+        </div>
+        <div class="loop">
+          <article class="loop-step"><b>01 COLLECT</b><h3>收集</h3><p>汇总教师、学生、试点客户与社群问题。</p></article>
+          <article class="loop-step"><b>02 TAG</b><h3>标签化</h3><p>按角色、场景、功能和问题类型归类。</p></article>
+          <article class="loop-step"><b>03 PRIORITISE</b><h3>分级</h3><p>结合频次、影响和解决成本判断优先级。</p></article>
+          <article class="loop-step"><b>04 ACTION</b><h3>处理</h3><p>分流至产品优化、内容更新或服务支持。</p></article>
+          <article class="loop-step"><b>05 REVIEW</b><h3>复盘</h3><p>通过功能使用和重复问题验证效果。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band white">
+      <div class="inner">
+        <div class="section-head">
+          <div><p class="kicker">03 · Taxonomy</p><h2>高频问题对应不同运营动作</h2></div>
+          <p class="lead">同一句“不会用”可能来自入口不清、任务不明、结果不符预期或教学场景不匹配。只有先完成归因，才能决定修改产品还是补充内容。</p>
+        </div>
+        <table class="feedback-table">
+          <thead><tr><th>反馈类型</th><th>用户信号</th><th>运营判断</th><th>对应动作</th></tr></thead>
+          <tbody>
+            <tr><td>进入与上手</td><td>找不到入口，不清楚第一步</td><td>首次任务路径过长</td><td>快速上手指南、入口说明、首任务引导</td></tr>
+            <tr><td>任务表达</td><td>不知道如何描述需求</td><td>AI输入门槛影响功能使用</td><td>任务模板、输入示例、场景化教程</td></tr>
+            <tr><td>结果预期</td><td>输出与期待不一致</td><td>用户缺少结果判断标准</td><td>结果示例、限制说明、问题排查FAQ</td></tr>
+            <tr><td>教学适配</td><td>不知道如何进入课程流程</td><td>功能与真实教学任务连接不足</td><td>教师案例、课程方案、产品演示</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="band navy" id="journey">
+      <div class="inner">
+        <div class="section-head">
+          <div><p class="kicker">04 · Product Journey</p><h2>沿用户路径跟踪核心信号</h2></div>
+          <p class="lead">把用户体验拆成可观察步骤，在每个节点同时记录行为数据和问题反馈，定位从“看到功能”到“完成任务”之间的主要阻碍。</p>
+        </div>
+        <div class="journey">
+          <article class="journey-step"><span>01</span><h3>进入产品</h3><p>入口访问、登录与角色信息</p></article>
+          <article class="journey-step"><span>02</span><h3>理解功能</h3><p>功能页查看、教程点击与问题反馈</p></article>
+          <article class="journey-step"><span>03</span><h3>首次任务</h3><p>功能启动、输入完成与中途退出</p></article>
+          <article class="journey-step"><span>04</span><h3>获得结果</h3><p>结果生成、重新尝试与异常反馈</p></article>
+          <article class="journey-step"><span>05</span><h3>保存复用</h3><p>保存、导出与教学场景采用</p></article>
+          <article class="journey-step"><span>06</span><h3>持续使用</h3><p>再次访问、核心功能频次与新需求</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="metrics">
+      <div class="inner">
+        <div class="section-head">
+          <div><p class="kicker">05 · Metric Framework</p><h2>指标服务于产品判断</h2></div>
+          <p class="lead">不把数据看板做成数字陈列，而是把每个指标和需要回答的运营问题对应：用户有没有开始、是否完成任务、是否理解价值，以及同类问题是否减少。</p>
+        </div>
+        <div class="metric-tree">
+          <div class="north-star"><span>项目结果指标</span><strong>+30%</strong><p>核心功能使用率提升。通过路径分析、教程内容和场景案例共同降低功能理解与首次使用门槛。</p></div>
+          <div class="metric-list">
+            <article class="metric-card"><b>ACTIVATION</b><h3>首次任务完成</h3><p>判断新用户是否从看到功能进入实际操作。</p></article>
+            <article class="metric-card"><b>USAGE</b><h3>核心功能使用</h3><p>观察关键能力是否被真实任务采用。</p></article>
+            <article class="metric-card"><b>CONTINUITY</b><h3>重复访问与复用</h3><p>判断内容和结果是否形成持续使用理由。</p></article>
+            <article class="metric-card"><b>QUALITY</b><h3>反馈重复与问题关闭</h3><p>验证同类问题是否因产品或内容动作减少。</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band white" id="content">
+      <div class="inner">
+        <div class="section-head">
+          <div><p class="kicker">06 · Content System</p><h2>30+篇内容覆盖完整使用阶段</h2></div>
+          <p class="lead">将复杂AI概念转化为四层产品内容：先降低理解成本，再帮助完成任务，随后解决异常，最终用真实场景支持教师和院校客户采用。</p>
+        </div>
+        <div class="content-system">
+          <article class="content-level"><span>L1 · QUICK START</span><h3>快速上手</h3><p>入口说明、核心概念和首次任务步骤，帮助用户尽快开始。</p></article>
+          <article class="content-level"><span>L2 · HOW TO</span><h3>功能教程</h3><p>拆解输入、操作和结果处理，让功能可以被独立完成。</p></article>
+          <article class="content-level"><span>L3 · SUPPORT</span><h3>FAQ与排查</h3><p>沉淀重复问题、功能边界和异常处理，减少沟通成本。</p></article>
+          <article class="content-level"><span>L4 · SCENARIO</span><h3>教学案例</h3><p>用备课、教学和自学案例连接产品能力与真实任务。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band navy" id="pilot">
+      <div class="inner">
+        <div class="section-head">
+          <div><p class="kicker">07 · University Partnerships</p><h2>用演示、案例和课程资料支持试点推进</h2></div>
+          <p class="lead">高校试点同时检验产品价值、教学适配和服务能力。运营侧承接院校需求、产品演示、教师案例与课程材料，并协同产品、内容和业务团队推动问题关闭与下一轮沟通。</p>
+        </div>
+        <div class="pilot-grid">
+          <img class="pilot-photo" src="../../works/covers/education-pilot.png" alt="生成式AI教育产品高校试点与合作资料">
+          <div class="pilot-list">
+            <article class="pilot-item"><span>DEMO</span><h3>产品演示</h3><p>围绕目标用户任务组织功能顺序和产品表达。</p></article>
+            <article class="pilot-item"><span>CASE</span><h3>教师案例</h3><p>用具体教学场景说明功能价值和采用方式。</p></article>
+            <article class="pilot-item"><span>MATERIAL</span><h3>课程材料</h3><p>整理方案、FAQ与使用内容，支持客户沟通。</p></article>
+            <article class="pilot-item"><span>HANDOFF</span><h3>问题协同</h3><p>输出10+项建议，推动产品、内容与业务共同处理。</p></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band white" id="results">
+      <div class="inner">
+        <div class="section-head">
+          <div><p class="kicker">08 · Outcome</p><h2>形成可复用的高校渠道与试点支持机制</h2></div>
+          <p class="lead">项目最终沉淀的不只是内容数量，而是一套从机构需求、宣讲资料、试点反馈到跨团队处理的合作支持方式。</p>
+        </div>
+        <div class="result-grid">
+          <article class="result"><strong>100+</strong><p>用户反馈被整理为可检索、可分级的问题标签。</p></article>
+          <article class="result"><strong>30+</strong><p>指南、FAQ、教程与案例覆盖不同使用阶段。</p></article>
+          <article class="result"><strong>+30%</strong><p>核心功能使用率在路径与内容优化后得到提升。</p></article>
+          <article class="result"><strong>10+</strong><p>产品与运营建议进入演示材料和试点推进。</p></article>
+        </div>
+        <p class="closing">机构需求 → 合作资料 → 产品演示 → 高校试点 → 反馈复盘 → 下一轮推进</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Generative AI Education Partnerships & University Pilots · Sylvia Li · 2025</footer>
+</body>
+</html>
