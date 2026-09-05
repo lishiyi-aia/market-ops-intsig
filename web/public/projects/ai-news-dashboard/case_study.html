@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AI资讯产品线上活动与渠道运营：活动策划、传播物料、科技媒体、KOL/KOC合作与数据复盘。">
-  <title>AI资讯产品线上活动与渠道运营</title>
+  <meta name="description" content="AI资讯产品线上线下活动与渠道运营：科技社群活动、线上直播、用户激活、传播物料、渠道合作与数据复盘。">
+  <title>AI资讯产品线上线下活动与渠道运营</title>
   <style>
     :root {
       --navy: #081a36;
@@ -327,6 +327,36 @@
     .campaign-material figcaption strong { display: block; color: var(--navy); font-size: 12px; }
     .campaign-material figcaption span { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.55; }
 
+    .event-brief { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: 48px; margin: 34px 0 54px; padding: 30px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .event-brief h3 { margin: 0; font-size: 28px; line-height: 1.2; }
+    .event-brief > p { margin: 12px 0 0; color: var(--muted); font-size: 13px; }
+    .event-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .event-fact { min-height: 112px; padding: 4px 24px 18px; border-left: 1px solid var(--line); }
+    .event-fact:nth-child(n+3) { padding-top: 20px; border-top: 1px solid var(--line); }
+    .event-fact span { display: block; margin-bottom: 9px; color: var(--blue); font-size: 10px; font-weight: 900; }
+    .event-fact strong { display: block; color: var(--navy); font-size: 13px; }
+    .event-fact p { margin: 6px 0 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
+
+    .field-evidence { display: grid; grid-template-columns: 1.55fr 0.55fr; gap: 22px; margin-top: 34px; align-items: start; }
+    .event-evidence { min-width: 0; display: block; margin: 0; }
+    .event-visual { min-height: 0; overflow: hidden; background: #dce5e7; box-shadow: 0 18px 42px rgba(7, 28, 66, 0.12); }
+    .event-evidence.offline .event-visual { aspect-ratio: 3 / 2; }
+    .event-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .event-evidence.live .event-visual img { object-position: center top; }
+    .event-evidence figcaption { display: grid; grid-template-columns: 34px 1fr; gap: 12px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .event-evidence figcaption > b { color: var(--blue); font-size: 11px; }
+    .event-evidence figcaption strong { display: block; color: var(--navy); font-size: 12px; }
+    .event-evidence figcaption span { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.55; }
+
+    .journey-materials { margin-top: 72px; }
+    .journey-materials .asset-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .journey-material-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 28px; margin-top: 34px; }
+    .journey-material-grid .campaign-material-visual { aspect-ratio: 1104 / 1464; }
+    .journey-material-grid .campaign-material img { width: 100%; height: 100%; object-fit: cover; }
+    .cost-note { display: grid; grid-template-columns: 0.56fr 1.44fr; gap: 28px; margin-top: 42px; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .cost-note strong { color: var(--navy); font-size: 13px; }
+    .cost-note p { margin: 0; color: var(--muted); font-size: 12px; }
+
     .asset-canvas { margin-top: 34px; padding: 26px; overflow: hidden; background: var(--navy); }
     .kit-header { display: flex; justify-content: space-between; gap: 20px; padding: 0 2px 18px; color: rgba(255,255,255,0.66); font-size: 10px; font-weight: 850; }
     .kit-grid { display: grid; grid-template-columns: 1.34fr 0.86fr; gap: 16px; }
@@ -492,6 +522,9 @@
       .asset-intro, .asset-list { grid-column: 1; }
       .asset-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .campaign-material-gallery { grid-template-columns: 1fr; width: min(100%, 620px); margin-right: auto; margin-left: auto; gap: 38px; }
+      .event-brief { grid-template-columns: 1fr; gap: 26px; }
+      .journey-materials .asset-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .field-evidence { grid-template-columns: 1.35fr 0.65fr; }
       .kit-hero { min-height: 560px; }
       .activation-impact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .impact-metric:nth-child(2) { border-right: 0; }
@@ -536,7 +569,13 @@
       .campaign-stage:last-child { border-bottom: 0; }
       .asset-copy { grid-template-columns: 1fr; gap: 16px; }
       .asset-list { grid-template-columns: 1fr; gap: 0; }
+      .journey-materials .asset-list { grid-template-columns: 1fr; }
       .campaign-material-gallery { gap: 30px; }
+      .event-facts, .field-evidence, .journey-material-grid, .cost-note { grid-template-columns: 1fr; }
+      .event-fact { padding: 18px 0; border-left: 0; border-top: 1px solid var(--line); }
+      .event-fact:first-child { border-top: 0; }
+      .event-evidence.live .event-visual { aspect-ratio: 3 / 4; }
+      .journey-material-grid { width: min(100%, 560px); margin-right: auto; margin-left: auto; gap: 34px; }
       .asset-canvas { padding: 14px; }
       .kit-header { flex-direction: column; gap: 4px; }
       .kit-hero { min-height: 0; }
@@ -585,9 +624,9 @@
 
   <header class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Online Campaigns · Channel Partnerships · Performance Review</p>
-      <h1>AI资讯产品<br>线上活动与渠道运营</h1>
-      <p class="hero-copy">围绕AI热点追踪挑战、行业专题模板与周报共创策划线上活动，协同产品内容、传播物料和渠道排期，并通过科技媒体、社区与KOL/KOC合作验证传播和激活质量。</p>
+      <p class="eyebrow">Integrated Campaign · Community Event · Performance Review</p>
+      <h1>AI资讯产品<br>线上线下活动与渠道运营</h1>
+      <p class="hero-copy">围绕科技社群线下活动与线上直播，协同产品展示、传播物料、用户激活和社群承接；活动后结合问卷与产品行为数据复盘，并通过科技媒体、社区与KOL/KOC持续验证渠道质量。</p>
       <div class="hero-meta">
         <span>北京搜狐新媒体信息有限公司</span>
         <span>AI产品运营实习生</span>
@@ -610,8 +649,8 @@
     <div class="band soft">
       <section class="section report">
         <div class="section-head">
-          <div><p class="kicker">Project brief</p><h2>把产品卖点转化为活动和渠道动作</h2></div>
-          <p class="section-lead">产品提供AI资讯聚合、专题创建、关键词监测、AI摘要和热点提醒。市场运营需要将复杂功能转化为可参与的线上活动、可传播的内容物料和可追踪的渠道合作，再判断哪些资源值得持续投入。</p>
+          <div><p class="kicker">Project brief</p><h2>把产品卖点转化为活动、体验和渠道动作</h2></div>
+          <p class="section-lead">产品提供AI资讯聚合、专题创建、关键词监测、AI摘要和热点提醒。市场运营需要将复杂功能转化为现场可理解的产品体验、线上可参与的激活动作和可追踪的渠道合作，再判断哪些资源值得持续投入。</p>
         </div>
         <div class="brief-grid">
           <div class="brief-main">
@@ -743,110 +782,78 @@
     <div class="band" id="campaigns">
       <section class="section report">
         <div class="section-head">
-          <div><p class="kicker">Online campaigns</p><h2>三套活动路径，<br>承接招募、体验与共创</h2></div>
-          <p class="section-lead">围绕“不知道创建什么专题”“不会设置关键词”和“不理解产品差异”三类阻碍，策划热点追踪挑战、行业模板领取和周报共创活动，把主题、参与流程、传播物料、产品体验和效果指标连接起来。</p>
+          <div><p class="kicker">Integrated campaign</p><h2>从线下科技社群，<br>承接到线上用户激活</h2></div>
+          <p class="section-lead">参与科技社群线下活动及线上直播传播，协助梳理产品展示内容、互动话术与现场物料；活动后用产品体验、新用户权益、社群答疑和问卷反馈承接现场兴趣，形成一条可执行、可复盘的活动路径。</p>
         </div>
 
-        <div class="campaign-loop" aria-label="内容拉新到产品激活路径">
-          <div class="campaign-stage"><span>01 · HOOK</span><strong>痛点钩子</strong><p>信息过载、热点分散、追踪低效。</p></div>
-          <div class="campaign-stage"><span>02 · DEMO</span><strong>功能演示</strong><p>展示专题、关键词、摘要与提醒。</p></div>
-          <div class="campaign-stage"><span>03 · OFFER</span><strong>领取模板</strong><p>用行业专题模板降低首次门槛。</p></div>
-          <div class="campaign-stage"><span>04 · SIGN-UP</span><strong>注册创建</strong><p>选择场景并完成第一个专题。</p></div>
-          <div class="campaign-stage"><span>05 · VALUE</span><strong>结果预览</strong><p>快速看到AI摘要与追踪结果。</p></div>
-          <div class="campaign-stage"><span>06 · SHARE</span><strong>分享回流</strong><p>周报卡片带来推荐与再次访问。</p></div>
+        <div class="campaign-loop" aria-label="线上线下活动运营闭环">
+          <div class="campaign-stage"><span>01 · PREPARE</span><strong>活动准备</strong><p>确定目标人群、产品卖点、流程与物料。</p></div>
+          <div class="campaign-stage"><span>02 · OFFLINE</span><strong>线下体验</strong><p>现场展示专题追踪、AI解读与日报。</p></div>
+          <div class="campaign-stage"><span>03 · LIVE</span><strong>线上直播</strong><p>同步活动内容，扩大科技人群触达。</p></div>
+          <div class="campaign-stage"><span>04 · ACTIVATE</span><strong>新用户激活</strong><p>引导注册并完成首次专题创建。</p></div>
+          <div class="campaign-stage"><span>05 · COMMUNITY</span><strong>社群承接</strong><p>产品内测、功能答疑与体验反馈。</p></div>
+          <div class="campaign-stage"><span>06 · REVIEW</span><strong>问卷复盘</strong><p>记录需求、阻碍和后续优化建议。</p></div>
         </div>
 
-        <div class="campaign-grid">
-          <article class="campaign-card">
-            <span class="campaign-no">CAMPAIGN 01 · 集中拉新</span>
-            <h3>7日AI热点追踪挑战</h3>
-            <p>用户选择AI、科技或金融方向的预设专题，在7天内完成创建、查看摘要、开启提醒和分享周报，集中验证从注册到首次价值的完整路径。</p>
-            <ul class="campaign-detail">
-              <li><strong>入口</strong><span>小红书、科技垂类达人、公众号与社群招募</span></li>
-              <li><strong>激励</strong><span>行业专题模板包与7日追踪清单</span></li>
-              <li><strong>CTA</strong><span>免费创建我的AI追踪专题</span></li>
-              <li><strong>指标</strong><span>访问注册率、专题创建率、7日回访率</span></li>
-            </ul>
-          </article>
-          <article class="campaign-card">
-            <span class="campaign-no">CAMPAIGN 02 · 常态获客</span>
-            <h3>行业专题模板包</h3>
-            <p>把用户最难完成的“选主题”和“写关键词”提前做成模板，通过功能教程和场景内容持续获客，注册后即可复制并开始追踪。</p>
-            <ul class="campaign-detail">
-              <li><strong>模板</strong><span>大模型、AI工具、金融科技、政策、竞品、新品</span></li>
-              <li><strong>入口</strong><span>小红书图文、KOC体验、知乎与科技网站</span></li>
-              <li><strong>CTA</strong><span>领取模板并生成我的专题</span></li>
-              <li><strong>指标</strong><span>内容CTR、模板采用率、首次摘要查看率</span></li>
-            </ul>
-          </article>
-          <article class="campaign-card">
-            <span class="campaign-no">CAMPAIGN 03 · 分享裂变</span>
-            <h3>AI情报周报共创</h3>
-            <p>将用户一周追踪结果生成可分享的情报卡片，通过“分享给同事一起追踪”把产品价值转化为自然推荐，并承接已有用户回访。</p>
-            <ul class="campaign-detail">
-              <li><strong>物料</strong><span>周报摘要卡、变化榜单、同主题邀请页</span></li>
-              <li><strong>入口</strong><span>产品内分享、社群、朋友圈与公众号</span></li>
-              <li><strong>CTA</strong><span>和同事共同追踪这个专题</span></li>
-              <li><strong>指标</strong><span>分享率、推荐注册率、共同专题激活率</span></li>
-            </ul>
-          </article>
+        <div class="event-brief">
+          <div>
+            <p class="kicker">Activity brief</p>
+            <h3>科技社群线下体验 × 线上直播传播</h3>
+            <p>以“减少信息焦虑、建立长期追踪”为核心沟通主题，让用户在活动现场理解产品，再由线上内容和社群完成后续激活。</p>
+          </div>
+          <div class="event-facts">
+            <div class="event-fact"><span>OBJECTIVE</span><strong>活动目标</strong><p>提升产品认知，推动首次专题创建并收集真实反馈。</p></div>
+            <div class="event-fact"><span>AUDIENCE</span><strong>目标人群</strong><p>科技从业者、AI关注者、内容创作者与研究用户。</p></div>
+            <div class="event-fact"><span>COORDINATION</span><strong>资源协同</strong><p>活动方、产品、内容、设计、直播与社群运营。</p></div>
+            <div class="event-fact"><span>MEASUREMENT</span><strong>评估指标</strong><p>现场与直播触达、产品访问、专题创建、入群和有效问卷。</p></div>
+          </div>
         </div>
 
-        <div class="asset-showcase">
+        <div class="asset-copy">
+          <div class="asset-heading"><p class="kicker">Field execution</p><h3>现场执行与直播承接</h3></div>
+          <p class="asset-intro">线下场景承担产品体验和用户交流，直播承担扩大触达与线上互动。两端统一产品卖点、演示顺序与后续入群路径。</p>
+        </div>
+        <div class="field-evidence" aria-label="科技社群线下活动与直播现场">
+          <figure class="event-evidence offline">
+            <div class="event-visual"><img src="event-materials/01-offline-event.jpg" alt="原点学堂Vibe之夜科技社群线下活动现场" loading="lazy"></div>
+            <figcaption><b>01</b><div><strong>科技社群线下活动</strong><span>参与产品展示、现场交流和活动内容采集，把AI资讯追踪功能转化为可理解的使用场景。</span></div></figcaption>
+          </figure>
+          <figure class="event-evidence live">
+            <div class="event-visual"><img src="event-materials/02-live-stream.jpg" alt="AI资讯产品线下活动线上直播画面" loading="lazy"></div>
+            <figcaption><b>02</b><div><strong>线上直播同步传播</strong><span>围绕产品演示与活动现场进行直播，承接评论互动和后续社群触达。</span></div></figcaption>
+          </figure>
+        </div>
+
+        <div class="journey-materials">
           <div class="asset-copy">
-            <div class="asset-heading">
-              <p class="kicker">Creative system</p>
-              <h3>一套活动，三张核心物料</h3>
-            </div>
-            <p class="asset-intro">三张物料依次承接活动说明、参与转化与产品激活：先讲清参与条件和权益，再用7日打卡推动持续体验，最后以分层任务引导用户完成专题创建、连续追踪和回流。</p>
+            <div class="asset-heading"><p class="kicker">Activation materials</p><h3>四张物料，承接活动后的用户旅程</h3></div>
+            <p class="asset-intro">四张物料依次承接产品认知、新用户激活、社群沉淀与反馈回收，把活动触达延伸为可持续跟进的用户路径。</p>
             <div class="asset-list">
-              <div class="asset-row"><b>01</b><strong>活动规则总览</strong><span>参与条件、7日挑战与奖励层级</span></div>
-              <div class="asset-row"><b>02</b><strong>打卡招募海报</strong><span>活动时间、参与路径与权益领取</span></div>
-              <div class="asset-row"><b>03</b><strong>专题页激活海报</strong><span>新用户、连续追踪与回流任务</span></div>
+              <div class="asset-row"><b>01</b><strong>产品认知</strong><span>信息焦虑与核心功能说明</span></div>
+              <div class="asset-row"><b>02</b><strong>新用户激活</strong><span>专题创建、AI解读与日报权益</span></div>
+              <div class="asset-row"><b>03</b><strong>社群承接</strong><span>产品内测、成长权益与答疑</span></div>
+              <div class="asset-row"><b>04</b><strong>问卷复盘</strong><span>体验反馈、功能问题与优化建议</span></div>
             </div>
           </div>
-          <div class="campaign-material-gallery" aria-label="AI资讯追踪拉新活动三张核心物料">
+          <div class="journey-material-grid" aria-label="AI资讯产品线上线下活动四张核心物料">
             <figure class="campaign-material">
-              <div class="campaign-material-visual">
-                <img src="campaign-materials/01-participation-and-rewards.png" alt="AI资讯追踪参与方式与活动奖励海报" loading="lazy">
-              </div>
-              <figcaption><b>01</b><div><strong>活动规则总览</strong><span>集中说明参与条件、连续追踪动作与奖励层级，作为社群和小红书活动主物料。</span></div></figcaption>
+              <div class="campaign-material-visual"><img src="event-materials/03-awareness.jpg" alt="AI资讯产品信息焦虑与产品功能说明海报" loading="lazy"></div>
+              <figcaption><b>01</b><div><strong>产品认知海报</strong><span>从信息分散、重复搜索和长期追踪困难切入，解释专题追踪、信息聚合与AI摘要价值。</span></div></figcaption>
             </figure>
             <figure class="campaign-material">
-              <div class="campaign-material-visual">
-                <img src="campaign-materials/02-check-in-benefits.png" alt="AI资讯追踪7日打卡与权益领取海报" loading="lazy">
-              </div>
-              <figcaption><b>02</b><div><strong>7日打卡招募</strong><span>把活动时间、参与步骤和权益领取放在同一条阅读路径中，降低参与门槛。</span></div></figcaption>
+              <div class="campaign-material-visual"><img src="event-materials/04-activation.jpg" alt="AI资讯产品新用户专属福利海报" loading="lazy"></div>
+              <figcaption><b>02</b><div><strong>新用户激活海报</strong><span>展示专题创建、AI深度解读和日报权益，引导新用户完成首次专题创建。</span></div></figcaption>
             </figure>
             <figure class="campaign-material">
-              <div class="campaign-material-visual">
-                <img src="campaign-materials/03-segmented-benefits.png" alt="AI资讯追踪分层用户专题页活动海报" loading="lazy">
-              </div>
-              <figcaption><b>03</b><div><strong>专题页分层激活</strong><span>针对新用户、连续追踪用户和回流用户设置不同任务，承接注册后的产品激活。</span></div></figcaption>
+              <div class="campaign-material-visual"><img src="event-materials/05-community.jpg" alt="AI资讯产品用户群招募海报" loading="lazy"></div>
+              <figcaption><b>03</b><div><strong>社群招募海报</strong><span>用产品内测、成长权益和专人答疑承接活动用户，建立持续沟通入口。</span></div></figcaption>
+            </figure>
+            <figure class="campaign-material">
+              <div class="campaign-material-visual"><img src="event-materials/06-survey.jpg" alt="AI资讯产品体验问卷活动海报" loading="lazy"></div>
+              <figcaption><b>04</b><div><strong>问卷反馈海报</strong><span>明确参与对象、反馈内容与领取方式，收集使用体验、功能问题和优化建议。</span></div></figcaption>
             </figure>
           </div>
-        </div>
-      </section>
-    </div>
-
-    <div class="band">
-      <section class="section report">
-        <div class="section-head">
-          <div><p class="kicker">Content A/B test</p><h2>一次只改一个变量，<br>让创意结论可以复用</h2></div>
-          <p class="section-lead">在发布周期、受众和渠道相近的内容中，分别测试标题、首图与信息结构；不把不同渠道的自然差异误判为单个创意效果。</p>
-        </div>
-        <div class="source-confidence" aria-label="内容A/B测试方法">
-          <div class="confidence"><strong>标题变量</strong><p>产品功能表达 vs. 用户场景表达；比较内容点击率与有效访问。</p></div>
-          <div class="confidence"><strong>首图变量</strong><p>产品界面 vs. 结果预览；比较停留、点击和访问注册率。</p></div>
-          <div class="confidence"><strong>信息结构变量</strong><p>先讲信息焦虑 vs. 先展示追踪结果；比较阅读完成率、有效访问与注册率。</p></div>
-        </div>
-        <div class="campaign-loop" style="margin-top:24px;margin-bottom:0" aria-label="内容测试闭环">
-          <div class="campaign-stage"><span>01 · HYPOTHESIS</span><strong>提出假设</strong><p>场景和结果表达能否降低理解成本。</p></div>
-          <div class="campaign-stage"><span>02 · CONTROL</span><strong>控制条件</strong><p>保持渠道、受众、时段和观察窗口相近。</p></div>
-          <div class="campaign-stage"><span>03 · TEST</span><strong>单变量测试</strong><p>每轮只改标题、首图或信息结构之一。</p></div>
-          <div class="campaign-stage"><span>04 · MEASURE</span><strong>读取指标</strong><p>CTR、访问注册率与专题创建率。</p></div>
-          <div class="campaign-stage"><span>05 · LEARN</span><strong>判断原因</strong><p>结合评论与问卷解释数据差异。</p></div>
-          <div class="campaign-stage"><span>06 · SCALE</span><strong>进入模板</strong><p>优胜表达写入达人 Brief 与后续内容。</p></div>
+          <div class="cost-note"><strong>执行与复盘口径</strong><p>自有账号与社群发布不计媒介采购费；问卷激励按10元/份有效样本核算。线下活动、直播和线上物料统一记录触达、产品访问、首次专题创建、入群与有效反馈，用于评估活动承接效果。</p></div>
         </div>
       </section>
     </div>
@@ -1028,7 +1035,7 @@
       <section class="section report">
         <div class="result-band">
           <div class="result-grid">
-            <div><p class="kicker" style="color:#6edbd2">Project outcome</p><h2>活动、渠道与数据复盘形成完整闭环</h2><p>从单次内容发布升级为可复用的市场运营流程：先明确活动目标和物料分工，再通过渠道合作触达用户，最后用注册、专题创建和单位成本调整资源投入。</p></div>
+            <div><p class="kicker" style="color:#6edbd2">Project outcome</p><h2>线上线下活动、渠道与数据复盘形成闭环</h2><p>从单次内容发布升级为可复用的市场运营流程：先明确活动目标、现场流程和物料分工，再通过线下体验、直播、社群及渠道合作触达用户，最后用注册、专题创建、反馈和单位成本调整资源投入。</p></div>
             <div class="result-list">
               <div class="result-item"><strong class="mono">100+</strong><span>公众号、小红书及社群内容</span></div>
               <div class="result-item"><strong class="mono">58万</strong><span>十周内容与创作者累计曝光</span></div>
@@ -1044,7 +1051,7 @@
 
   </main>
 
-  <footer class="footer report">AI资讯产品线上活动与渠道运营 · Sylvia Li Market Operations</footer>
+  <footer class="footer report">AI资讯产品线上线下活动与渠道运营 · Sylvia Li Market Operations</footer>
 
   <script>
     const sections = [...document.querySelectorAll('main [id]')];

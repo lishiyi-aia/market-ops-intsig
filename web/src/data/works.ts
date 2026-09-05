@@ -86,16 +86,16 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
       {
         id: 'project-2',
         no: '02',
-        title: '线上活动与渠道运营',
-        tagline: '活动方案｜传播物料｜达人合作｜效果评估',
+        title: '线上线下活动与渠道运营',
+        tagline: '活动方案｜现场执行｜直播传播｜数据复盘',
         items: [
           {
-            name: 'AI资讯产品线上活动与渠道运营',
-            meta: 'AI Information Product Campaign & Channel Operations',
+            name: 'AI资讯产品线上线下活动与渠道运营',
+            meta: 'AI Information Product Integrated Campaign Operations',
             slug: 'ai-news-dashboard',
             tags: [
-              '活动方案：策划7日AI热点追踪挑战、行业专题模板包与周报共创3套路径',
-              '传播物料：完成活动规则、参与流程、招募海报及100+条社媒与社群内容',
+              '活动执行：参与科技社群线下活动与线上直播，协同产品展示、现场互动与传播排期',
+              '用户承接：完成认知、激活、社群招募和问卷反馈4类物料及100+条渠道内容',
               '渠道合作：管理科技媒体、产品社区与KOL/KOC的筛选、报价、Brief和发布',
               '效果评估：按Campaign ID跟踪触达、注册和激活，并据此调整资源投入',
             ],
@@ -157,16 +157,16 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
       {
         id: 'project-2',
         no: '02',
-        title: 'Online Campaign & Channel Operations',
-        tagline: 'Plan · Materials · Creators · Evaluation',
+        title: 'Integrated Event & Channel Operations',
+        tagline: 'Offline · Livestream · Activation · Review',
         items: [
           {
-            name: 'AI Information Product Campaign & Channel Operations',
-            meta: 'AI资讯产品线上活动与渠道运营',
+            name: 'AI Information Product Event & Channel Operations',
+            meta: 'AI资讯产品线上线下活动与渠道运营',
             slug: 'ai-news-dashboard',
             tags: [
-              'Planned three online campaign journeys for challenges, industry templates, and weekly co-creation',
-              'Produced 100+ WeChat, Xiaohongshu, and community assets plus campaign materials',
+              'Connected a tech-community event, livestream, product activation, and feedback review into one journey',
+              'Produced 100+ WeChat, Xiaohongshu, and community assets plus four activation materials',
               'Managed tech media, communities, and KOL/KOC from screening and quotes to briefs and reviews',
               'Tracked reach, registration, and activation by Campaign ID to guide channel allocation',
             ],
