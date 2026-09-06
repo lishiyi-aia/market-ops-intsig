@@ -337,12 +337,12 @@
     .event-fact strong { display: block; color: var(--navy); font-size: 13px; }
     .event-fact p { margin: 6px 0 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
 
-    .field-evidence { display: grid; grid-template-columns: 1.55fr 0.55fr; gap: 22px; margin-top: 34px; align-items: start; }
+    .field-evidence { display: grid; grid-template-columns: minmax(0, 2.1fr) minmax(280px, 1fr); gap: 22px; margin-top: 34px; align-items: start; }
     .event-evidence { min-width: 0; display: block; margin: 0; }
-    .event-visual { min-height: 0; overflow: hidden; background: #dce5e7; box-shadow: 0 18px 42px rgba(7, 28, 66, 0.12); }
-    .event-evidence.offline .event-visual { aspect-ratio: 3 / 2; }
-    .event-visual img { width: 100%; height: 100%; object-fit: cover; }
-    .event-evidence.live .event-visual img { object-position: center top; }
+    .event-visual { height: clamp(360px, 32vw, 580px); overflow: hidden; background: #dce5e7; box-shadow: 0 18px 42px rgba(7, 28, 66, 0.12); }
+    .event-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .event-evidence.offline .event-visual img { object-position: center 45%; }
+    .event-evidence.live .event-visual img { object-position: center 24%; }
     .event-evidence figcaption { display: grid; grid-template-columns: 34px 1fr; gap: 12px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
     .event-evidence figcaption > b { color: var(--blue); font-size: 11px; }
     .event-evidence figcaption strong { display: block; color: var(--navy); font-size: 12px; }
@@ -524,7 +524,7 @@
       .campaign-material-gallery { grid-template-columns: 1fr; width: min(100%, 620px); margin-right: auto; margin-left: auto; gap: 38px; }
       .event-brief { grid-template-columns: 1fr; gap: 26px; }
       .journey-materials .asset-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .field-evidence { grid-template-columns: 1.35fr 0.65fr; }
+      .field-evidence { grid-template-columns: minmax(0, 2.05fr) minmax(240px, 1fr); }
       .kit-hero { min-height: 560px; }
       .activation-impact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .impact-metric:nth-child(2) { border-right: 0; }
@@ -574,6 +574,8 @@
       .event-facts, .field-evidence, .journey-material-grid, .cost-note { grid-template-columns: 1fr; }
       .event-fact { padding: 18px 0; border-left: 0; border-top: 1px solid var(--line); }
       .event-fact:first-child { border-top: 0; }
+      .event-visual { height: auto; }
+      .event-evidence.offline .event-visual { aspect-ratio: 3 / 2; }
       .event-evidence.live .event-visual { aspect-ratio: 3 / 4; }
       .journey-material-grid { width: min(100%, 560px); margin-right: auto; margin-left: auto; gap: 34px; }
       .asset-canvas { padding: 14px; }
