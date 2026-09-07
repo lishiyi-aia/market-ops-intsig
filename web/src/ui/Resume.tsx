@@ -33,12 +33,12 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
       {
         period: '2024.10–2025.05',
         place: 'Xuanhua Intelligence · Beijing',
-        role: 'AI Product Operations Intern',
+        role: 'AI Product Marketing Intern',
         points: [
-          'Organized 100+ feedback items from teachers, students, and pilot users to identify institutional needs and high-frequency experience issues.',
+          'Organized 100+ feedback items from teachers, students, and pilot users by issue type to identify common usage questions.',
           'Produced 30+ guides, FAQs, tutorials, and instructor-facing cases for product communication and pilot onboarding.',
           'Prepared product demos, course materials, and cooperation materials; coordinated feedback with product, content, and business teams.',
-          'Supported university and education-institution pilots with 10+ recommendations, contributing to a 30% increase in core feature adoption.',
+          'Developed 10+ product and operations suggestions and shared them with relevant teams to support university and education-institution pilots.',
         ],
       },
       {
@@ -86,12 +86,12 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
       {
         period: '2024.10–2025.05',
         place: '玄华智能（北京）科技有限公司',
-        role: 'AI产品运营实习生',
+        role: 'AI产品营销实习生',
         points: [
-          '整理教师、学生及试点用户100余条反馈，识别院校需求与高频体验问题。',
+          '整理教师、学生及试点用户100余条反馈，按问题类型归类，汇总常见使用问题。',
           '输出30余篇使用指南、FAQ、功能教程与教师案例，支持产品宣讲和试点用户上手。',
           '整理产品演示、课程方案与合作资料，协同产品、内容和业务团队处理一线问题。',
-          '支持高校及教育机构试点，输出10余项优化建议，推动核心功能使用率提升30%。',
+          '形成10余项产品与运营优化建议，反馈给相关团队，支持高校及教育机构试点沟通。',
         ],
       },
       {

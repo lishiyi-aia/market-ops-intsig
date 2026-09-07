@@ -1,369 +1,421 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="生成式AI教育产品用户反馈、指标分析、内容建设与高校试点案例。">
-  <title>生成式AI教育产品高校试点与机构合作</title>
+  <meta name="description" content="AI 教育产品用户运营与高校试点支持：师生反馈整理、使用指南与FAQ、产品资料及试点沟通。">
+  <title>AI 教育产品用户运营与高校试点支持 | Shiyi Li</title>
   <style>
     :root {
-      --navy: #0b1f3a;
-      --blue: #1f6fe5;
-      --teal: #16a69b;
-      --orange: #f28a3a;
-      --ink: #13233d;
-      --muted: #60708a;
-      --line: #d8e1ed;
-      --paper: #ffffff;
-      --bg: #f3f6fa;
-      --max: 1180px;
+      --ink: #202e36; --dark: #20343d; --blue: #2462c8; --teal: #087b70;
+      --pink: #b13a69; --gold: #94651a; --yellow: #ffe083; --muted: #5d6c77;
+      --line: #d6dfe5; --soft: #f3f6f8; --paper: #fff;
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--bg);
-      font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
-      line-height: 1.65;
-      letter-spacing: 0;
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; color: var(--ink); background: #fff; font: 16px/1.8 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; letter-spacing: 0; }
+    h1, h2, h3, h4, p, figure { margin: 0; }
+    h1, h2, h3, h4 { line-height: 1.4; text-wrap: balance; letter-spacing: 0; }
+    p { overflow-wrap: anywhere; }
+    a { color: inherit; text-underline-offset: 4px; }
+    img { display: block; max-width: 100%; height: auto; }
+    button { font: inherit; cursor: pointer; touch-action: manipulation; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 3px solid var(--pink); outline-offset: 5px; }
+    .mono { font-family: "SFMono-Regular", Consolas, monospace; font-variant-numeric: tabular-nums; }
+    .wrap { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+    .skip-link { position: fixed; left: 12px; top: 8px; z-index: 100; transform: translateY(-150%); padding: 8px 12px; background: #fff; }
+    .skip-link:focus { transform: none; }
+    .nav { position: sticky; top: 0; z-index: 30; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 64px; padding: 0 max(32px, calc((100% - 1180px) / 2)); color: #fff; background: #20343dfb; border-bottom: 1px solid #ffffff30; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-weight: 750; text-decoration: none; white-space: nowrap; }
+    .brand-mark { display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid #ffffff75; border-radius: 50%; font-size: 11px; }
+    .nav-links { display: flex; gap: 22px; min-width: 0; overflow: auto; scrollbar-width: none; }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav-links a { display: inline-flex; flex-shrink: 0; align-items: center; min-height: 44px; color: #d1dde4; font-size: 12px; border-bottom: 2px solid transparent; text-decoration: none; }
+    .nav-links a:hover, .nav-links a[aria-current="location"] { color: #fff; border-bottom-color: var(--yellow); }
+    .hero { position: relative; isolation: isolate; color: #fff; background: var(--dark); }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #152e39fa 0%, #152e39eb 44%, #152e3965 77%, #152e392e 100%), url("../../works/covers/education-pilot.png") center 39% / cover no-repeat; }
+    .hero-inner { padding-block: 58px 48px; }
+    .eyebrow { margin-bottom: 22px; color: #ffdf8a; font-size: 11px; font-weight: 750; }
+    h1 { max-width: 870px; font-size: 56px; line-height: 1.23; font-weight: 850; }
+    .hero-copy { max-width: 640px; margin-top: 24px; color: #e1eaf0; font-size: 17px; line-height: 1.95; }
+    .hero-meta { display: flex; gap: 8px 22px; flex-wrap: wrap; margin-top: 25px; color: #d0dfe6; font-size: 12px; }
+    .hero-meta span { padding-left: 10px; border-left: 2px solid #ffdf8a; }
+    .hero-foot { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 30px; padding-top: 17px; border-top: 1px solid #ffffff40; }
+    .hero-foot p { color: #d0dfe6; font-size: 12px; }
+    .hero-foot a { display: inline-flex; min-height: 44px; align-items: center; gap: 16px; color: #ffdf8a; text-decoration: none; font-size: 12px; font-weight: 750; }
+    .disclosure { color: #362807; background: var(--yellow); border-bottom: 1px solid #d9b759; }
+    .disclosure-inner { display: grid; grid-template-columns: 205px 1fr; align-items: center; gap: 40px; padding-block: 22px; }
+    .disclosure h2 { font-size: 18px; }
+    .disclosure strong { display: block; font-size: 15px; }
+    .disclosure p { margin-top: 5px; font-size: 12px; }
+    .snapshot { border-bottom: 1px solid var(--line); }
+    .metric-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .metric { --accent: var(--blue); display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 22px; padding: 27px 28px; border-right: 1px solid var(--line); }
+    .metric:first-child { padding-left: 0; }
+    .metric:nth-child(2) { --accent: var(--teal); }
+    .metric:last-child { --accent: var(--pink); border: 0; }
+    .metric strong { color: var(--accent); font: 48px/1.2 "SFMono-Regular", Consolas, monospace; }
+    .metric b { display: block; font-size: 14px; }
+    .metric span { display: block; margin-top: 4px; font-size: 11px; color: var(--muted); }
+    .band { border-bottom: 1px solid var(--line); }
+    .band.soft { background: var(--soft); }
+    .section { padding-block: 74px; scroll-margin-top: 14px; }
+    .section-head { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: 70px; margin-bottom: 36px; align-items: start; }
+    .kicker { color: var(--blue); font-size: 11px; font-weight: 750; margin-bottom: 12px; }
+    h2 { font-size: 36px; line-height: 1.35; font-weight: 800; }
+    h3 { font-size: 21px; } h4 { font-size: 16px; }
+    .lead { color: var(--muted); font-size: 15px; line-height: 1.95; padding-top: 3px; }
+    .lead p + p { margin-top: 12px; }
+    .responsibilities { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+    .responsibility { --accent: var(--blue); display: grid; grid-template-columns: 40px 1fr; gap: 20px; padding-top: 24px; border-top: 3px solid var(--accent); }
+    .responsibility:nth-child(2) { --accent: var(--teal); }
+    .responsibility:nth-child(3) { --accent: var(--pink); }
+    .responsibility > span { color: var(--accent); font: 27px/1.5 "SFMono-Regular", Consolas, monospace; }
+    .responsibility p { margin-top: 10px; color: var(--muted); font-size: 13px; }
+    .subheading { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 22px; }
+    .subheading h3 { font-size: 18px; }
+    .example-label { color: var(--gold); font-size: 11px; font-weight: 650; }
+    .usage-path { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; padding: 0; list-style: none; margin: 0 0 44px; }
+    .usage-path li { --accent: var(--blue); position: relative; padding-top: 22px; border-top: 3px solid var(--accent); }
+    .usage-path li:nth-child(2) { --accent: var(--teal); }
+    .usage-path li:nth-child(3) { --accent: var(--pink); }
+    .usage-path li:nth-child(4) { --accent: var(--gold); }
+    .usage-path li:nth-child(5) { --accent: var(--teal); }
+    .usage-path li:not(:last-child)::after { content: "→"; position: absolute; right: -23px; top: -20px; background: var(--soft); color: var(--accent); font-size: 23px; padding-inline: 3px; }
+    .path-number { display: block; color: var(--accent); font: 33px/1.1 "SFMono-Regular", Consolas, monospace; margin-bottom: 16px; }
+    .usage-path h4 { font-size: 16px; }
+    .usage-path p { margin-top: 9px; font-size: 12px; color: var(--muted); }
+    .feedback-toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px 28px; margin-bottom: 22px; }
+    .feedback-tabs { display: flex; width: min(580px, 100%); padding: 4px; border: 1px solid #c7d3db; border-radius: 6px; background: #fff; }
+    .feedback-tabs button { flex: 1; min-width: 0; min-height: 44px; padding: 8px 12px; border: 0; border-radius: 3px; color: var(--muted); background: transparent; font-size: 13px; }
+    .feedback-tabs button[aria-selected="true"] { color: #fff; background: var(--dark); }
+    .feedback-tabs button:hover:not([aria-selected="true"]) { color: var(--blue); background: var(--soft); }
+    .decision-panel { min-width: 0; padding: 28px 0; border-block: 1px solid var(--line); }
+    .decision-panel + .decision-panel { margin-top: 28px; }
+    .feedback-enhanced .decision-panel { margin-top: 0; }
+    .case-question { display: grid; grid-template-columns: 62px 1fr; gap: 22px; align-items: center; min-height: 91px; padding-bottom: 25px; }
+    .case-question > span { color: var(--blue); font: 42px/1.1 "SFMono-Regular", Consolas, monospace; }
+    .case-question small { display: block; color: var(--muted); font-size: 10px; margin-bottom: 7px; }
+    .case-question h3 { font-size: 23px; }
+    .decision-columns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; }
+    .decision-column { --accent: var(--blue); padding-top: 18px; border-top: 3px solid var(--accent); }
+    .decision-column:nth-child(2) { --accent: var(--teal); }
+    .decision-column:nth-child(3) { --accent: var(--pink); }
+    .decision-column h4 { color: var(--accent); font-size: 16px; }
+    .decision-column p { min-height: 94px; margin-top: 12px; color: var(--muted); font-size: 14px; line-height: 1.95; }
+    .decision-column small { display: block; padding-top: 13px; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); }
+    .example-note { margin-top: 20px; font-size: 11px; color: var(--muted); }
+    .content-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+    .content-item { --accent: var(--blue); padding: 25px 22px; border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 5px; background: #fff; }
+    .content-item:nth-child(2) { --accent: var(--teal); }
+    .content-item:nth-child(3) { --accent: var(--pink); }
+    .content-item:nth-child(4) { --accent: var(--gold); }
+    .content-item > span { display: block; color: var(--accent); font: 35px/1.2 "SFMono-Regular", Consolas, monospace; }
+    .content-item h3 { margin-top: 22px; font-size: 21px; }
+    .content-item p { min-height: 76px; margin-top: 12px; color: var(--muted); font-size: 13px; }
+    .content-item small { display: block; font-size: 11px; color: var(--accent); margin-top: 18px; padding-top: 13px; border-top: 1px solid var(--line); }
+    .document-outline { display: grid; grid-template-columns: .8fr 1.2fr; gap: 60px; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--line); }
+    .outline-intro h3 { margin-bottom: 12px; font-size: 23px; }
+    .outline-intro p { color: var(--muted); font-size: 13px; margin-top: 17px; }
+    .outline-steps { list-style: none; margin: 0; padding: 0; }
+    .outline-steps li { display: grid; grid-template-columns: 30px 92px 1fr; gap: 20px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--line); }
+    .outline-steps li:first-child { padding-top: 0; }
+    .outline-steps li span { color: var(--blue); font-size: 11px; }
+    .outline-steps li strong { font-size: 14px; }
+    .outline-steps li p { color: var(--muted); font-size: 12px; }
+    .pilot-stages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-bottom: 42px; }
+    .pilot-stage { --accent: var(--blue); padding-top: 24px; border-top: 3px solid var(--accent); }
+    .pilot-stage:nth-child(2) { --accent: var(--teal); }
+    .pilot-stage:nth-child(3) { --accent: var(--pink); }
+    .pilot-stage span { color: var(--accent); font-size: 10px; font-weight: 750; }
+    .pilot-stage h3 { margin-top: 16px; font-size: 23px; }
+    .pilot-stage p { color: var(--muted); font-size: 13px; margin-top: 13px; }
+    .field-evidence { display: grid; grid-template-columns: minmax(0, 1.65fr) minmax(0, .75fr); gap: 36px; align-items: start; }
+    .photo-link { display: block; background: #e4eaed; border: 1px solid var(--line); cursor: zoom-in; }
+    .photo-link img { width: 100%; height: auto; aspect-ratio: 1448 / 1086; object-fit: contain; }
+    .photo-link:hover { outline: 3px solid var(--teal); outline-offset: -3px; }
+    .field-evidence figcaption { margin-top: 15px; font-size: 12px; color: var(--muted); }
+    .evidence-context { padding-top: 20px; border-top: 2px solid var(--ink); }
+    .evidence-context h3 { font-size: 22px; }
+    .evidence-context > p { margin-top: 14px; font-size: 13px; color: var(--muted); }
+    .evidence-context dl { margin: 27px 0 0; }
+    .evidence-context dl > div { padding-block: 15px; border-top: 1px solid var(--line); }
+    .evidence-context dt { font-size: 13px; font-weight: 700; }
+    .evidence-context dd { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
+    .image-note { margin-top: 22px; padding: 15px 17px; border-left: 3px solid #ae790b; color: #362807; background: var(--yellow); font-size: 11px; }
+    .results-band { color: #fff; background: var(--dark); }
+    .results-band .kicker { color: #9adacb; }
+    .results-band .lead { color: #d1dfe6; }
+    .result-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid #ffffff40; }
+    .result-list li { display: grid; grid-template-columns: 55px .8fr 1.2fr; align-items: baseline; gap: 28px; padding-block: 26px; border-bottom: 1px solid #ffffff40; }
+    .result-list li > span { font: 22px/1.2 "SFMono-Regular", Consolas, monospace; color: #ffdf8a; }
+    .result-list h3 { font-size: 21px; }
+    .result-list p { font-size: 14px; color: #d1dfe6; }
+    .scope-note { margin-top: 28px; font-size: 12px; color: #d1dfe6; }
+    .scope-note strong { color: #ffdf8a; margin-right: 14px; }
+    .footer { padding-block: 24px; color: var(--muted); font-size: 11px; }
+    .footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer a { display: inline-flex; min-height: 44px; align-items: center; color: var(--blue); font-weight: 700; }
+    @media (max-width: 1000px) {
+      h1 { font-size: 48px; } h2 { font-size: 32px; }
+      .nav-links { gap: 17px; } .brand { font-size: 12px; }
+      .section-head { gap: 36px; }
+      .metric { grid-template-columns: 1fr; gap: 7px; padding-inline: 22px; }
+      .metric strong { font-size: 43px; }
+      .responsibility { gap: 13px; grid-template-columns: 33px 1fr; }
+      .responsibility h3 { font-size: 19px; }
+      .usage-path { gap: 18px; } .usage-path li:not(:last-child)::after { right: -20px; }
+      .usage-path h4 { font-size: 15px; }
+      .decision-columns { gap: 24px; } .decision-column p { min-height: 120px; }
+      .content-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .content-item { padding: 24px; } .content-item p { min-height: 48px; }
+      .document-outline { gap: 34px; }
+      .field-evidence { grid-template-columns: 1.4fr 1fr; gap: 26px; }
+      .evidence-context { padding-top: 16px; } .evidence-context h3 { font-size: 20px; }
     }
-    a { color: inherit; }
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      height: 64px;
-      background: rgba(11, 31, 58, .96);
-      color: #fff;
-      border-bottom: 1px solid rgba(255,255,255,.16);
+    @media (max-width: 760px) {
+      html { scroll-padding-top: 104px; }
+      .wrap { width: calc(100% - 36px); }
+      .nav { flex-direction: column; align-items: stretch; padding: 12px 18px 0; gap: 0; }
+      .brand { font-size: 12px; } .brand-mark { width: 24px; height: 24px; }
+      .nav-links { width: 100%; gap: 23px; } .nav-links a { font-size: 11px; }
+      .hero-inner { padding-block: 36px 26px; }
+      .hero::before { background-image: linear-gradient(90deg, #152e39ed 0%, #152e39db 50%, #152e3990 100%), url("../../works/covers/education-pilot.png"); background-position: center, 61% center; }
+      h1 { font-size: 32px; line-height: 1.35; }
+      .eyebrow { font-size: 10px; margin-bottom: 16px; }
+      .hero-copy { font-size: 14px; margin-top: 19px; }
+      .hero-meta { font-size: 10px; gap: 7px 16px; margin-top: 20px; }
+      .hero-foot { margin-top: 24px; padding-top: 12px; gap: 18px; }
+      .hero-foot p { font-size: 10px; max-width: 178px; }
+      .hero-foot a { font-size: 11px; flex-shrink: 0; gap: 10px; }
+      .disclosure-inner { grid-template-columns: 1fr; gap: 10px; padding-block: 20px; }
+      .disclosure h2 { font-size: 18px; } .disclosure strong { font-size: 13px; } .disclosure p { font-size: 11px; }
+      .metric, .metric:first-child { padding: 20px 12px; gap: 9px; }
+      .metric:first-child { padding-left: 0; } .metric:last-child { padding-right: 0; }
+      .metric strong { font-size: 34px; } .metric b { font-size: 12px; } .metric span { font-size: 10px; }
+      .section { padding-block: 50px; }
+      .section-head { grid-template-columns: 1fr; gap: 18px; margin-bottom: 28px; }
+      h2 { font-size: 29px; } .lead { font-size: 14px; }
+      .kicker { font-size: 10px; margin-bottom: 10px; }
+      .responsibilities { grid-template-columns: 1fr; gap: 24px; }
+      .responsibility { grid-template-columns: 35px 1fr; gap: 15px; padding-top: 18px; }
+      .responsibility p { margin-top: 7px; } .responsibility h3 { font-size: 21px; }
+      .subheading { gap: 8px; margin-bottom: 20px; }
+      .subheading h3 { font-size: 17px; } .example-label { font-size: 10px; }
+      .usage-path { grid-template-columns: 1fr; gap: 0; margin-bottom: 34px; }
+      .usage-path li { border-top: 0; border-left: 2px solid var(--accent); padding: 0 0 23px 54px; margin-left: 9px; }
+      .usage-path li:last-child { padding-bottom: 0; }
+      .path-number { position: absolute; top: 2px; left: 14px; font-size: 21px; }
+      .usage-path li:not(:last-child)::after { content: "↓"; left: -10px; right: auto; top: auto; bottom: 0; font-size: 20px; padding: 0; }
+      .usage-path h4 { font-size: 17px; } .usage-path p { margin-top: 6px; font-size: 12px; }
+      .feedback-toolbar { gap: 12px; }
+      .feedback-tabs { width: 100%; } .feedback-tabs button { font-size: 12px; padding-inline: 6px; min-height: 46px; }
+      .decision-panel { padding-block: 22px; }
+      .case-question { grid-template-columns: 40px 1fr; gap: 16px; min-height: 100px; }
+      .case-question > span { font-size: 30px; } .case-question h3 { font-size: 21px; }
+      .decision-columns { grid-template-columns: 1fr; gap: 23px; }
+      .decision-column { padding-top: 15px; } .decision-column p { min-height: 80px; font-size: 13px; margin-top: 9px; }
+      .decision-column small { font-size: 10px; padding-top: 10px; }
+      .example-note { font-size: 10px; margin-top: 16px; }
+      .content-grid { gap: 16px; }
+      .content-item { padding: 19px 15px; } .content-item > span { font-size: 29px; }
+      .content-item h3 { margin-top: 16px; font-size: 18px; }
+      .content-item p { min-height: 90px; font-size: 12px; margin-top: 10px; }
+      .content-item small { font-size: 10px; margin-top: 12px; }
+      .document-outline { grid-template-columns: 1fr; gap: 25px; margin-top: 30px; padding-top: 25px; }
+      .outline-intro h3 { font-size: 22px; } .outline-intro p { margin-top: 12px; }
+      .outline-steps li { grid-template-columns: 22px 76px 1fr; gap: 12px; }
+      .outline-steps li strong { font-size: 13px; } .outline-steps li p { font-size: 11px; }
+      .pilot-stages { grid-template-columns: 1fr; gap: 23px; margin-bottom: 30px; }
+      .pilot-stage { padding-top: 17px; } .pilot-stage h3 { margin-top: 10px; font-size: 21px; } .pilot-stage p { margin-top: 9px; }
+      .field-evidence { grid-template-columns: 1fr; gap: 25px; }
+      .field-evidence figcaption { font-size: 11px; }
+      .evidence-context dl { margin-top: 19px; }
+      .result-list li { grid-template-columns: 32px 1fr; gap: 10px 16px; padding-block: 23px; }
+      .result-list li > span { font-size: 19px; } .result-list h3 { font-size: 21px; }
+      .result-list p { grid-column: 2; font-size: 13px; }
+      .scope-note { font-size: 11px; } .scope-note strong { display: block; margin-bottom: 8px; }
+      .footer .wrap { flex-direction: column; align-items: flex-start; gap: 6px; }
     }
-    .nav-inner {
-      width: min(var(--max), calc(100% - 40px));
-      height: 100%;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .brand { font-weight: 800; text-decoration: none; white-space: nowrap; }
-    .nav-links { display: flex; gap: 22px; font-size: 14px; }
-    .nav-links a { color: rgba(255,255,255,.78); text-decoration: none; }
-    .nav-links a:hover { color: #fff; }
-    .hero {
-      position: relative;
-      min-height: min(760px, 80vh);
-      color: #fff;
-      background: var(--navy) url("../../works/covers/education-pilot.png") center / cover no-repeat;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(5, 20, 40, .84);
-    }
-    .hero-inner {
-      position: relative;
-      width: min(var(--max), calc(100% - 40px));
-      min-height: min(760px, 80vh);
-      margin: 0 auto;
-      padding: 86px 0 54px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .eyebrow { margin: 0 0 18px; color: #8ec5ff; font-size: 14px; font-weight: 800; text-transform: uppercase; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { max-width: 900px; margin-bottom: 24px; font-size: clamp(42px, 6.4vw, 84px); line-height: 1.06; }
-    .hero-copy { max-width: 760px; color: rgba(255,255,255,.78); font-size: 20px; }
-    .hero-meta { margin-top: 28px; color: rgba(255,255,255,.68); font-size: 14px; }
-    .metric-row {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0,1fr));
-      border-top: 1px solid rgba(255,255,255,.22);
-      border-bottom: 1px solid rgba(255,255,255,.22);
-    }
-    .metric { min-height: 130px; padding: 24px; border-right: 1px solid rgba(255,255,255,.22); }
-    .metric:last-child { border-right: 0; }
-    .metric strong { display: block; font-size: 42px; line-height: 1; }
-    .metric span { display: block; margin-top: 12px; color: rgba(255,255,255,.68); font-size: 14px; }
-    .band { padding: 92px 0; }
-    .band.white { background: var(--paper); }
-    .band.navy { background: var(--navy); color: #fff; }
-    .inner { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(260px,.75fr) minmax(0,1.25fr);
-      gap: 56px;
-      align-items: start;
-      margin-bottom: 48px;
-    }
-    .kicker { margin-bottom: 12px; color: var(--blue); font-size: 13px; font-weight: 800; text-transform: uppercase; }
-    .navy .kicker { color: #71c9ff; }
-    h2 { margin-bottom: 0; font-size: clamp(32px, 4vw, 54px); line-height: 1.16; }
-    .lead { color: var(--muted); font-size: 18px; }
-    .navy .lead { color: rgba(255,255,255,.7); }
-    .context-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); border-top: 1px solid var(--line); }
-    .context-item { padding: 28px 24px 6px 0; border-right: 1px solid var(--line); }
-    .context-item + .context-item { padding-left: 24px; }
-    .context-item:last-child { border-right: 0; }
-    .context-item span { color: var(--blue); font-size: 13px; font-weight: 800; }
-    .context-item h3 { margin: 10px 0; font-size: 23px; }
-    .context-item p { color: var(--muted); }
-    .loop {
-      display: grid;
-      grid-template-columns: repeat(5,minmax(0,1fr));
-      gap: 10px;
-    }
-    .loop-step {
-      position: relative;
-      min-height: 190px;
-      padding: 24px;
-      background: #fff;
-      color: var(--ink);
-      border-top: 5px solid var(--blue);
-      border-radius: 6px;
-    }
-    .loop-step:nth-child(2) { border-color: var(--teal); }
-    .loop-step:nth-child(3) { border-color: var(--orange); }
-    .loop-step:nth-child(4) { border-color: #7d6be8; }
-    .loop-step:nth-child(5) { border-color: #3e9d64; }
-    .loop-step b { display: block; margin-bottom: 18px; color: var(--muted); font-size: 12px; }
-    .loop-step h3 { margin-bottom: 8px; font-size: 20px; }
-    .loop-step p { color: var(--muted); font-size: 14px; }
-    .feedback-table { width: 100%; border-collapse: collapse; background: #fff; }
-    .feedback-table th, .feedback-table td { padding: 20px 18px; text-align: left; border-bottom: 1px solid var(--line); }
-    .feedback-table th { color: var(--muted); font-size: 13px; }
-    .feedback-table td:first-child { width: 22%; font-weight: 800; }
-    .journey {
-      display: grid;
-      grid-template-columns: repeat(6,minmax(0,1fr));
-      border: 1px solid rgba(255,255,255,.22);
-    }
-    .journey-step { min-height: 170px; padding: 22px; border-right: 1px solid rgba(255,255,255,.22); }
-    .journey-step:last-child { border-right: 0; }
-    .journey-step span { color: #71c9ff; font-weight: 800; }
-    .journey-step h3 { margin: 28px 0 8px; font-size: 18px; }
-    .journey-step p { color: rgba(255,255,255,.62); font-size: 13px; }
-    .metric-tree { display: grid; grid-template-columns: 1.05fr 1.95fr; gap: 24px; }
-    .north-star { padding: 32px; color: #fff; background: var(--blue); border-radius: 6px; }
-    .north-star strong { display: block; margin: 12px 0; font-size: 52px; }
-    .north-star p { color: rgba(255,255,255,.78); }
-    .metric-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
-    .metric-card { padding: 24px; background: #fff; border: 1px solid var(--line); border-radius: 6px; }
-    .metric-card b { color: var(--blue); }
-    .metric-card h3 { margin: 10px 0; font-size: 20px; }
-    .metric-card p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
-    .content-system { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 14px; }
-    .content-level { min-height: 245px; padding: 26px; background: #fff; border: 1px solid var(--line); border-radius: 6px; }
-    .content-level span { color: var(--blue); font-size: 12px; font-weight: 800; }
-    .content-level h3 { margin: 22px 0 10px; font-size: 22px; }
-    .content-level p { color: var(--muted); font-size: 14px; }
-    .pilot-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 36px; align-items: stretch; }
-    .pilot-photo { width: 100%; height: 100%; min-height: 440px; object-fit: cover; border-radius: 6px; }
-    .pilot-list { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
-    .pilot-item { min-height: 190px; padding: 24px; color: #fff; border: 1px solid rgba(255,255,255,.2); border-radius: 6px; }
-    .pilot-item span { color: #71c9ff; font-size: 12px; font-weight: 800; }
-    .pilot-item h3 { margin: 18px 0 8px; }
-    .pilot-item p { color: rgba(255,255,255,.65); font-size: 14px; }
-    .result-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .result { min-height: 190px; padding: 30px 24px; border-right: 1px solid var(--line); }
-    .result:last-child { border-right: 0; }
-    .result strong { display: block; margin-bottom: 16px; color: var(--blue); font-size: 42px; }
-    .result p { margin: 0; color: var(--muted); }
-    .closing { margin-top: 42px; padding-left: 20px; border-left: 5px solid var(--orange); font-size: 23px; font-weight: 750; }
-    footer { padding: 34px 20px; color: rgba(255,255,255,.58); background: #07162b; text-align: center; font-size: 13px; }
-    @media (max-width: 900px) {
-      .nav-links { display: none; }
-      .metric-row, .context-grid, .result-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-      .metric:nth-child(2), .result:nth-child(2) { border-right: 0; }
-      .metric:nth-child(-n+2), .result:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.22); }
-      .section-head, .metric-tree, .pilot-grid { grid-template-columns: 1fr; }
-      .loop { grid-template-columns: repeat(2,minmax(0,1fr)); }
-      .journey { grid-template-columns: repeat(3,minmax(0,1fr)); }
-      .journey-step:nth-child(3) { border-right: 0; }
-      .content-system { grid-template-columns: repeat(2,minmax(0,1fr)); }
-    }
-    @media (max-width: 600px) {
-      .nav-inner, .hero-inner, .inner { width: min(100% - 28px, var(--max)); }
-      .hero, .hero-inner { min-height: 720px; }
-      .hero-inner { padding-top: 64px; }
-      .hero-copy { font-size: 17px; }
-      .metric { min-height: 112px; padding: 18px 14px; }
-      .metric strong { font-size: 34px; }
-      .band { padding: 64px 0; }
-      .context-grid, .loop, .metric-list, .content-system, .pilot-list, .result-grid { grid-template-columns: 1fr; }
-      .context-item, .context-item + .context-item { padding: 22px 0; border-right: 0; border-bottom: 1px solid var(--line); }
-      .journey { grid-template-columns: repeat(2,minmax(0,1fr)); }
-      .journey-step:nth-child(2n) { border-right: 0; }
-      .feedback-table { display: block; overflow-x: auto; }
-      .result, .result:nth-child(2) { border-right: 0; border-bottom: 1px solid var(--line); }
-    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <a class="brand" href="../../">Sylvia Li · Market Operations</a>
-      <div class="nav-links">
-        <a href="#feedback">机构需求</a><a href="#journey">试点路径</a><a href="#content">宣讲内容</a><a href="#pilot">高校合作</a><a href="#results">结果</a>
-      </div>
-    </div>
+  <a class="skip-link" href="#overview">跳至项目内容</a>
+  <nav class="nav" aria-label="页面导航">
+    <a class="brand" href="../../index.html" aria-label="返回作品集首页"><span class="brand-mark">SL</span><span>Shiyi Li · Market Operations</span></a>
+    <div class="nav-links"><a href="#overview">我的职责</a><a href="#feedback">反馈判断</a><a href="#content">使用内容</a><a href="#pilot">试点支持</a><a href="#results">工作结果</a></div>
   </nav>
-
-  <header class="hero">
-    <div class="hero-inner">
-      <div>
-        <p class="eyebrow">University Channels · Partnership Materials · B2B Pilots</p>
-        <h1>生成式AI教育产品<br>B端高校合作与试点推进</h1>
-        <p class="hero-copy">围绕高校和教育机构试点，完成合作需求梳理、产品宣讲资料、教师案例、课程方案与试点反馈协同，把一次沟通推进为可执行、可复盘的合作路径。</p>
-        <p class="hero-meta">AI产品运营实习 · 2024.10–2025.05 · 合作资源 / 宣讲资料 / 试点执行 / 反馈复盘</p>
+  <main>
+    <header class="hero">
+      <div class="wrap hero-inner">
+        <p class="eyebrow">PROJECT 03 / AI EDUCATION · USER OPERATIONS</p>
+        <h1>AI 教育产品用户运营<br>与高校试点支持</h1>
+        <p class="hero-copy">整理师生使用反馈，制作指南、FAQ和教学案例，配合产品介绍与高校试点沟通。</p>
+        <div class="hero-meta"><span>2024.10–2025.05</span><span>AI产品营销实习生</span><span>教学 / 备课 / 自学</span></div>
+        <div class="hero-foot"><p>用户反馈 / 使用指导 / 产品资料 / 试点支持</p><a href="#feedback">反馈与处理思路 <span aria-hidden="true">↓</span></a></div>
       </div>
-      <div class="metric-row" aria-label="项目核心结果">
-        <div class="metric"><strong>100+</strong><span>机构与用户需求整理</span></div>
-        <div class="metric"><strong>30+</strong><span>宣讲与使用内容</span></div>
-        <div class="metric"><strong>+30%</strong><span>核心功能使用率</span></div>
-        <div class="metric"><strong>10+</strong><span>产品与运营建议</span></div>
+    </header>
+    <aside class="disclosure" aria-labelledby="disclosure-title">
+      <div class="wrap disclosure-inner"><h2 id="disclosure-title">材料与保密说明</h2><div><strong>涉及个人信息的反馈原文及内部数据明细不公开。</strong><p>流程和问题示例用于说明工作方法，不代表原始后台记录或用户原话。</p></div></div>
+    </aside>
+    <div class="snapshot">
+      <div class="wrap metric-row" aria-label="项目工作量">
+        <div class="metric"><strong>100+</strong><div><b>用户反馈</b><span>师生及试点用户反馈条数</span></div></div>
+        <div class="metric"><strong>30+</strong><div><b>使用内容</b><span>指南、FAQ、教程与案例篇数</span></div></div>
+        <div class="metric"><strong>10+</strong><div><b>改进建议</b><span>提出的产品与运营建议项数</span></div></div>
       </div>
     </div>
-  </header>
 
-  <main>
-    <section class="band white">
-      <div class="inner">
-        <div class="section-head">
-          <div><p class="kicker">01 · Context</p><h2>先理解机构需求，再组织合作表达</h2></div>
-          <p class="lead">产品服务高校教师、学生与院校客户，覆盖教学、备课、自学和内容生成等场景。市场运营需要同时理解终端用户任务与院校采购、试用和教学落地诉求，再决定产品演示、案例内容和合作资料如何组织。</p>
+    <div class="band">
+      <section class="wrap section" id="overview" aria-labelledby="overview-title">
+        <div class="section-head"><div><p class="kicker">01 / 项目背景与职责</p><h2 id="overview-title">帮助师生理解产品<br>支持高校试点沟通</h2></div><div class="lead"><p>产品面向高校教师、学生及教育机构，涉及教学、备课与自学等使用场景。不同用户对AI工具的熟悉程度和使用需求有所不同。</p><p>我的工作围绕反馈整理、使用内容和试点支持展开：记录用户问题，准备产品资料，并配合相关团队跟进反馈。</p></div></div>
+        <div class="responsibilities">
+          <article class="responsibility"><span>01</span><div><h3>整理使用反馈</h3><p>汇总师生及试点用户的问题，按类型归类，整理高频需求与改进建议。</p></div></article>
+          <article class="responsibility"><span>02</span><div><h3>制作使用内容</h3><p>编写使用指南、FAQ、功能教程与案例，补充常见问题的说明。</p></div></article>
+          <article class="responsibility"><span>03</span><div><h3>支持试点沟通</h3><p>准备产品介绍和课程相关资料，协助同步产品、内容与业务团队。</p></div></article>
         </div>
-        <div class="context-grid">
-          <article class="context-item"><span>用户</span><h3>教师与学生</h3><p>角色、任务和AI使用基础差异明显，需要不同的上手路径。</p></article>
-          <article class="context-item"><span>产品</span><h3>生成式AI能力</h3><p>功能价值依赖输入方式、结果预期与具体教学任务的清晰连接。</p></article>
-          <article class="context-item"><span>运营</span><h3>院校试点</h3><p>需要同时承接终端用户问题、教师案例和客户侧产品宣讲。</p></article>
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
-    <section class="band navy" id="feedback">
-      <div class="inner">
-        <div class="section-head">
-          <div><p class="kicker">02 · Feedback Loop</p><h2>从100+条反馈建立处理闭环</h2></div>
-          <p class="lead">以用户角色、任务场景、问题类型和影响程度为基础完成标签化整理，避免反馈停留在零散记录，并让产品与运营动作拥有一致的优先级。</p>
-        </div>
-        <div class="loop">
-          <article class="loop-step"><b>01 COLLECT</b><h3>收集</h3><p>汇总教师、学生、试点客户与社群问题。</p></article>
-          <article class="loop-step"><b>02 TAG</b><h3>标签化</h3><p>按角色、场景、功能和问题类型归类。</p></article>
-          <article class="loop-step"><b>03 PRIORITISE</b><h3>分级</h3><p>结合频次、影响和解决成本判断优先级。</p></article>
-          <article class="loop-step"><b>04 ACTION</b><h3>处理</h3><p>分流至产品优化、内容更新或服务支持。</p></article>
-          <article class="loop-step"><b>05 REVIEW</b><h3>复盘</h3><p>通过功能使用和重复问题验证效果。</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="band white">
-      <div class="inner">
-        <div class="section-head">
-          <div><p class="kicker">03 · Taxonomy</p><h2>高频问题对应不同运营动作</h2></div>
-          <p class="lead">同一句“不会用”可能来自入口不清、任务不明、结果不符预期或教学场景不匹配。只有先完成归因，才能决定修改产品还是补充内容。</p>
-        </div>
-        <table class="feedback-table">
-          <thead><tr><th>反馈类型</th><th>用户信号</th><th>运营判断</th><th>对应动作</th></tr></thead>
-          <tbody>
-            <tr><td>进入与上手</td><td>找不到入口，不清楚第一步</td><td>首次任务路径过长</td><td>快速上手指南、入口说明、首任务引导</td></tr>
-            <tr><td>任务表达</td><td>不知道如何描述需求</td><td>AI输入门槛影响功能使用</td><td>任务模板、输入示例、场景化教程</td></tr>
-            <tr><td>结果预期</td><td>输出与期待不一致</td><td>用户缺少结果判断标准</td><td>结果示例、限制说明、问题排查FAQ</td></tr>
-            <tr><td>教学适配</td><td>不知道如何进入课程流程</td><td>功能与真实教学任务连接不足</td><td>教师案例、课程方案、产品演示</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section class="band navy" id="journey">
-      <div class="inner">
-        <div class="section-head">
-          <div><p class="kicker">04 · Product Journey</p><h2>沿用户路径跟踪核心信号</h2></div>
-          <p class="lead">把用户体验拆成可观察步骤，在每个节点同时记录行为数据和问题反馈，定位从“看到功能”到“完成任务”之间的主要阻碍。</p>
-        </div>
-        <div class="journey">
-          <article class="journey-step"><span>01</span><h3>进入产品</h3><p>入口访问、登录与角色信息</p></article>
-          <article class="journey-step"><span>02</span><h3>理解功能</h3><p>功能页查看、教程点击与问题反馈</p></article>
-          <article class="journey-step"><span>03</span><h3>首次任务</h3><p>功能启动、输入完成与中途退出</p></article>
-          <article class="journey-step"><span>04</span><h3>获得结果</h3><p>结果生成、重新尝试与异常反馈</p></article>
-          <article class="journey-step"><span>05</span><h3>保存复用</h3><p>保存、导出与教学场景采用</p></article>
-          <article class="journey-step"><span>06</span><h3>持续使用</h3><p>再次访问、核心功能频次与新需求</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="band" id="metrics">
-      <div class="inner">
-        <div class="section-head">
-          <div><p class="kicker">05 · Metric Framework</p><h2>指标服务于产品判断</h2></div>
-          <p class="lead">不把数据看板做成数字陈列，而是把每个指标和需要回答的运营问题对应：用户有没有开始、是否完成任务、是否理解价值，以及同类问题是否减少。</p>
-        </div>
-        <div class="metric-tree">
-          <div class="north-star"><span>项目结果指标</span><strong>+30%</strong><p>核心功能使用率提升。通过路径分析、教程内容和场景案例共同降低功能理解与首次使用门槛。</p></div>
-          <div class="metric-list">
-            <article class="metric-card"><b>ACTIVATION</b><h3>首次任务完成</h3><p>判断新用户是否从看到功能进入实际操作。</p></article>
-            <article class="metric-card"><b>USAGE</b><h3>核心功能使用</h3><p>观察关键能力是否被真实任务采用。</p></article>
-            <article class="metric-card"><b>CONTINUITY</b><h3>重复访问与复用</h3><p>判断内容和结果是否形成持续使用理由。</p></article>
-            <article class="metric-card"><b>QUALITY</b><h3>反馈重复与问题关闭</h3><p>验证同类问题是否因产品或内容动作减少。</p></article>
+    <div class="band soft">
+      <section class="wrap section" id="feedback" aria-labelledby="feedback-title">
+        <div class="section-head"><div><p class="kicker">02 / 用户反馈与判断</p><h2 id="feedback-title">先看用户卡在哪里<br>再决定怎样跟进</h2></div><p class="lead">整理反馈时，先区分用户遇到的现象和仍需确认的原因。使用说明能提供帮助的，补充教程与FAQ；涉及功能和产品体验的问题，汇总后反馈给相关团队。</p></div>
+        <div class="subheading"><h3>用户使用过程</h3><span class="example-label">流程示意 · 非后台行为或转化数据</span></div>
+        <ol class="usage-path" aria-label="用户使用过程示意">
+          <li><span class="path-number">01</span><h4>了解功能</h4><p>知道产品适合哪些任务</p></li>
+          <li><span class="path-number">02</span><h4>尝试操作</h4><p>按照说明进行初步使用</p></li>
+          <li><span class="path-number">03</span><h4>遇到问题</h4><p>记录操作中的疑问与阻碍</p></li>
+          <li><span class="path-number">04</span><h4>获得帮助</h4><p>通过说明或团队反馈跟进</p></li>
+          <li><span class="path-number">05</span><h4>反馈使用情况</h4><p>补充仍未解决的问题</p></li>
+        </ol>
+        <div class="feedback-toolbar"><div class="feedback-tabs" role="tablist" aria-label="反馈问题示例" hidden><button id="feedback-tab-entry" role="tab" type="button" aria-controls="feedback-entry" aria-selected="true" data-feedback="entry">入口与上手</button><button id="feedback-tab-input" role="tab" type="button" aria-controls="feedback-input" aria-selected="false" tabindex="-1" data-feedback="input">输入与操作</button><button id="feedback-tab-result" role="tab" type="button" aria-controls="feedback-result" aria-selected="false" tabindex="-1" data-feedback="result">结果与预期</button></div><span class="example-label">问题处理思路示意 · 非用户原话</span></div>
+        <div class="decision-panel" id="feedback-entry" role="region" aria-labelledby="entry-title" tabindex="0">
+          <div class="case-question"><span>01</span><div><small>示例问题</small><h3 id="entry-title">找不到功能入口</h3></div></div>
+          <div class="decision-columns">
+            <article class="decision-column"><h4>需要确认的原因</h4><p>入口位置是否不够明显？使用说明是否缺少第一步？不能仅凭这一条反馈就判断路径过长。</p><small>先核查现象，不直接下结论</small></article>
+            <article class="decision-column"><h4>我能提供的帮助</h4><p>补充入口位置和操作步骤说明，将相同问题归类，整理需要进一步说明的内容。</p><small>使用指导 / 反馈整理</small></article>
+            <article class="decision-column"><h4>需产品团队确认</h4><p>核查入口位置、页面提示或交互是否需要调整，区分说明不足与产品体验问题。</p><small>产品核查 / 处理建议</small></article>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="band white" id="content">
-      <div class="inner">
-        <div class="section-head">
-          <div><p class="kicker">06 · Content System</p><h2>30+篇内容覆盖完整使用阶段</h2></div>
-          <p class="lead">将复杂AI概念转化为四层产品内容：先降低理解成本，再帮助完成任务，随后解决异常，最终用真实场景支持教师和院校客户采用。</p>
-        </div>
-        <div class="content-system">
-          <article class="content-level"><span>L1 · QUICK START</span><h3>快速上手</h3><p>入口说明、核心概念和首次任务步骤，帮助用户尽快开始。</p></article>
-          <article class="content-level"><span>L2 · HOW TO</span><h3>功能教程</h3><p>拆解输入、操作和结果处理，让功能可以被独立完成。</p></article>
-          <article class="content-level"><span>L3 · SUPPORT</span><h3>FAQ与排查</h3><p>沉淀重复问题、功能边界和异常处理，减少沟通成本。</p></article>
-          <article class="content-level"><span>L4 · SCENARIO</span><h3>教学案例</h3><p>用备课、教学和自学案例连接产品能力与真实任务。</p></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="band navy" id="pilot">
-      <div class="inner">
-        <div class="section-head">
-          <div><p class="kicker">07 · Partnership Execution</p><h2>把合作资源、宣讲资料与试点流程连接起来</h2></div>
-          <p class="lead">合作推进不止是一次产品介绍。运营侧先明确院校角色与需求，再组织价值表达、演示流程和配套资料；试点中持续收集问题，协同产品、内容与业务团队处理，并用结果决定下一轮合作动作。</p>
-        </div>
-        <div class="pilot-grid">
-          <img class="pilot-photo" src="../../works/covers/education-pilot.png" alt="生成式AI教育产品高校试点与合作资料">
-          <div class="pilot-list">
-            <article class="pilot-item"><span>PARTNER MAP</span><h3>合作对象与需求</h3><p>区分院校决策者、教师和学生，明确试点目标与采用条件。</p></article>
-            <article class="pilot-item"><span>PROPOSAL</span><h3>合作表达与资料</h3><p>用产品演示、教师案例、课程方案和FAQ支持沟通。</p></article>
-            <article class="pilot-item"><span>EXECUTION</span><h3>宣讲与试点执行</h3><p>围绕真实教学任务组织演示顺序、上手内容和反馈入口。</p></article>
-            <article class="pilot-item"><span>REVIEW</span><h3>结果复盘与协同</h3><p>输出10+项建议，推动产品、内容与业务共同处理。</p></article>
+        <div class="decision-panel" id="feedback-input" role="region" aria-labelledby="input-title" tabindex="0">
+          <div class="case-question"><span>02</span><div><small>示例问题</small><h3 id="input-title">不清楚怎样描述任务</h3></div></div>
+          <div class="decision-columns">
+            <article class="decision-column"><h4>需要确认的原因</h4><p>任务目标是否明确？输入要求是否说明清楚？需要结合具体操作，判断用户在哪一步有疑问。</p><small>先核查现象，不直接下结论</small></article>
+            <article class="decision-column"><h4>我能提供的帮助</h4><p>补充输入示例与场景化说明，把操作要求写成具体步骤，并记录用户仍不理解的地方。</p><small>使用指导 / 反馈整理</small></article>
+            <article class="decision-column"><h4>需产品团队确认</h4><p>核查输入提示、功能要求及报错信息是否清晰，确认是否需要补充提示或调整交互。</p><small>产品核查 / 处理建议</small></article>
           </div>
         </div>
-      </div>
-    </section>
+        <div class="decision-panel" id="feedback-result" role="region" aria-labelledby="result-title" tabindex="0">
+          <div class="case-question"><span>03</span><div><small>示例问题</small><h3 id="result-title">结果与预期不一致</h3></div></div>
+          <div class="decision-columns">
+            <article class="decision-column"><h4>需要确认的原因</h4><p>可能与输入信息、使用场景或产品能力有关。先了解实际任务与结果，不直接归因于用户理解不足。</p><small>先核查现象，不直接下结论</small></article>
+            <article class="decision-column"><h4>我能提供的帮助</h4><p>整理任务背景、操作过程与具体差异，补充已有功能说明，将待确认的问题反馈给相关团队。</p><small>使用指导 / 反馈整理</small></article>
+            <article class="decision-column"><h4>需产品团队确认</h4><p>核查结果质量、功能限制或异常情况，判断是否涉及产品优化，以及需要提供哪些补充说明。</p><small>产品核查 / 处理建议</small></article>
+          </div>
+        </div>
+        <p class="example-note">以上示例用于说明分析方式，具体原因与处理方式需要结合实际情况确认。</p>
+      </section>
+    </div>
 
-    <section class="band white" id="results">
-      <div class="inner">
-        <div class="section-head">
-          <div><p class="kicker">08 · Outcome</p><h2>从一次院校沟通沉淀为可复用的合作推进机制</h2></div>
-          <p class="lead">项目将机构需求、价值表达、宣讲资料、试点执行和反馈处理串联起来，为后续高校及教育机构合作提供统一的准备清单与复盘框架。</p>
+    <div class="band">
+      <section class="wrap section" id="content" aria-labelledby="content-title">
+        <div class="section-head"><div><p class="kicker">03 / 使用内容与产品资料</p><h2 id="content-title">把常见问题<br>写成清楚的使用说明</h2></div><p class="lead">根据师生使用中的常见问题，整理指南、FAQ、功能教程与场景案例。内容重点是说明产品能做什么、操作从哪里开始，以及遇到问题时需要补充哪些信息。</p></div>
+        <div class="content-grid">
+          <article class="content-item"><span>01</span><h3>使用指南</h3><p>介绍产品入口、主要功能与开始使用的步骤。</p><small>从哪里开始</small></article>
+          <article class="content-item"><span>02</span><h3>功能教程</h3><p>整理具体操作、输入要求和结果查看方式。</p><small>怎样完成操作</small></article>
+          <article class="content-item"><span>03</span><h3>常见问题</h3><p>汇总重复出现的疑问，补充说明与注意事项。</p><small>遇到问题怎么办</small></article>
+          <article class="content-item"><span>04</span><h3>场景案例</h3><p>结合备课、教学和自学需求，说明功能的使用场景。</p><small>适合什么任务</small></article>
         </div>
-        <div class="result-grid">
-          <article class="result"><strong>100+</strong><p>用户反馈被整理为可检索、可分级的问题标签。</p></article>
-          <article class="result"><strong>30+</strong><p>指南、FAQ、教程与案例覆盖不同使用阶段。</p></article>
-          <article class="result"><strong>+30%</strong><p>核心功能使用率在路径与内容优化后得到提升。</p></article>
-          <article class="result"><strong>10+</strong><p>产品与运营建议进入演示材料和试点推进。</p></article>
+        <div class="document-outline">
+          <div class="outline-intro"><h3>一份使用说明的组织方式</h3><span class="example-label">内容结构示意 · 非历史文档截图</span><p>围绕一个具体任务组织信息，把使用背景、操作步骤和需要注意的问题放在一起。</p></div>
+          <ol class="outline-steps" aria-label="使用说明结构示意">
+            <li><span class="mono">01</span><strong>适用场景</strong><p>说明要完成什么任务</p></li>
+            <li><span class="mono">02</span><strong>操作步骤</strong><p>按顺序说明需要做什么</p></li>
+            <li><span class="mono">03</span><strong>结果说明</strong><p>说明结果如何查看与理解</p></li>
+            <li><span class="mono">04</span><strong>常见问题</strong><p>补充疑问与使用注意事项</p></li>
+          </ol>
         </div>
-        <p class="closing">合作资源识别 → 需求沟通 → 合作资料 → 产品宣讲 → 高校试点 → 效果复盘 → 下一轮推进</p>
-      </div>
-    </section>
+      </section>
+    </div>
+
+    <div class="band soft">
+      <section class="wrap section" id="pilot" aria-labelledby="pilot-title">
+        <div class="section-head"><div><p class="kicker">04 / 高校试点支持</p><h2 id="pilot-title">沟通前准备资料<br>使用中收集反馈</h2></div><p class="lead">试点支持围绕资料准备、使用问题和后续沟通展开。我配合整理产品介绍与课程相关材料，并将师生反馈同步给产品、内容及业务团队。</p></div>
+        <div class="pilot-stages">
+          <article class="pilot-stage"><span>01 / BEFORE</span><h3>沟通前</h3><p>配合准备产品介绍、演示材料、教师案例及课程相关资料。</p></article>
+          <article class="pilot-stage"><span>02 / DURING</span><h3>使用中</h3><p>收集师生的使用问题与场景需求，协助同步相关团队。</p></article>
+          <article class="pilot-stage"><span>03 / FOLLOW-UP</span><h3>沟通后</h3><p>整理需要补充的说明与改进建议，支持后续试点沟通。</p></article>
+        </div>
+        <div class="field-evidence">
+          <figure><a class="photo-link" href="../../works/covers/education-pilot.png" target="_blank" rel="noopener noreferrer" aria-label="查看高校交流与合作活动原图" title="查看原图"><img src="../../works/covers/education-pilot.png" width="1448" height="1086" loading="lazy" alt="已有脱敏拼图，包含高校交流合影及合作活动记录"></a><figcaption>高校交流与合作活动记录，沿用已有脱敏图片。</figcaption></figure>
+          <div class="evidence-context"><h3>交流与合作背景</h3><p>拼图保留了不同场景的活动记录，不将其合并解释为同一次高校试点。</p><dl><div><dt>高校交流合影</dt><dd>呈现高校交流相关活动背景。</dd></div><div><dt>签约与合作展示</dt><dd>呈现其他合作场景，不等同于师生实际使用情况。</dd></div><div><dt>本项目展示重点</dt><dd>用户反馈整理、使用内容制作与试点沟通支持。</dd></div></dl><aside class="image-note">图片用于说明活动背景，不作为单个试点成效或使用指标的证明。</aside></div>
+        </div>
+      </section>
+    </div>
+
+    <div class="band results-band">
+      <section class="wrap section" id="results" aria-labelledby="results-title">
+        <div class="section-head"><div><p class="kicker">05 / 工作结果</p><h2 id="results-title">反馈整理、内容制作<br>与试点支持</h2></div><p class="lead">工作结果主要体现在整理后的反馈、补充的使用内容和提交的改进建议。相关资料用于产品介绍、用户上手和后续试点沟通。</p></div>
+        <ul class="result-list">
+          <li><span>01</span><h3>整理师生使用问题</h3><p>按问题类型归类反馈，汇总常见疑问与需要进一步确认的事项。</p></li>
+          <li><span>02</span><h3>补充产品使用资料</h3><p>制作指南、FAQ、功能教程和场景案例，配合产品介绍与使用指导。</p></li>
+          <li><span>03</span><h3>提出产品与运营建议</h3><p>将整理后的问题与改进建议反馈给相关团队，支持后续沟通。</p></li>
+        </ul>
+        <p class="scope-note"><strong>统计说明</strong>页面数字分别为反馈条数、内容篇数与建议项数；建议数量不代表全部已实施。</p>
+      </section>
+    </div>
   </main>
-
-  <footer>Generative AI Education Partnerships & University Pilots · Sylvia Li · 2025</footer>
+  <footer class="footer"><div class="wrap"><span>Shiyi Li · AI Education User Operations · 2024.10–2025.05</span><a href="../../index.html">返回项目首页 ↑</a></div></footer>
+  <script>
+    const tabs = [...document.querySelectorAll('[data-feedback]')];
+    const panels = [...document.querySelectorAll('.decision-panel')];
+    function selectFeedback(tab) {
+      tabs.forEach(item => {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+      });
+      panels.forEach(panel => {
+        panel.hidden = panel.id !== tab.getAttribute('aria-controls');
+      });
+    }
+    // All examples remain readable without JavaScript; tabs enhance the same content.
+    panels.forEach((panel, index) => {
+      panel.setAttribute('role', 'tabpanel');
+      panel.setAttribute('aria-labelledby', tabs[index].id);
+    });
+    document.querySelector('.feedback-tabs').hidden = false;
+    document.querySelector('#feedback').classList.add('feedback-enhanced');
+    selectFeedback(tabs[0]);
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => selectFeedback(tab));
+      tab.addEventListener('keydown', event => {
+        let next;
+        if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === 'Home') next = 0;
+        if (event.key === 'End') next = tabs.length - 1;
+        if (next === undefined) return;
+        event.preventDefault();
+        selectFeedback(tabs[next]);
+        tabs[next].focus();
+      });
+    });
+    if ('IntersectionObserver' in window) {
+      const links = [...document.querySelectorAll('.nav-links a')];
+      const observer = new IntersectionObserver(entries => {
+        const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (!visible) return;
+        links.forEach(link => {
+          if (link.hash === '#' + visible.target.id) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }, { rootMargin: '-110px 0px -55% 0px' });
+      links.forEach(link => observer.observe(document.querySelector(link.hash)));
+    }
+  </script>
 </body>
 </html>

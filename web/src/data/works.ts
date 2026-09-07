@@ -96,18 +96,18 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
       {
         id: 'project-3',
         no: '03',
-        title: '机构合作与高校试点',
-        tagline: '合作资源｜宣讲资料｜试点执行｜反馈闭环',
+        title: '用户运营与高校试点',
+        tagline: '师生反馈｜使用指导｜产品资料｜试点支持',
         items: [
           {
-            name: '生成式AI教育产品高校试点与机构合作',
-            meta: 'Generative AI Education Partnerships & Pilots',
+            name: 'AI 教育产品用户运营与高校试点支持',
+            meta: 'AI Education User Operations & University Pilot Support',
             slug: 'ai-education-product',
             tags: [
-              '合作对象：高校教师、学生与教育机构试点团队；整理100+条需求与反馈',
-              '合作资料：产品演示、教师案例、课程方案、FAQ及30+篇使用内容',
-              '执行协同：连接产品、内容与业务团队，支持海内外高校试点沟通和推进',
-              '项目复盘：沉淀10+项产品与运营建议，推动核心功能使用率提升30%',
+              '用户反馈：整理100+条师生及试点用户反馈，归类常见使用问题',
+              '使用内容：输出30+篇指南、FAQ、功能教程和场景案例',
+              '试点支持：准备产品介绍与使用资料，配合高校试点沟通和反馈整理',
+              '改进建议：形成10+项产品与运营建议，反馈给相关团队',
             ],
           },
         ],
@@ -186,18 +186,18 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
       {
         id: 'project-3',
         no: '03',
-        title: 'Institution Partnerships & University Pilots',
-        tagline: 'Resources · Materials · Execution · Review',
+        title: 'User Operations & University Pilot Support',
+        tagline: 'Feedback · User Guidance · Materials · Pilot Support',
         items: [
           {
-            name: 'Generative AI Education Partnerships & Pilots',
-            meta: 'Generative AI Education Partnerships & Pilots',
+            name: 'AI Education User Operations & University Pilot Support',
+            meta: 'User Feedback, Learning Materials & Pilot Support',
             slug: 'ai-education-product',
             tags: [
-              'Organized 100+ university-user and pilot feedback items across teaching and learning scenarios',
-              'Produced 30+ guides, FAQs, tutorials, and instructor-facing cases for product communication',
-              'Prepared demos, course materials, and cooperation materials for university and institution pilots',
-              'Delivered 10+ recommendations and supported a 30% increase in core-feature adoption',
+              'Organized 100+ feedback items from teachers, students, and pilot users by issue type',
+              'Produced 30+ guides, FAQs, feature tutorials, and use-case materials',
+              'Prepared product and user-guidance materials and supported university pilot communication',
+              'Developed 10+ product and operations suggestions and shared them with relevant teams',
             ],
           },
         ],
