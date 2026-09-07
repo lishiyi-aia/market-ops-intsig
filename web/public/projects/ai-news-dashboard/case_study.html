@@ -7,1070 +7,547 @@
   <title>AI资讯产品线上线下活动与渠道运营</title>
   <style>
     :root {
-      --navy: #081a36;
-      --navy-2: #102b53;
-      --blue: #1769e0;
-      --cyan: #19a7a1;
-      --orange: #f27a3d;
-      --gold: #e5b63f;
-      --pink: #d84f83;
-      --green: #228a65;
-      --ink: #162238;
-      --muted: #647087;
-      --line: #d8e0ea;
-      --soft: #f1f5f8;
-      --paper: #ffffff;
-      --page: #eaf0f5;
-      --radius: 6px;
-      --shadow: 0 20px 60px rgba(8, 26, 54, 0.12);
+      --navy: #18242c; --navy-2: #21343d; --blue: #175bd4; --cyan: #087e79;
+      --pink: #b63668; --green: #277c54; --orange: #d96c32; --gold: #f0c552;
+      --ink: #18242c; --muted: #5e6978; --line: #dce2e8; --soft: #f4f6f8; --paper: #fff;
     }
-
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--page);
-      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-      font-size: 16px;
-      line-height: 1.7;
-      letter-spacing: 0;
-    }
-
-    a { color: inherit; }
-    img, svg { display: block; max-width: 100%; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; color: var(--ink); background: #fff; font: 16px/1.7 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; letter-spacing: 0; }
+    h1, h2, h3, h4, p, figure { margin: 0; }
+    h1, h2, h3, h4 { letter-spacing: 0; text-wrap: balance; }
+    p { overflow-wrap: anywhere; }
+    a { color: inherit; text-underline-offset: 4px; }
+    img { display: block; width: 100%; height: auto; }
+    [hidden] { display: none !important; }
+    button { font: inherit; cursor: pointer; touch-action: manipulation; }
     button, a { -webkit-tap-highlight-color: transparent; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1, h2, h3 { letter-spacing: 0; }
-    .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-variant-numeric: tabular-nums; }
-
-    .skip-link {
-      position: fixed;
-      top: 8px;
-      left: 8px;
-      z-index: 100;
-      transform: translateY(-180%);
-      padding: 8px 12px;
-      border-radius: 4px;
-      color: var(--navy);
-      background: var(--paper);
-      font-weight: 800;
-    }
-    .skip-link:focus { transform: translateY(0); }
-
-    .site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      min-height: 58px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-      padding: 0 max(22px, calc((100vw - 1180px) / 2));
-      color: #fff;
-      background: rgba(8, 26, 54, 0.95);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-      backdrop-filter: blur(14px);
-    }
-
-    .nav-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 850;
-      white-space: nowrap;
-    }
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 27px;
-      height: 27px;
-      border: 1px solid rgba(255, 255, 255, 0.55);
-      border-radius: 50%;
-      font-size: 12px;
-    }
-    .nav-links { display: flex; align-items: center; gap: 18px; overflow-x: auto; scrollbar-width: none; }
+    :focus-visible { outline: 3px solid var(--orange); outline-offset: 5px; }
+    .mono { font-family: "SFMono-Regular", Consolas, monospace; font-variant-numeric: tabular-nums; }
+    .skip-link { position: fixed; left: 12px; top: 8px; z-index: 100; transform: translateY(-160%); padding: 8px 12px; background: #fff; }
+    .skip-link:focus { transform: none; }
+    .report, .hero-inner, .metric-strip { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+    .site-nav { position: sticky; top: 0; z-index: 50; min-height: 64px; padding: 0 max(32px, calc((100% - 1180px) / 2)); display: flex; align-items: center; justify-content: space-between; gap: 24px; color: #fff; background: #18242cf7; border-bottom: 1px solid #ffffff25; backdrop-filter: blur(12px); }
+    .nav-brand { display: inline-flex; gap: 10px; align-items: center; text-decoration: none; white-space: nowrap; font-size: 14px; font-weight: 750; }
+    .brand-mark { display: grid; place-items: center; border: 1px solid #ffffff70; width: 28px; height: 28px; border-radius: 50%; font-size: 11px; }
+    .nav-links { display: flex; align-items: center; gap: 22px; min-width: 0; overflow: auto; scrollbar-width: none; }
     .nav-links::-webkit-scrollbar { display: none; }
-    .nav-links a {
-      position: relative;
-      padding: 18px 0 16px;
-      color: rgba(255, 255, 255, 0.66);
-      text-decoration: none;
-      font-size: 12px;
-      font-weight: 750;
-      white-space: nowrap;
-    }
-    .nav-links a::after {
-      content: "";
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 180ms ease;
-    }
-    .nav-links a:hover, .nav-links a.active { color: #fff; }
-    .nav-links a.active::after { transform: scaleX(1); }
-    .nav-action {
-      display: inline-flex;
-      align-items: center;
-      min-height: 34px;
-      padding: 7px 12px;
-      border: 1px solid rgba(255, 255, 255, 0.38);
-      border-radius: 4px;
-      color: #fff !important;
-      background: rgba(255, 255, 255, 0.08);
-    }
-    .nav-action::after { display: none; }
-
-    .hero {
-      position: relative;
-      min-height: 700px;
-      display: grid;
-      align-items: end;
-      overflow: hidden;
-      color: #fff;
-      background: var(--navy);
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(5, 17, 38, 0.98) 0%, rgba(5, 17, 38, 0.88) 48%, rgba(5, 17, 38, 0.3) 78%, rgba(5, 17, 38, 0.48) 100%),
-        linear-gradient(0deg, rgba(5, 17, 38, 0.92) 0%, rgba(5, 17, 38, 0.08) 58%),
-        url("../../works/covers/sohu-dashboard.png") center / cover no-repeat;
-    }
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      width: min(1180px, calc(100% - 44px));
-      margin: 0 auto;
-      padding: 100px 0 64px;
-    }
-    .eyebrow {
-      margin-bottom: 16px;
-      color: #ffd76c;
-      font-size: 12px;
-      font-weight: 850;
-      text-transform: uppercase;
-    }
-    h1 {
-      max-width: 900px;
-      margin-bottom: 22px;
-      font-size: 72px;
-      line-height: 1.04;
-      font-weight: 900;
-    }
-    .hero-copy {
-      max-width: 730px;
-      margin-bottom: 28px;
-      color: rgba(255, 255, 255, 0.82);
-      font-size: 20px;
-      line-height: 1.65;
-    }
-    .hero-meta { display: flex; flex-wrap: wrap; gap: 8px 20px; color: rgba(255, 255, 255, 0.7); font-size: 13px; font-weight: 700; }
-    .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
-    .hero-meta span::before { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--orange); }
-
-    .snapshot { position: relative; z-index: 3; background: var(--paper); box-shadow: var(--shadow); }
-    .metric-strip { width: min(1180px, calc(100% - 44px)); margin: 0 auto; display: grid; grid-template-columns: repeat(5, 1fr); }
-    .metric { min-width: 0; padding: 28px 22px 26px; border-right: 1px solid var(--line); }
-    .metric:last-child { border-right: 0; }
-    .metric-label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 12px; font-weight: 750; }
-    .metric strong { display: block; margin-bottom: 5px; color: var(--navy); font-size: 40px; line-height: 1; font-weight: 900; font-variant-numeric: tabular-nums; }
-    .metric p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.5; }
-
-    .report { width: min(1180px, calc(100% - 44px)); margin: 0 auto; }
-    .band { background: var(--paper); }
+    .nav-links a { flex-shrink: 0; min-height: 44px; display: inline-flex; align-items: center; border-bottom: 2px solid transparent; text-decoration: none; color: #cad3d9; font-size: 12px; }
+    .nav-links a:hover, .nav-links a.active { color: #fff; border-bottom-color: var(--gold); }
+    .nav-links .nav-action { color: #f0d48b; }
+    .hero { position: relative; isolation: isolate; overflow: hidden; min-height: 470px; display: flex; align-items: center; color: #fff; background: #18242c; }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #18242c 0%, #18242cee 46%, #18242c40 100%), url("event-materials/03-awareness.jpg") right 40% / auto 160% no-repeat; }
+    .hero-inner { padding-block: 62px; }
+    .eyebrow { color: #f0d48b; font-size: 12px; font-weight: 750; margin-bottom: 22px; }
+    h1 { max-width: 950px; font-size: 60px; font-weight: 850; line-height: 1.2; }
+    .hero-copy { max-width: 740px; margin-top: 24px; font-size: 18px; color: #e1e7eb; line-height: 1.85; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 28px; font-size: 12px; color: #ced8df; }
+    .hero-meta span { border-left: 2px solid #f0c552; padding-left: 10px; }
+    .snapshot { border-bottom: 1px solid var(--line); }
+    .metric-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .metric { min-width: 0; padding: 27px 22px; border-right: 1px solid var(--line); }
+    .metric:first-child { padding-left: 0; }
+    .metric:last-child { border: 0; }
+    .metric-label { display: block; font-size: 10px; color: var(--muted); font-weight: 700; }
+    .metric strong { display: flex; align-items: center; min-height: 58px; font-size: 25px; line-height: 1.3; }
+    .metric strong.mono { font-size: 46px; color: var(--blue); }
+    .metric p { font-size: 11px; color: var(--muted); }
+    .band { background: var(--paper); border-bottom: 1px solid var(--line); }
     .band.soft { background: var(--soft); }
-    .band.dark { color: #fff; background: var(--navy); }
-    .section { padding: 88px 0; scroll-margin-top: 58px; }
-    .band + .band { border-top: 1px solid var(--line); }
-    .section-head { display: grid; grid-template-columns: minmax(350px, 0.72fr) minmax(0, 1.28fr); gap: 52px; align-items: start; margin-bottom: 40px; }
-    .kicker { margin-bottom: 12px; color: var(--blue); font-size: 12px; font-weight: 850; text-transform: uppercase; }
-    .dark .kicker { color: #6edbd2; }
-    h2 { margin-bottom: 0; font-size: 48px; line-height: 1.12; font-weight: 900; }
-    .tight-title { font-size: 44px; }
-    h3 { margin-bottom: 10px; font-size: 20px; line-height: 1.35; font-weight: 850; }
-    .section-lead { max-width: 750px; margin-bottom: 0; color: var(--muted); font-size: 18px; line-height: 1.75; }
-    .dark .section-lead { color: rgba(255, 255, 255, 0.72); }
-    .body-copy { max-width: 760px; color: var(--muted); }
-
-    .brief-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 26px; }
-    .brief-main { padding: 34px; border-left: 5px solid var(--orange); background: var(--paper); }
-    .brief-main p:last-child { margin-bottom: 0; }
-    .role-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .role-item { padding: 20px 0; border-top: 3px solid var(--blue); }
-    .role-item:nth-child(2) { border-color: var(--orange); }
-    .role-item:nth-child(3) { border-color: var(--pink); }
-    .role-item:nth-child(4) { border-color: var(--green); }
-    .role-item strong { display: block; margin-bottom: 5px; font-size: 15px; }
-    .role-item span { color: var(--muted); font-size: 13px; }
-
-    .growth-path { display: grid; grid-template-columns: repeat(6, 1fr); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--paper); }
-    .growth-node { position: relative; min-height: 210px; padding: 22px 18px; border-right: 1px solid var(--line); border-top: 5px solid var(--blue); }
-    .growth-node:nth-child(2) { border-top-color: var(--cyan); }
-    .growth-node:nth-child(3) { border-top-color: var(--pink); }
-    .growth-node:nth-child(4) { border-top-color: var(--orange); }
-    .growth-node:nth-child(5) { border-top-color: var(--gold); }
-    .growth-node:nth-child(6) { border-top-color: var(--green); border-right: 0; }
-    .growth-node:not(:last-child)::after { content: "→"; position: absolute; top: 25px; right: -13px; z-index: 2; display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; color: var(--blue); background: var(--paper); font-weight: 900; }
-    .growth-node span { display: block; margin-bottom: 34px; color: var(--muted); font-size: 11px; font-weight: 850; }
-    .growth-node h3 { font-size: 16px; }
-    .growth-node p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
-    .growth-node small { display: block; margin-top: 18px; color: var(--navy); font-size: 11px; font-weight: 850; }
-
-    .data-architecture { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--paper); }
-    .data-layer { position: relative; min-height: 206px; padding: 26px 23px; border-right: 1px solid var(--line); }
-    .data-layer:last-child { border-right: 0; }
-    .data-layer:not(:last-child)::after { content: "+"; position: absolute; top: 28px; right: -11px; z-index: 2; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; color: #fff; background: var(--navy); font-weight: 900; }
-    .data-layer .layer-id { display: block; margin-bottom: 30px; color: var(--blue); font-size: 11px; font-weight: 850; }
-    .data-layer p { margin: 0; color: var(--muted); font-size: 13px; }
-    .source-confidence { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
-    .confidence { padding: 18px; border-top: 3px solid var(--blue); background: var(--paper); }
-    .confidence:nth-child(2) { border-color: var(--orange); }
-    .confidence:nth-child(3) { border-color: var(--pink); }
-    .confidence strong { display: block; margin-bottom: 4px; }
-    .confidence p { margin: 0; color: var(--muted); font-size: 12px; }
-
-    .chart-frame { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); }
-    .chart-title { margin-bottom: 4px; color: var(--navy); font-size: 16px; font-weight: 850; }
-    .chart-subtitle { margin-bottom: 20px; color: var(--muted); font-size: 12px; }
-    .chart-note { margin: 14px 0 0; color: var(--muted); font-size: 11px; }
-    .timeline-chart { width: 100%; height: auto; min-height: 330px; }
-    .chart-grid { stroke: #dfe6ee; stroke-width: 1; }
-    .chart-axis { fill: #788498; font-size: 12px; font-family: Inter, sans-serif; }
-    .chart-line { fill: none; stroke: var(--blue); stroke-width: 4; }
-    .chart-lift { fill: none; stroke: var(--orange); stroke-width: 6; }
-    .chart-point { fill: #fff; stroke: var(--blue); stroke-width: 3; }
-    .chart-point.highlight { fill: var(--orange); stroke: #fff; stroke-width: 4; }
-    .chart-value { fill: var(--navy); font-size: 12px; font-weight: 850; font-family: "SFMono-Regular", Consolas, monospace; }
-
-    .split-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: start; }
-    .bar-chart { display: grid; gap: 14px; }
-    .bar-row { display: grid; grid-template-columns: 170px 1fr 64px; gap: 14px; align-items: center; }
-    .bar-label { color: var(--ink); font-size: 13px; font-weight: 750; }
-    .bar-track { height: 18px; overflow: hidden; background: #e7edf3; }
-    .bar-fill { display: block; width: var(--value); height: 100%; background: var(--blue); transform: scaleX(0); transform-origin: left; transition: transform 800ms ease; }
-    .bar-row:nth-child(2) .bar-fill { background: var(--cyan); }
-    .bar-row:nth-child(3) .bar-fill { background: var(--orange); }
-    .bar-row:nth-child(4) .bar-fill { background: var(--gold); }
-    .bar-row:nth-child(5) .bar-fill { background: var(--pink); }
-    .bar-row:nth-child(6) .bar-fill { background: var(--green); }
-    .bar-row:nth-child(7) .bar-fill, .bar-row:nth-child(8) .bar-fill { background: #8a96a8; }
-    .bar-chart.in-view .bar-fill { transform: scaleX(1); }
-    .bar-value { color: var(--navy); font-size: 12px; font-weight: 850; text-align: right; }
-
-    .channel-decision { display: grid; gap: 1px; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--line); }
-    .decision-row { display: grid; grid-template-columns: 110px 1fr; background: var(--paper); }
-    .decision-status { display: grid; place-items: center; min-height: 86px; padding: 14px; color: #fff; background: var(--blue); font-size: 12px; font-weight: 850; text-align: center; }
-    .decision-row:nth-child(2) .decision-status { background: var(--cyan); }
-    .decision-row:nth-child(3) .decision-status { background: var(--orange); }
-    .decision-row:nth-child(4) .decision-status { background: #7a8596; }
-    .decision-copy { padding: 16px 18px; }
-    .decision-copy strong { display: block; margin-bottom: 4px; font-size: 13px; }
-    .decision-copy p { margin: 0; color: var(--muted); font-size: 12px; }
-
-    .distribution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .distribution-item { min-height: 180px; padding: 24px; border-top: 4px solid var(--blue); background: var(--paper); }
-    .distribution-item:nth-child(2) { border-color: var(--cyan); }
-    .distribution-item:nth-child(3) { border-color: var(--orange); }
-    .distribution-item:nth-child(4) { border-color: var(--pink); }
-    .distribution-item:nth-child(5) { border-color: var(--gold); }
-    .distribution-item:nth-child(6) { border-color: var(--green); }
-    .distribution-item span { display: block; margin-bottom: 26px; color: var(--muted); font-size: 11px; font-weight: 850; }
-    .distribution-item p { margin: 0; color: var(--muted); font-size: 13px; }
-
-    .campaign-loop { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-bottom: 28px; border: 1px solid var(--line); background: var(--paper); }
-    .campaign-stage { position: relative; min-height: 118px; padding: 22px 18px; border-right: 1px solid var(--line); }
-    .campaign-stage:last-child { border-right: 0; }
-    .campaign-stage:not(:last-child)::after { content: "→"; position: absolute; top: 50%; right: -10px; z-index: 2; display: grid; place-items: center; width: 20px; height: 20px; color: var(--blue); background: var(--paper); transform: translateY(-50%); font-weight: 900; }
-    .campaign-stage span { display: block; margin-bottom: 14px; color: var(--blue); font-size: 10px; font-weight: 900; }
-    .campaign-stage strong { display: block; margin-bottom: 6px; color: var(--navy); font-size: 13px; }
-    .campaign-stage p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
-
-    .campaign-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-    .campaign-card { min-height: 380px; padding: 28px; border-top: 5px solid var(--blue); background: var(--paper); }
-    .campaign-card:nth-child(2) { border-color: var(--cyan); }
-    .campaign-card:nth-child(3) { border-color: var(--orange); }
-    .campaign-no { display: block; margin-bottom: 28px; color: var(--muted); font-size: 10px; font-weight: 900; }
-    .campaign-card h3 { font-size: 22px; }
-    .campaign-card > p { min-height: 72px; color: var(--muted); font-size: 13px; }
-    .campaign-detail { margin: 22px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
-    .campaign-detail li { display: grid; grid-template-columns: 66px 1fr; gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 11px; }
-    .campaign-detail strong { color: var(--navy); }
-    .campaign-detail span { color: var(--muted); }
-
-    .asset-showcase { margin-top: 72px; }
-    .asset-copy { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: 18px 58px; align-items: start; }
-    .asset-heading h3 { margin-bottom: 0; font-size: 34px; }
-    .asset-intro { margin: 0; color: var(--muted); font-size: 16px; }
-    .asset-list { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 24px; margin-top: 20px; }
-    .asset-row { display: grid; grid-template-columns: 34px 1fr; gap: 4px 10px; padding: 16px 0; border-top: 1px solid var(--line); align-items: start; }
-    .asset-row b { grid-row: 1 / span 2; color: var(--blue); font-size: 11px; }
-    .asset-row strong { color: var(--navy); font-size: 12px; }
-    .asset-row span { color: var(--muted); font-size: 11px; }
-
-    .campaign-material-gallery { display: grid; grid-template-columns: 1.28fr 1fr 1fr; gap: 22px; align-items: start; margin-top: 34px; }
-    .campaign-material { min-width: 0; margin: 0; }
-    .campaign-material-visual { overflow: hidden; background: #dce5e7; box-shadow: 0 18px 42px rgba(7, 28, 66, 0.12); }
-    .campaign-material img { display: block; width: 100%; height: auto; }
-    .campaign-material figcaption { display: grid; grid-template-columns: 34px 1fr; gap: 12px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
-    .campaign-material figcaption > b { color: var(--blue); font-size: 11px; }
-    .campaign-material figcaption strong { display: block; color: var(--navy); font-size: 12px; }
-    .campaign-material figcaption span { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.55; }
-
-    .event-brief { display: grid; grid-template-columns: 0.72fr 1.28fr; gap: 48px; margin: 34px 0 54px; padding: 30px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .event-brief h3 { margin: 0; font-size: 28px; line-height: 1.2; }
-    .event-brief > p { margin: 12px 0 0; color: var(--muted); font-size: 13px; }
-    .event-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .event-fact { min-height: 112px; padding: 4px 24px 18px; border-left: 1px solid var(--line); }
-    .event-fact:nth-child(n+3) { padding-top: 20px; border-top: 1px solid var(--line); }
-    .event-fact span { display: block; margin-bottom: 9px; color: var(--blue); font-size: 10px; font-weight: 900; }
-    .event-fact strong { display: block; color: var(--navy); font-size: 13px; }
-    .event-fact p { margin: 6px 0 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
-
-    .field-evidence { display: grid; grid-template-columns: minmax(0, 2.1fr) minmax(280px, 1fr); gap: 22px; margin-top: 34px; align-items: start; }
-    .event-evidence { min-width: 0; display: block; margin: 0; }
-    .event-visual { height: clamp(360px, 32vw, 580px); overflow: hidden; background: #dce5e7; box-shadow: 0 18px 42px rgba(7, 28, 66, 0.12); }
-    .event-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
-    .event-evidence.offline .event-visual img { object-position: center 45%; }
-    .event-evidence.live .event-visual img { object-position: center 58%; }
-    .event-evidence figcaption { display: grid; grid-template-columns: 34px 1fr; gap: 12px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
-    .event-evidence figcaption > b { color: var(--blue); font-size: 11px; }
-    .event-evidence figcaption strong { display: block; color: var(--navy); font-size: 12px; }
-    .event-evidence figcaption span { display: block; margin-top: 4px; color: var(--muted); font-size: 11px; line-height: 1.55; }
-
-    .journey-materials { margin-top: 72px; }
-    .journey-materials .asset-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .journey-material-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 28px; margin-top: 34px; }
-    .journey-material-grid .campaign-material-visual { aspect-ratio: 1104 / 1464; }
-    .journey-material-grid .campaign-material img { width: 100%; height: 100%; object-fit: cover; }
-    .cost-note { display: grid; grid-template-columns: 0.56fr 1.44fr; gap: 28px; margin-top: 42px; padding: 24px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .cost-note strong { color: var(--navy); font-size: 13px; }
-    .cost-note p { margin: 0; color: var(--muted); font-size: 12px; }
-
-    .asset-canvas { margin-top: 34px; padding: 26px; overflow: hidden; background: var(--navy); }
-    .kit-header { display: flex; justify-content: space-between; gap: 20px; padding: 0 2px 18px; color: rgba(255,255,255,0.66); font-size: 10px; font-weight: 850; }
-    .kit-grid { display: grid; grid-template-columns: 1.34fr 0.86fr; gap: 16px; }
-    .kit-hero { min-height: 590px; display: grid; grid-template-rows: auto 1fr; overflow: hidden; background: var(--blue); }
-    .kit-hero-copy { padding: 38px 40px 30px; color: #fff; }
-    .kit-label { display: block; margin-bottom: 48px; color: #b9d1ff; font-size: 10px; font-weight: 900; }
-    .kit-hero h4 { max-width: 540px; margin: 0; font-size: 44px; line-height: 1.05; }
-    .kit-hero-copy > p { max-width: 560px; margin: 18px 0 0; color: rgba(255,255,255,0.78); font-size: 13px; }
-    .kit-benefits { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 30px; background: rgba(255,255,255,0.22); }
-    .kit-benefits span { padding: 13px 10px; color: #fff; background: rgba(7,28,66,0.24); text-align: center; font-size: 10px; font-weight: 800; }
-    .kit-action { display: inline-block; margin-top: 24px; padding: 12px 18px; color: var(--navy); background: #ffd76c; font-size: 11px; font-weight: 900; }
-    .kit-product-window { align-self: end; margin: 0 40px 38px; overflow: hidden; border: 6px solid #fff; background: #fff; box-shadow: 0 18px 36px rgba(5, 17, 38, 0.28); }
-    .kit-browser { display: flex; gap: 5px; align-items: center; height: 26px; padding: 0 10px; border-bottom: 1px solid var(--line); }
-    .kit-browser i { width: 6px; height: 6px; border-radius: 50%; background: #ff7a67; }
-    .kit-browser i:nth-child(2) { background: #f2b743; }
-    .kit-browser i:nth-child(3) { background: #2bbd8e; }
-    .kit-browser span { margin-left: 6px; color: var(--muted); font-size: 8px; font-style: normal; }
-    .kit-product-window img { width: 100%; height: 210px; object-fit: cover; object-position: left top; }
-    .kit-stack { display: grid; grid-template-rows: 1fr 1fr; gap: 16px; }
-    .kit-card { min-height: 0; padding: 30px; background: #fff; }
-    .kit-card small { display: block; margin-bottom: 30px; color: var(--blue); font-size: 9px; font-weight: 900; }
-    .kit-card h4 { margin: 0; color: var(--navy); font-size: 27px; line-height: 1.08; }
-    .kit-card > p { margin-top: 12px; color: var(--muted); font-size: 11px; }
-    .kit-card.activation { background: #dff8f5; }
-    .template-lines { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; margin-top: 26px; }
-    .template-lines span { padding: 9px; color: var(--navy); background: var(--soft); font-size: 9px; font-weight: 800; }
-    .landing-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin-top: 28px; background: rgba(7, 28, 66, 0.16); }
-    .landing-flow span { padding: 13px 8px; color: var(--navy); background: #fff; text-align: center; font-size: 9px; font-weight: 800; }
-    .kit-secondary-action { display: block; margin-top: 18px; padding-top: 12px; border-top: 1px solid rgba(7,28,66,0.18); color: var(--navy); font-size: 10px; font-weight: 900; }
-
-    .funnel-model { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: stretch; }
-    .funnel-step { display: grid; place-items: center; min-height: 112px; padding: 18px 28px; color: #fff; background: var(--blue); text-align: center; clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 7% 50%); }
-    .funnel-step:first-child { clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%); }
-    .funnel-step:nth-child(2) { background: var(--cyan); }
-    .funnel-step:nth-child(3) { background: var(--orange); }
-    .funnel-step:nth-child(4) { background: var(--green); }
-    .funnel-step strong { display: block; font-size: 24px; line-height: 1.1; }
-    .funnel-step span { display: block; margin-top: 6px; font-size: 11px; font-weight: 750; }
-
-    .screening-funnel { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; align-items: stretch; margin-bottom: 22px; }
-    .screening-step { display: grid; place-content: center; min-height: 126px; padding: 22px 30px; color: #fff; background: var(--navy-2); text-align: center; clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 8% 50%); }
-    .screening-step:first-child { clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%); }
-    .screening-step:nth-child(2) { background: var(--blue); }
-    .screening-step:nth-child(3) { background: var(--cyan); }
-    .screening-step:nth-child(4) { background: var(--orange); }
-    .screening-step strong { display: block; font-size: 28px; line-height: 1; }
-    .screening-step span { display: block; margin-top: 10px; font-size: 12px; font-weight: 750; }
-
-    .comparison { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
-    .comparison-panel { padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); }
-    .comparison-panel.focus { border-color: var(--blue); box-shadow: 0 14px 36px rgba(23, 105, 224, 0.12); }
-    .comparison-head { display: flex; justify-content: space-between; gap: 16px; align-items: start; margin-bottom: 20px; }
-    .comparison-head span { color: var(--muted); font-size: 11px; font-weight: 750; }
-    .comparison-panel.focus .comparison-head span { color: var(--blue); }
-    .comparison-metrics { display: grid; gap: 13px; }
-    .compare-row { display: grid; grid-template-columns: 90px 1fr 54px; gap: 10px; align-items: center; }
-    .compare-label { color: var(--muted); font-size: 11px; }
-    .compare-track { height: 9px; background: #e5ebf1; }
-    .compare-fill { display: block; width: var(--value); height: 100%; background: var(--orange); }
-    .focus .compare-fill { background: var(--blue); }
-    .comparison-panel:nth-child(3) .compare-fill { background: var(--green); }
-    .compare-value { color: var(--navy); font-size: 11px; font-weight: 850; text-align: right; }
-    .comparison-caption { margin: 18px 0 0; color: var(--muted); font-size: 12px; }
-
-    .cadence { display: grid; grid-template-columns: repeat(6, 1fr); border-top: 2px solid var(--navy); margin-top: 34px; }
-    .cadence-item { position: relative; min-height: 128px; padding: 22px 18px 0 0; }
-    .cadence-item::before { content: ""; position: absolute; top: -8px; left: 0; width: 14px; height: 14px; border: 3px solid var(--soft); border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 1px var(--blue); }
-    .cadence-item:nth-child(2)::before, .cadence-item:nth-child(4)::before, .cadence-item:nth-child(5)::before, .cadence-item:nth-child(6)::before { background: var(--green); box-shadow: 0 0 0 1px var(--green); }
-    .cadence-item:nth-child(3)::before { background: var(--orange); box-shadow: 0 0 0 1px var(--orange); }
-    .cadence-item time { color: var(--blue); font-size: 11px; font-weight: 850; }
-    .cadence-item:nth-child(3) time { color: var(--orange); }
-    .cadence-item strong { display: block; margin: 6px 0 4px; font-size: 13px; }
-    .cadence-item p { margin: 0; color: var(--muted); font-size: 11px; }
-
-    .survey-grid { display: grid; grid-template-columns: 0.82fr 1.18fr; gap: 24px; }
-    .survey-summary { padding: 32px; color: #fff; background: var(--navy); }
-    .survey-summary strong { display: block; margin-bottom: 10px; color: #ffd76c; font-size: 52px; line-height: 1; }
-    .survey-summary p { color: rgba(255, 255, 255, 0.72); }
-    .survey-summary dl { display: grid; grid-template-columns: 1fr auto; gap: 10px 18px; margin: 28px 0 0; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, 0.18); }
-    .survey-summary dt { color: rgba(255, 255, 255, 0.68); font-size: 12px; }
-    .survey-summary dd { margin: 0; color: #fff; font-size: 12px; font-weight: 850; }
-    .issue-chart { display: grid; gap: 12px; }
-    .issue-row { display: grid; grid-template-columns: 190px 1fr 58px; gap: 12px; align-items: center; }
-    .issue-label { color: var(--ink); font-size: 12px; font-weight: 700; }
-    .issue-track { height: 22px; background: #e5ebf1; }
-    .issue-fill { display: block; width: var(--value); height: 100%; background: var(--pink); }
-    .issue-row:nth-child(2) .issue-fill { background: var(--orange); }
-    .issue-row:nth-child(3) .issue-fill { background: var(--gold); }
-    .issue-row:nth-child(4) .issue-fill { background: var(--cyan); }
-    .issue-row:nth-child(5) .issue-fill { background: var(--green); }
-    .issue-value { color: var(--navy); font-size: 12px; font-weight: 850; text-align: right; }
-
-    .before-after { display: grid; grid-template-columns: 1fr 110px 1fr; gap: 20px; align-items: stretch; }
-    .period { padding: 30px; border: 1px solid var(--line); background: var(--paper); }
-    .period.after { border-color: var(--blue); }
-    .period-label { display: block; margin-bottom: 24px; color: var(--muted); font-size: 11px; font-weight: 850; }
-    .period-metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-    .period-metric strong { display: block; color: var(--navy); font-size: 46px; line-height: 1; }
-    .period-metric span { color: var(--muted); font-size: 12px; }
-    .lift-arrow { display: grid; place-items: center; color: var(--orange); font-size: 44px; font-weight: 900; }
-    .lift-note { margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
-    .activation-impact { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 18px; border: 1px solid var(--line); background: var(--paper); }
-    .impact-metric { min-height: 112px; padding: 22px; border-right: 1px solid var(--line); }
-    .impact-metric:last-child { border-right: 0; }
-    .impact-metric strong { display: block; margin-bottom: 8px; color: var(--blue); font-size: 28px; line-height: 1; }
-    .impact-metric span { display: block; color: var(--ink); font-size: 12px; font-weight: 800; }
-    .impact-metric small { display: block; margin-top: 6px; color: var(--muted); font-size: 10px; }
-
-    .decision-table { width: 100%; border-collapse: collapse; border: 1px solid var(--line); background: var(--paper); }
-    .decision-table th, .decision-table td { padding: 17px 15px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; font-size: 13px; }
-    .decision-table th { color: var(--navy); background: #e8f0fb; font-size: 11px; font-weight: 850; }
-    .decision-table tr:last-child td { border-bottom: 0; }
-    .decision-table td:first-child { color: var(--navy); font-weight: 800; }
-    .decision-table td:last-child { color: var(--green); font-weight: 800; }
-
-    .sop-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 32px; align-items: center; }
-    .sop-copy p { color: rgba(255, 255, 255, 0.72); }
-    .sop-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 24px 0; background: rgba(255, 255, 255, 0.16); }
-    .sop-step { min-height: 96px; padding: 16px; background: var(--navy-2); }
-    .sop-step span { display: block; margin-bottom: 8px; color: #6edbd2; font-size: 10px; font-weight: 850; }
-    .sop-step strong { font-size: 12px; }
-    .dashboard-shot { overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.18); border-radius: var(--radius); background: #fff; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28); }
-    .dashboard-shot img { width: 100%; height: auto; }
-    .primary-link { display: inline-flex; align-items: center; min-height: 44px; padding: 10px 16px; border: 1px solid #6edbd2; border-radius: 4px; color: #fff; text-decoration: none; font-size: 13px; font-weight: 850; }
-    .primary-link:hover { color: var(--navy); background: #6edbd2; }
-
-    .result-band { padding: 52px; color: #fff; background: var(--navy); }
-    .result-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 52px; align-items: start; }
-    .result-band h2 { color: #fff; }
-    .result-band p { color: rgba(255, 255, 255, 0.72); }
-    .result-list { display: grid; gap: 15px; }
-    .result-item { display: grid; grid-template-columns: 112px 1fr; gap: 20px; align-items: baseline; padding-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.16); }
-    .result-item:last-child { border-bottom: 0; }
-    .result-item strong { color: #ffd76c; font-size: 30px; line-height: 1; }
-    .result-item span { color: rgba(255, 255, 255, 0.78); font-size: 13px; }
-
-    .footer { padding: 32px 0 48px; color: var(--muted); font-size: 12px; }
+    .band.dark { background: var(--navy); color: #fff; }
+    .section { padding: 76px 0; scroll-margin-top: 16px; }
+    .section-head { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 64px; margin-bottom: 38px; align-items: start; }
+    .kicker { color: var(--blue); font-size: 11px; font-weight: 750; margin-bottom: 14px; }
+    h2 { font-size: 36px; line-height: 1.3; font-weight: 800; }
+    h3 { font-size: 21px; line-height: 1.45; }
+    h4 { font-size: 16px; line-height: 1.5; }
+    .section-lead { font-size: 16px; color: var(--muted); line-height: 1.9; padding-top: 2px; }
+    .dark .kicker { color: #77d9c9; }
+    .dark .section-lead { color: #ccd7dd; }
+    .work-route { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); padding: 0; list-style: none; margin: 0; gap: 28px; }
+    .work-route li { position: relative; padding: 24px 0 0; border-top: 3px solid var(--step-color); }
+    .work-route li:not(:last-child)::after { content: "→"; position: absolute; right: -24px; top: -17px; background: #fff; padding-inline: 5px; color: var(--muted); font-size: 20px; }
+    .route-number { display: block; margin-bottom: 14px; font: 48px/1 "SFMono-Regular", Consolas, monospace; color: var(--step-color); }
+    .work-route h3 { margin-bottom: 12px; }
+    .work-route p { min-height: 60px; color: var(--muted); font-size: 13px; }
+    .route-output { display: block; margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--line); color: var(--step-color); font-size: 12px; font-weight: 650; }
+    .test-toolbar { display: flex; justify-content: space-between; gap: 16px; align-items: center; margin-bottom: 20px; flex-wrap: wrap; }
+    .test-tabs { display: flex; width: 324px; padding: 4px; border: 1px solid #cbd4dc; border-radius: 6px; background: #fff; }
+    .test-tabs button { flex: 1; min-width: 0; min-height: 40px; padding: 7px; border: 0; border-radius: 3px; background: transparent; color: var(--muted); font-size: 13px; white-space: nowrap; }
+    .test-tabs button[aria-selected="true"] { color: #fff; background: var(--navy); }
+    .test-tabs button:hover:not([aria-selected="true"]) { background: var(--soft); }
+    .evidence-label { color: #76542b; font-size: 12px; }
+    #test-panel { outline-offset: 7px; }
+    .test-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .test-version { --test-accent: var(--blue); overflow: hidden; padding: 26px; border: 1px solid var(--line); border-top: 4px solid var(--test-accent); background: #fff; border-radius: 6px; min-width: 0; }
+    .version-b { --test-accent: var(--cyan); }
+    .test-version header { display: flex; align-items: center; gap: 16px; }
+    .version-letter { color: var(--test-accent); font: 54px/1 "SFMono-Regular", Consolas, monospace; }
+    .version-caption { font-size: 11px; color: var(--muted); }
+    .test-version h3 { font-size: 19px; }
+    .test-creative { min-height: 194px; margin-top: 24px; padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .creative-label { display: block; font-size: 10px; color: var(--muted); margin-bottom: 22px; }
+    .test-creative > p { font-size: 26px; line-height: 1.5; max-width: 470px; font-weight: 700; color: var(--test-accent); text-wrap: balance; }
+    .version-note { min-height: 42px; margin-top: 18px; color: var(--muted); font-size: 12px; }
+    .cover-example { height: 140px; object-fit: contain; object-position: left; margin-top: 16px; }
+    .cover-mode .test-creative { min-height: 360px; }
+    .comparison-criteria { display: grid; grid-template-columns: .8fr 1.05fr 1.15fr; margin-top: 22px; gap: 28px; }
+    .comparison-criteria > div { padding-top: 15px; border-top: 1px solid #cdd5dd; min-width: 0; }
+    .comparison-criteria span { display: block; color: var(--muted); font-size: 11px; margin-bottom: 6px; }
+    .comparison-criteria strong { display: block; font-size: 13px; font-weight: 600; }
+    .provenance { font-size: 11px; color: var(--muted); margin-top: 24px; }
+    .channel-map { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr) minmax(0, .8fr); align-items: center; gap: 52px; padding: 32px 0; }
+    .map-label { display: block; font-size: 11px; margin-bottom: 15px; }
+    .channel-source, .channel-destination { border-block: 3px solid var(--blue); padding: 28px 0; }
+    .channel-source p, .channel-destination p, .review-center p { margin-top: 12px; font-size: 12px; color: var(--muted); }
+    .channel-source .map-label { color: var(--blue); }
+    .channel-destination { border-color: var(--cyan); }
+    .channel-destination .map-label { color: var(--cyan); }
+    .channel-lanes { display: grid; gap: 14px; position: relative; }
+    .channel-lanes::before, .channel-lanes::after { content: ""; position: absolute; top: 24px; bottom: 24px; width: 25px; border: 1px solid #b4c3d0; }
+    .channel-lanes::before { left: -26px; border-right: 0; }
+    .channel-lanes::after { right: -26px; border-left: 0; }
+    .channel-lane { --lane-color: var(--blue); padding: 19px 22px; border-left: 4px solid var(--lane-color); background: var(--soft); }
+    .channel-lane:nth-child(2) { --lane-color: var(--pink); }
+    .channel-lane:nth-child(3) { --lane-color: var(--cyan); }
+    .channel-lane strong { display: block; font-size: 16px; color: var(--lane-color); }
+    .channel-lane span { display: block; font-size: 12px; color: var(--muted); margin-top: 5px; }
+    .subsection-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 10px 24px; margin: 48px 0 24px; }
+    .subsection-heading span { font-size: 11px; color: var(--muted); }
+    .creator-route { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; padding: 0; margin: 0; list-style: none; }
+    .creator-route li { display: flex; gap: 12px; border-top: 1px solid var(--line); padding-top: 22px; }
+    .creator-route li > span { color: var(--blue); font: 13px/24px "SFMono-Regular", Consolas, monospace; }
+    .creator-route p { color: var(--muted); font-size: 12px; margin-top: 9px; }
+    .field-evidence { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+    .event-visual { background: #e5e9ed; overflow: hidden; }
+    .event-visual img { width: 100%; height: 420px; object-fit: contain; }
+    .event-evidence figcaption, .campaign-material figcaption { display: grid; grid-template-columns: 26px 1fr; gap: 10px; margin-top: 15px; padding-top: 14px; border-top: 1px solid #cdd5dd; }
+    figcaption b { color: var(--blue); font-size: 11px; }
+    figcaption strong { display: block; font-size: 14px; }
+    figcaption span { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; }
+    .journey-materials { margin-top: 42px; }
+    .journey-material-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+    .campaign-material-visual { aspect-ratio: 1104 / 1464; background: #e5e9ed; }
+    .campaign-material-visual img { height: 100%; object-fit: contain; }
+    .event-visual a, .campaign-material-visual a { display: block; height: 100%; }
+    .event-visual a:hover, .campaign-material-visual a:hover { outline: 3px solid var(--cyan); outline-offset: -3px; }
+    .review-map { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr); align-items: center; gap: 52px; padding: 32px 0; }
+    .review-inputs, .review-outputs { display: grid; gap: 16px; }
+    .review-inputs > div, .review-outputs > div { position: relative; padding: 18px; background: var(--soft); border-left: 3px solid var(--blue); }
+    .review-inputs > div::after { content: "→"; position: absolute; right: -35px; top: 50%; transform: translateY(-50%); color: #80909d; }
+    .review-outputs > div { border-left-color: var(--cyan); }
+    .review-outputs > div::before { content: "→"; position: absolute; left: -36px; top: 50%; transform: translateY(-50%); color: #80909d; }
+    .review-inputs span, .review-outputs span { font-size: 14px; font-weight: 650; }
+    .review-inputs p, .review-outputs p { margin-top: 6px; font-size: 12px; color: var(--muted); }
+    .review-center { background: var(--navy); color: #fff; padding: 35px 28px; }
+    .review-center .map-label { color: #f0d48b; }
+    .review-center h3 { font-size: 23px; }
+    .review-center p { color: #d2dce2; }
+    .measurement-flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+    .measurement-flow > div { position: relative; padding: 20px 0; border-block: 1px solid var(--line); }
+    .measurement-flow > div:not(:last-child)::after { content: "→"; position: absolute; right: -21px; top: 43%; color: var(--blue); }
+    .measurement-number { display: block; color: var(--blue); font-size: 12px; margin-bottom: 12px; }
+    .measurement-flow p { margin-top: 8px; font-size: 12px; color: var(--muted); }
+    .feedback-rows > div { display: grid; grid-template-columns: 1fr 1.5fr 80px; gap: 26px; padding: 19px 0; border-top: 1px solid var(--line); align-items: baseline; }
+    .feedback-rows > div:last-child { border-bottom: 1px solid var(--line); }
+    .feedback-rows span { font-size: 14px; font-weight: 650; }
+    .feedback-rows p { color: var(--muted); font-size: 13px; }
+    .feedback-rows strong { font-size: 12px; color: var(--cyan); font-weight: 650; text-align: right; }
+    .dashboard-shot { display: block; background: #fff; border: 1px solid #ffffff40; border-radius: 6px; overflow: hidden; }
+    .dashboard-shot img { max-height: 640px; object-fit: contain; }
+    .demo-footer { display: flex; justify-content: space-between; align-items: center; gap: 18px; margin-top: 22px; flex-wrap: wrap; }
+    .demo-footer > span { font-size: 12px; color: #c5d2d8; }
+    .primary-link { display: inline-flex; align-items: center; gap: 16px; min-height: 44px; padding: 9px 16px; border: 1px solid #8bccc2; border-radius: 4px; color: #fff; text-decoration: none; font-size: 13px; }
+    .primary-link:hover { color: var(--navy); background: #8bccc2; }
+    .outcome-summary { display: grid; grid-template-columns: 1fr 1.4fr; gap: 60px; padding: 32px 0; border-block: 1px solid var(--line); }
+    .outcome-count strong { display: block; font-size: 112px; color: var(--blue); line-height: 1.2; }
+    .outcome-count strong span { color: var(--cyan); }
+    .outcome-count p { font-size: 13px; color: var(--muted); margin-top: 12px; }
+    .outcome-list { padding: 0; margin: 0; list-style: none; }
+    .outcome-list li { display: grid; grid-template-columns: 110px 1fr; gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+    .outcome-list li:last-child { border: 0; }
+    .outcome-list span { font-size: 14px; font-weight: 650; }
+    .outcome-list p { font-size: 13px; color: var(--muted); }
+    .disclosure { margin-top: 30px; font-size: 12px; color: var(--muted); max-width: 950px; }
+    .back-link { display: inline-flex; gap: 20px; align-items: center; margin-top: 26px; min-height: 44px; font-size: 13px; color: var(--blue); }
+    .footer { padding-block: 26px; font-size: 11px; color: var(--muted); }
 
     @media (max-width: 1000px) {
-      h1 { font-size: 56px; }
-      h2 { font-size: 40px; }
-      .tight-title { font-size: 40px; }
-      .metric-strip { grid-template-columns: repeat(3, 1fr); }
-      .metric:nth-child(3) { border-right: 0; }
-      .metric:nth-child(n+4) { border-top: 1px solid var(--line); }
-      .growth-path { grid-template-columns: repeat(3, 1fr); }
-      .growth-node:nth-child(3) { border-right: 0; }
-      .growth-node:nth-child(n+4) { border-top-width: 5px; border-top-style: solid; border-bottom: 0; }
-      .growth-node:nth-child(3)::after { display: none; }
-      .data-architecture, .distribution-grid { grid-template-columns: repeat(2, 1fr); }
-      .data-layer:nth-child(2) { border-right: 0; }
-      .data-layer:nth-child(2)::after { display: none; }
-      .split-grid, .brief-grid, .survey-grid, .sop-layout, .result-grid { grid-template-columns: 1fr; }
-      .comparison { grid-template-columns: 1fr; }
-      .cadence { grid-template-columns: repeat(3, 1fr); }
-      .campaign-loop { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .campaign-stage:nth-child(3) { border-right: 0; }
-      .campaign-stage:nth-child(3)::after { display: none; }
-      .campaign-stage:nth-child(n+4) { border-top: 1px solid var(--line); }
-      .campaign-grid { grid-template-columns: 1fr; }
-      .campaign-card { min-height: auto; }
-      .asset-copy, .kit-grid { grid-template-columns: 1fr; }
-      .asset-intro, .asset-list { grid-column: 1; }
-      .asset-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .campaign-material-gallery { grid-template-columns: 1fr; width: min(100%, 620px); margin-right: auto; margin-left: auto; gap: 38px; }
-      .event-brief { grid-template-columns: 1fr; gap: 26px; }
-      .journey-materials .asset-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .field-evidence { grid-template-columns: minmax(0, 2.05fr) minmax(240px, 1fr); }
-      .kit-hero { min-height: 560px; }
-      .activation-impact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .impact-metric:nth-child(2) { border-right: 0; }
-      .impact-metric:nth-child(n+3) { border-top: 1px solid var(--line); }
+      h1 { font-size: 48px; } h2 { font-size: 32px; }
+      .section-head { gap: 36px; }
+      .nav-links { gap: 16px; }
+      .metric { padding-inline: 16px; } .metric strong { font-size: 20px; }
+      .channel-map, .review-map { gap: 35px; }
+      .channel-lanes::before { width: 17px; left: -18px; }
+      .channel-lanes::after { width: 17px; right: -18px; }
+      .review-inputs > div::after { right: -24px; } .review-outputs > div::before { left: -26px; }
+      .review-center { padding: 28px 20px; } .review-center h3 { font-size: 19px; }
+      .event-visual img { height: 300px; }
+      .journey-material-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+      .test-creative > p { font-size: 23px; } .test-creative { min-height: 215px; }
+      .outcome-summary { gap: 32px; } .outcome-count strong { font-size: 86px; }
     }
-
     @media (max-width: 720px) {
-      body { font-size: 15px; }
-      .site-nav { align-items: flex-start; flex-direction: column; gap: 0; padding: 11px 18px 0; }
-      .nav-links { width: 100%; gap: 16px; }
-      .nav-links a { padding-top: 11px; }
-      .nav-action { min-height: 30px; padding: 4px 9px !important; }
-      .hero { min-height: 650px; }
-      .hero::before { background-position: 62% center; }
-      .hero-inner, .report, .metric-strip { width: min(100% - 32px, 1180px); }
-      .hero-inner { padding: 86px 0 42px; }
-      h1 { font-size: 42px; }
-      h2 { font-size: 34px; }
-      .tight-title { font-size: 34px; }
-      .hero-copy { font-size: 17px; }
-      .metric-strip { grid-template-columns: repeat(2, 1fr); }
-      .metric, .metric:nth-child(3) { border-right: 1px solid var(--line); border-top: 1px solid var(--line); padding: 22px 16px; }
-      .metric:nth-child(1), .metric:nth-child(2) { border-top: 0; }
-      .metric:nth-child(even) { border-right: 0; }
-      .metric:last-child { grid-column: 1 / -1; border-right: 0; }
-      .metric strong { font-size: 34px; }
-      .section { padding: 62px 0; }
+      html { scroll-padding-top: 108px; }
+      .report, .hero-inner, .metric-strip { width: calc(100% - 36px); }
+      .site-nav { flex-direction: column; align-items: stretch; gap: 0; padding: 12px 18px 0; }
+      .nav-brand { font-size: 12px; } .brand-mark { width: 24px; height: 24px; }
+      .nav-links { width: 100%; gap: 22px; } .nav-links a { min-height: 44px; font-size: 11px; }
+      .hero { min-height: 430px; } .hero-inner { padding-block: 40px; }
+      .hero::before { opacity: .8; background-position: center, 85% 40%; }
+      h1 { font-size: 34px; line-height: 1.3; } .hero-copy { font-size: 15px; margin-top: 20px; }
+      .eyebrow { font-size: 10px; margin-bottom: 16px; }
+      .hero-meta { gap: 8px 16px; margin-top: 22px; font-size: 10px; }
+      .metric-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .metric, .metric:first-child { padding: 20px 14px; }
+      .metric:nth-child(2) { border-right: 0; }
+      .metric:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .metric:nth-child(3) { padding-left: 14px; }
+      .metric-label { font-size: 9px; } .metric strong { font-size: 21px; min-height: 51px; }
+      .metric strong.mono { font-size: 39px; } .metric p { font-size: 10px; }
+      .section { padding-block: 50px; }
       .section-head { grid-template-columns: 1fr; gap: 18px; margin-bottom: 28px; }
-      .section-lead { font-size: 16px; }
-      .role-list, .growth-path, .data-architecture, .source-confidence, .distribution-grid { grid-template-columns: 1fr; }
-      .growth-node, .data-layer { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
-      .growth-node::after, .data-layer::after { display: none !important; }
-      .bar-row { grid-template-columns: 126px 1fr 50px; gap: 9px; }
-      .bar-label { font-size: 11px; }
-      .funnel-model, .screening-funnel { grid-template-columns: 1fr; }
-      .funnel-step, .funnel-step:first-child, .screening-step, .screening-step:first-child { min-height: 112px; display: grid; place-content: center start; padding: 22px 42px; clip-path: none; border-radius: 0; text-align: left; }
-      .cadence { grid-template-columns: repeat(2, 1fr); }
-      .campaign-loop { grid-template-columns: 1fr; }
-      .campaign-stage { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
-      .campaign-stage:nth-child(n+4) { border-top: 0; }
-      .campaign-stage::after { display: none !important; }
-      .campaign-stage:last-child { border-bottom: 0; }
-      .asset-copy { grid-template-columns: 1fr; gap: 16px; }
-      .asset-list { grid-template-columns: 1fr; gap: 0; }
-      .journey-materials .asset-list { grid-template-columns: 1fr; }
-      .campaign-material-gallery { gap: 30px; }
-      .event-facts, .field-evidence, .journey-material-grid, .cost-note { grid-template-columns: 1fr; }
-      .event-fact { padding: 18px 0; border-left: 0; border-top: 1px solid var(--line); }
-      .event-fact:first-child { border-top: 0; }
-      .event-visual { height: auto; }
-      .event-evidence.offline .event-visual { aspect-ratio: 3 / 2; }
-      .event-evidence.live .event-visual { aspect-ratio: 3 / 4; }
-      .journey-material-grid { width: min(100%, 560px); margin-right: auto; margin-left: auto; gap: 34px; }
-      .asset-canvas { padding: 14px; }
-      .kit-header { flex-direction: column; gap: 4px; }
-      .kit-hero { min-height: 0; }
-      .kit-hero-copy { padding: 28px 24px 24px; }
-      .kit-label { margin-bottom: 34px; }
-      .kit-hero h4 { font-size: 34px; }
-      .kit-benefits { grid-template-columns: 1fr; }
-      .kit-product-window { margin: 0 24px 24px; }
-      .kit-product-window img { height: 160px; }
-      .kit-card { padding: 26px 22px; }
-      .kit-card h4 { font-size: 24px; }
-      .issue-row { grid-template-columns: 128px 1fr 42px; gap: 8px; }
-      .issue-label { font-size: 11px; }
-      .before-after { grid-template-columns: 1fr; }
-      .lift-arrow { min-height: 50px; transform: rotate(90deg); }
-      .activation-impact { grid-template-columns: 1fr; }
-      .impact-metric, .impact-metric:nth-child(2) { border-right: 0; border-top: 1px solid var(--line); }
-      .impact-metric:first-child { border-top: 0; }
-      .period-metrics { grid-template-columns: 1fr 1fr; }
-      .decision-table { min-width: 760px; }
-      .table-scroll { overflow-x: auto; }
-      .sop-steps { grid-template-columns: repeat(2, 1fr); }
-      .result-band { padding: 34px 24px; }
+      .section-lead { font-size: 14px; } h2 { font-size: 29px; } h3 { font-size: 19px; }
+      .kicker { font-size: 10px; margin-bottom: 10px; }
+      .work-route { grid-template-columns: 1fr; gap: 0; }
+      .work-route li { padding: 24px 0 24px 60px; border-top: 0; border-left: 2px solid var(--step-color); margin-left: 12px; }
+      .work-route li:not(:last-child)::after { content: "↓"; top: auto; right: auto; left: -11px; bottom: -12px; z-index: 1; }
+      .route-number { position: absolute; left: 17px; top: 28px; font-size: 22px; }
+      .work-route p { min-height: 0; font-size: 13px; } .work-route p br { display: none; }
+      .work-route h3 { margin-bottom: 6px; } .route-output { margin-top: 12px; padding-top: 8px; }
+      .test-tabs { width: 100%; } .test-toolbar { gap: 10px; }
+      .test-pair { gap: 14px; } .test-version { padding: 15px 12px; }
+      .test-version header { gap: 9px; } .version-letter { font-size: 34px; }
+      .test-version h3 { font-size: 14px; } .version-caption { font-size: 10px; }
+      .test-creative { min-height: 235px; padding-block: 16px; margin-top: 16px; }
+      .creative-label { font-size: 9px; margin-bottom: 15px; }
+      .test-creative > p { font-size: 18px; } .version-note { min-height: 57px; font-size: 11px; margin-top: 12px; }
+      .cover-mode .test-creative { min-height: 350px; } .cover-example { height: 135px; }
+      .comparison-criteria { grid-template-columns: 1fr; gap: 13px; margin-top: 18px; }
+      .comparison-criteria > div { display: grid; grid-template-columns: 76px 1fr; gap: 12px; padding-top: 12px; }
+      .comparison-criteria strong { font-size: 12px; }
+      .provenance { font-size: 10px; margin-top: 18px; }
+      .channel-map { grid-template-columns: 1fr; gap: 22px; padding: 0; }
+      .channel-source, .channel-destination { padding: 20px 0; }
+      .channel-source h3 br, .channel-source p br, .channel-destination h3 br, .channel-destination p br { display: none; }
+      .channel-source { border-bottom: 0; } .channel-destination { border-top: 0; }
+      .channel-lanes { margin-left: 18px; } .channel-lanes::before { width: 18px; left: -19px; }
+      .channel-lanes::after { display: none; }
+      .creator-route { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+      .creator-route h4 { font-size: 14px; } .creator-route p { font-size: 11px; }
+      .subsection-heading { margin-top: 34px; }
+      .field-evidence { grid-template-columns: 1fr; gap: 28px; }
+      .event-visual img { height: auto; max-height: 490px; object-fit: contain; }
+      .journey-material-grid { gap: 24px 14px; }
+      figcaption strong { font-size: 13px; } figcaption span { font-size: 11px; }
+      .review-map { grid-template-columns: 1fr; gap: 30px; padding: 0; }
+      .review-inputs { gap: 10px; }
+      .review-inputs > div::after, .review-outputs > div::before { display: none; }
+      .review-center { position: relative; padding: 25px; }
+      .review-center::before, .review-center::after { position: absolute; content: "↓"; color: var(--cyan); left: calc(50% - 6px); }
+      .review-center::before { top: -30px; } .review-center::after { bottom: -30px; }
+      .review-center h3 { font-size: 23px; }
+      .review-outputs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+      .review-outputs > div { padding: 15px 12px; }
+      .measurement-flow { grid-template-columns: 1fr; gap: 16px; }
+      .measurement-flow > div { padding-left: 48px; }
+      .measurement-number { position: absolute; left: 6px; top: 22px; }
+      .measurement-flow > div:not(:last-child)::after { content: "↓"; right: auto; left: 10px; top: auto; bottom: -21px; background: #fff; z-index: 1; }
+      .feedback-rows > div { grid-template-columns: minmax(0, 1fr) 54px; gap: 6px 14px; }
+      .feedback-rows p { grid-column: 1; grid-row: 2; font-size: 12px; }
+      .feedback-rows strong { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+      .demo-footer > span { font-size: 11px; }
+      .outcome-summary { grid-template-columns: 1fr; gap: 26px; }
+      .outcome-count strong { font-size: 92px; } .outcome-list li { grid-template-columns: 90px 1fr; gap: 14px; }
+      .outcome-list p { font-size: 12px; } .outcome-list span { font-size: 13px; }
+      .disclosure { font-size: 11px; }
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .bar-fill { transition: none; transform: scaleX(1); }
+    @media (max-width: 360px) {
+      h1 { font-size: 30px; }
+      .test-pair { grid-template-columns: 1fr; }
+      .test-creative { min-height: 155px; }
+      .version-note { min-height: 0; }
+      .cover-mode .test-creative { min-height: 295px; }
     }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
   <a class="skip-link" href="#overview">跳到项目内容</a>
   <nav class="site-nav" aria-label="项目导航">
-    <a class="nav-brand" href="../../"><span class="brand-mark">SL</span><span>Sylvia Li · Market Operations</span></a>
+    <a class="nav-brand" href="../../"><span class="brand-mark">SL</span><span>项目经历</span></a>
     <div class="nav-links">
       <a href="#overview">概览</a>
+      <a href="#content-test">内容对比</a>
       <a href="#channels">渠道</a>
       <a href="#campaigns">活动</a>
-      <a href="#creators">达人合作</a>
-      <a href="#research">调研</a>
+      <a href="#research">复盘</a>
       <a href="#results">结果</a>
-      <a class="nav-action" href="operations_dashboard.html">打开复盘工具</a>
+      <a class="nav-action" href="operations_dashboard.html">复盘工具</a>
     </div>
   </nav>
 
   <header class="hero">
     <div class="hero-inner">
-      <p class="eyebrow">Integrated Campaign · Community Event · Performance Review</p>
+      <p class="eyebrow">01 / SOHU · AI PRODUCT OPERATIONS</p>
       <h1>AI资讯产品<br>线上线下活动与渠道运营</h1>
-      <p class="hero-copy">围绕科技社群线下活动与线上直播，协同产品展示、传播物料、用户激活和社群承接；活动后结合问卷与产品行为数据复盘，并通过科技媒体、社区与KOL/KOC持续验证渠道质量。</p>
-      <div class="hero-meta">
-        <span>北京搜狐新媒体信息有限公司</span>
-        <span>AI产品运营实习生</span>
-        <span>2025.12–2026.02</span>
-      </div>
+      <p class="hero-copy">参与用户调研、内容制作与达人合作，配合活动传播，整理发布数据和使用反馈。</p>
+      <div class="hero-meta"><span>北京搜狐新媒体信息有限公司</span><span>AI产品运营实习生</span><span>2025.12–2026.02</span></div>
     </div>
   </header>
 
-  <div class="snapshot" aria-label="项目关键结果">
+  <div class="snapshot" aria-label="项目工作概览">
     <div class="metric-strip">
-      <div class="metric"><span class="metric-label">CONTENT REACH</span><strong>58万</strong><p>十周内容与创作者累计曝光</p></div>
-      <div class="metric"><span class="metric-label">LANDING VISITS</span><strong>15.8K</strong><p>专属链接与来源参数有效访问</p></div>
-      <div class="metric"><span class="metric-label">ATTRIBUTABLE SIGN-UPS</span><strong>1,438</strong><p>十周可归因新增注册</p></div>
-      <div class="metric"><span class="metric-label">WEEKLY REGISTRATION</span><strong>+50%</strong><p>科技垂类达人发布周环比</p></div>
-      <div class="metric"><span class="metric-label">TOPIC ACTIVATION</span><strong>+15%</strong><p>首次专题创建率相对提升</p></div>
+      <div class="metric"><span class="metric-label">CONTENT / 内容制作</span><strong class="mono">100+</strong><p>公众号、小红书及社群内容</p></div>
+      <div class="metric"><span class="metric-label">RESEARCH / 用户调研</span><strong>需求与反馈</strong><p>产品需求、付费意愿、使用问题</p></div>
+      <div class="metric"><span class="metric-label">CREATORS / 达人合作</span><strong>筛选与跟进</strong><p>金融、科技方向的内容合作</p></div>
+      <div class="metric"><span class="metric-label">REVIEW / 数据复盘</span><strong>记录与调整</strong><p>内容表现、注册及首次专题创建</p></div>
     </div>
   </div>
 
-  <main id="overview">
-    <div class="band soft">
-      <section class="section report">
+  <main>
+    <div class="band">
+      <section class="section report" id="overview">
         <div class="section-head">
-          <div><p class="kicker">Project brief</p><h2>把产品卖点转化为活动、体验和渠道动作</h2></div>
-          <p class="section-lead">产品提供AI资讯聚合、专题创建、关键词监测、AI摘要和热点提醒。市场运营需要将复杂功能转化为现场可理解的产品体验、线上可参与的激活动作和可追踪的渠道合作，再判断哪些资源值得持续投入。</p>
+          <div><p class="kicker">01 / PROJECT BRIEF</p><h2>项目背景与<br>我的工作</h2></div>
+          <p class="section-lead">产品提供资讯聚合、专题追踪、关键词监测和 AI 摘要。在实习期间，我围绕产品介绍、功能教程和用户常见问题准备内容，并结合问卷与发布数据整理运营建议。</p>
         </div>
-        <div class="brief-grid">
-          <div class="brief-main">
-            <h3>业务任务</h3>
-            <p>初期同步测试公众号、小红书、知乎、豆瓣、科技网站、AI产品社区、KOL/KOC与社群。每周突出一个新增变量，统一观察曝光、访问、注册、专题创建和回访，逐步确定渠道优先级。</p>
-            <p>最终将小红书确定为主要增长来源；科技垂类达人兼顾流量规模和激活质量；低成本KOC承担长尾铺量；公众号、知乎和科技网站分别负责教育、搜索与产品分发。</p>
+        <ol class="work-route" aria-label="工作流程">
+          <li style="--step-color:var(--blue)"><span class="route-number">01</span><h3>了解用户</h3><p>整理使用反馈<br>开展需求与价格问卷</p><span class="route-output">用户需求与问题</span></li>
+          <li style="--step-color:var(--cyan)"><span class="route-number">02</span><h3>准备内容</h3><p>产品介绍、教程与 FAQ<br>尝试不同标题和表达</p><span class="route-output">内容与宣传物料</span></li>
+          <li style="--step-color:var(--pink)"><span class="route-number">03</span><h3>跟进发布</h3><p>账号、社群及达人合作<br>配合活动与直播传播</p><span class="route-output">发布记录与反馈</span></li>
+          <li style="--step-color:var(--green)"><span class="route-number">04</span><h3>整理复盘</h3><p>跟踪内容与产品数据<br>提出后续调整建议</p><span class="route-output">内容建议与产品反馈</span></li>
+        </ol>
+      </section>
+    </div>
+
+    <div class="band soft">
+      <section class="section report" id="content-test">
+        <div class="section-head">
+          <div><p class="kicker">02 / CONTENT COMPARISON</p><h2>内容对比测试</h2></div>
+          <p class="section-lead">尝试不同的标题、封面及内容表达，记录发布后的阅读与互动表现，为后续选题和内容修改提供参考。</p>
+        </div>
+        <div class="test-toolbar">
+          <div class="test-tabs" role="tablist" aria-label="内容对比维度">
+            <button type="button" role="tab" id="tab-title" aria-controls="test-panel" aria-selected="true" data-test="title">标题</button>
+            <button type="button" role="tab" id="tab-cover" aria-controls="test-panel" aria-selected="false" tabindex="-1" data-test="cover">封面</button>
+            <button type="button" role="tab" id="tab-copy" aria-controls="test-panel" aria-selected="false" tabindex="-1" data-test="copy">内容表达</button>
           </div>
-          <div class="role-list" aria-label="个人职责">
-            <div class="role-item"><strong>活动方案</strong><span>主题、目标、流程、规则、物料清单与评估指标</span></div>
-            <div class="role-item"><strong>合作拓展</strong><span>科技媒体、产品社区、KOL/KOC与社群资源</span></div>
-            <div class="role-item"><strong>执行协同</strong><span>内容Brief、设计需求、招募素材与渠道排期</span></div>
-            <div class="role-item"><strong>效果评估</strong><span>来源标记、转化漏斗、合作成本与资源调整</span></div>
+          <span class="evidence-label">版本示意 · 非历史投放截图</span>
+        </div>
+        <div id="test-panel" role="tabpanel" aria-labelledby="tab-title" tabindex="0">
+          <div class="test-pair">
+            <article class="test-version version-a">
+              <header><span class="version-letter" aria-hidden="true">A</span><div><span class="version-caption">版本 A</span><h3 id="version-a-name">功能介绍</h3></div></header>
+              <div class="test-creative"><span class="creative-label">AI 资讯追踪产品 / 文案示意</span><p id="version-a-copy">用专题追踪、关键词监测和 AI 摘要整理资讯</p><img class="cover-example" src="event-materials/03-awareness.jpg" alt="封面构图示意使用的现有宣传物料" hidden></div>
+              <p class="version-note" id="version-a-note">先介绍功能，让用户知道产品可以做什么。</p>
+            </article>
+            <article class="test-version version-b">
+              <header><span class="version-letter" aria-hidden="true">B</span><div><span class="version-caption">版本 B</span><h3 id="version-b-name">使用场景</h3></div></header>
+              <div class="test-creative"><span class="creative-label">AI 资讯追踪产品 / 文案示意</span><p id="version-b-copy">每天反复搜索行业动态？把关注的信息建成一个专题</p><img class="cover-example" src="event-materials/03-awareness.jpg" alt="封面构图示意使用的现有宣传物料" hidden></div>
+              <p class="version-note" id="version-b-note">先提出使用场景，再说明产品如何提供帮助。</p>
+            </article>
+          </div>
+          <div class="comparison-criteria">
+            <div><span>对比重点</span><strong id="test-variable">标题的表达角度</strong></div>
+            <div><span>其他条件</span><strong id="test-controls">尽量保持封面、正文与观察时长一致</strong></div>
+            <div><span>观察指标</span><strong id="test-metric">阅读与互动；有曝光、点击记录时比较点击率</strong></div>
           </div>
         </div>
+        <p class="provenance">根据内容对比思路重新整理；不展示历史版本的胜负或提升幅度。不同时间发布的内容仅作对比观察。</p>
       </section>
     </div>
 
     <div class="band">
-      <section class="section report">
+      <section class="section report" id="channels">
         <div class="section-head">
-          <div><p class="kicker">Growth model</p><h2>从内容触达到持续追踪</h2></div>
-          <p class="section-lead">十周漏斗由58万次内容触达进入15,800次有效访问，获得1,438名注册与630名首次专题创建用户；访问注册率为9.1%，整体专题创建率为43.8%。</p>
+          <div><p class="kicker">03 / CHANNELS & CREATORS</p><h2>内容发布与<br>达人合作</h2></div>
+          <p class="section-lead">通过公众号、小红书和社群发布产品介绍、功能教程及常见问题内容。根据粉丝画像、内容方向、互动表现和报价筛选金融、科技类博主，参与合作内容准备与上线跟进。</p>
         </div>
-        <div class="growth-path" aria-label="用户增长路径模型">
-          <div class="growth-node"><span>01 · REACH</span><h3>内容触达</h3><p>社媒、KOL/KOC、科技网站与产品社区。</p><small>曝光 / 阅读</small></div>
-          <div class="growth-node"><span>02 · VISIT</span><h3>有效访问</h3><p>通过专属链接或来源参数进入落地页。</p><small>CTR / UV</small></div>
-          <div class="growth-node"><span>03 · ACQUIRE</span><h3>新用户注册</h3><p>完成账号注册，进入产品首次体验。</p><small>注册转化率</small></div>
-          <div class="growth-node"><span>04 · ACTIVATE</span><h3>创建专题</h3><p>从被动阅读转向主动配置信息需求。</p><small>专题创建率</small></div>
-          <div class="growth-node"><span>05 · VALUE</span><h3>查看AI摘要</h3><p>消费聚合结果，体验产品核心能力。</p><small>摘要查看率</small></div>
-          <div class="growth-node"><span>06 · RETAIN</span><h3>持续追踪</h3><p>开启提醒并在七日内再次使用。</p><small>提醒 / 7日回访</small></div>
+        <div class="channel-map" aria-label="渠道与对应内容">
+          <div class="channel-source"><span class="map-label">内容准备</span><h3>产品功能<br>与用户问题</h3><p>整理功能说明、使用场景<br>及用户关心的信息</p></div>
+          <div class="channel-lanes">
+            <div class="channel-lane"><strong>公众号</strong><span>产品介绍、功能教程、行业案例</span></div>
+            <div class="channel-lane"><strong>小红书</strong><span>使用场景、体验内容、达人合作</span></div>
+            <div class="channel-lane"><strong>社群</strong><span>内容分发、功能答疑、反馈收集</span></div>
+          </div>
+          <div class="channel-destination"><span class="map-label">发布后记录</span><h3>内容表现<br>与用户反馈</h3><p>阅读、互动及能够<br>追踪的访问与注册</p></div>
         </div>
+        <div class="subsection-heading"><h3>达人合作中参与的环节</h3><span>筛选依据与跟进流程</span></div>
+        <ol class="creator-route">
+          <li><span>01</span><div><h4>查看账号</h4><p>粉丝画像、内容方向与近期互动</p></div></li>
+          <li><span>02</span><div><h4>整理合作信息</h4><p>报价、发布安排与产品介绍</p></div></li>
+          <li><span>03</span><div><h4>准备与跟进</h4><p>合作内容准备、上线跟进</p></div></li>
+          <li><span>04</span><div><h4>记录效果</h4><p>内容表现与可追踪的注册情况</p></div></li>
+        </ol>
       </section>
     </div>
 
     <div class="band soft">
-      <section class="section report" id="data-system">
+      <section class="section report" id="campaigns">
         <div class="section-head">
-          <div><p class="kicker">Data system</p><h2>四层数据连接渠道与产品行为</h2></div>
-          <p class="section-lead">每条内容先建立 Campaign ID，发布后按 T+1、T+3、T+7 和 T+14 记录传播、注册、激活和长尾数据；价格问卷补充用户为什么转化、流失或暂不付费。</p>
+          <div><p class="kicker">04 / EVENTS & MATERIALS</p><h2>活动现场与<br>传播物料</h2></div>
+          <p class="section-lead">参与科技社群线下活动及线上直播传播，协助准备产品介绍、现场物料和互动内容，并通过社群与问卷收集后续反馈。</p>
         </div>
-        <div class="data-architecture" aria-label="数据采集架构">
-          <div class="data-layer"><span class="layer-id">LAYER 01</span><h3>渠道数据</h3><p>曝光、互动、访问、注册、发布时间与来源参数。</p></div>
-          <div class="data-layer"><span class="layer-id">LAYER 02</span><h3>投放数据</h3><p>创作者类型、粉丝区间、报价、内容表现与单位成本。</p></div>
-          <div class="data-layer"><span class="layer-id">LAYER 03</span><h3>产品数据</h3><p>注册、专题创建、摘要查看、提醒开启与7日回访。</p></div>
-          <div class="data-layer"><span class="layer-id">LAYER 04</span><h3>调研数据</h3><p>核心需求、付费意愿、价格接受度与首次体验阻碍。</p></div>
+        <div class="field-evidence" aria-label="活动现场与直播材料">
+          <figure class="event-evidence offline"><div class="event-visual"><a href="event-materials/01-offline-event.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：原点学堂 Vibe之夜科技社群活动现场"><img src="event-materials/01-offline-event.jpg" alt="原点学堂 Vibe之夜科技社群活动现场" loading="lazy"></a></div><figcaption><b>01</b><div><strong>科技社群线下活动</strong><span>参与产品介绍、现场交流与活动内容采集。</span></div></figcaption></figure>
+          <figure class="event-evidence live"><div class="event-visual"><a href="event-materials/02-live-stream.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：活动线上直播画面"><img src="event-materials/02-live-stream.jpg" alt="活动线上直播画面" loading="lazy"></a></div><figcaption><b>02</b><div><strong>线上直播传播</strong><span>配合活动内容传播与互动反馈收集。</span></div></figcaption></figure>
         </div>
-        <div class="source-confidence" aria-label="来源归因可信度">
-          <div class="confidence"><strong>A级 · 直接归因</strong><p>专属链接、UTM或邀请码；用于计算渠道转化和成本。</p></div>
-          <div class="confidence"><strong>B级 · 辅助归因</strong><p>来源域名、注册入口和发布时间匹配；用于趋势分析。</p></div>
-          <div class="confidence"><strong>C级 · 用户自报</strong><p>问卷中的AI推荐、朋友推荐和自然口碑；不与ROI数据重复相加。</p></div>
-        </div>
-      </section>
-    </div>
-
-    <div class="band" id="channels">
-      <section class="section report">
-        <div class="section-head">
-          <div><p class="kicker">Channel experiments</p><h2>十周错峰测试，<br>逐步聚焦小红书</h2></div>
-          <p class="section-lead">不同渠道和达人错开发布，减少动作重叠对归因的影响。前六周完成自然渠道、金融垂类达人和KOC测试；科技垂类达人在 Week 7 发布，当周新增注册由136人增至204人，后续三周继续复用高效内容场景。</p>
-        </div>
-        <div class="chart-frame">
-          <div class="chart-title">每周新增注册用户</div>
-          <div class="chart-subtitle">单位：人；Week 1–10；科技垂类达人于 Week 7 发布</div>
-          <svg class="timeline-chart" viewBox="0 0 1000 360" role="img" aria-labelledby="weekly-chart-title weekly-chart-desc">
-            <title id="weekly-chart-title">十周新增注册变化</title>
-            <desc id="weekly-chart-desc">科技垂类达人在第七周发布，新增注册从第六周136人增至204人；后续三周保持在170至192人。</desc>
-            <line class="chart-grid" x1="60" y1="290" x2="960" y2="290"/><line class="chart-grid" x1="60" y1="233" x2="960" y2="233"/><line class="chart-grid" x1="60" y1="175" x2="960" y2="175"/><line class="chart-grid" x1="60" y1="118" x2="960" y2="118"/><line class="chart-grid" x1="60" y1="60" x2="960" y2="60"/>
-            <text class="chart-axis" x="24" y="294">80</text><text class="chart-axis" x="17" y="237">130</text><text class="chart-axis" x="17" y="179">180</text><text class="chart-axis" x="17" y="122">230</text><text class="chart-axis" x="17" y="64">280</text>
-            <polyline class="chart-line" points="60,273 160,253 260,260 360,239 460,246 560,226 660,148 760,187 860,174 960,161"/>
-            <polyline class="chart-lift" points="560,226 660,148"/>
-            <g><circle class="chart-point" cx="60" cy="273" r="6"/><circle class="chart-point" cx="160" cy="253" r="6"/><circle class="chart-point" cx="260" cy="260" r="6"/><circle class="chart-point" cx="360" cy="239" r="6"/><circle class="chart-point" cx="460" cy="246" r="6"/><circle class="chart-point" cx="560" cy="226" r="6"/><circle class="chart-point highlight" cx="660" cy="148" r="9"/><circle class="chart-point" cx="760" cy="187" r="6"/><circle class="chart-point" cx="860" cy="174" r="6"/><circle class="chart-point" cx="960" cy="161" r="6"/></g>
-            <g><text class="chart-value" x="49" y="256">95</text><text class="chart-value" x="144" y="236">112</text><text class="chart-value" x="244" y="243">106</text><text class="chart-value" x="344" y="222">124</text><text class="chart-value" x="444" y="229">118</text><text class="chart-value" x="544" y="209">136</text><text class="chart-value" x="644" y="126">204</text><text class="chart-value" x="744" y="170">170</text><text class="chart-value" x="844" y="157">181</text><text class="chart-value" x="944" y="144">192</text></g>
-            <g><text class="chart-axis" x="47" y="324">W1</text><text class="chart-axis" x="147" y="324">W2</text><text class="chart-axis" x="247" y="324">W3</text><text class="chart-axis" x="347" y="324">W4</text><text class="chart-axis" x="447" y="324">W5</text><text class="chart-axis" x="547" y="324">W6</text><text class="chart-axis" x="647" y="324">W7</text><text class="chart-axis" x="747" y="324">W8</text><text class="chart-axis" x="847" y="324">W9</text><text class="chart-axis" x="942" y="324">W10</text></g>
-            <text x="681" y="119" fill="#f27a3d" font-size="13" font-weight="850">科技垂类达人发布</text>
-          </svg>
-          <p class="chart-note">Week 7发布周环比提升50%；后续三周平均新增181人，较发布前一周的136人高33%，验证内容场景可被持续复用。</p>
-        </div>
-      </section>
-    </div>
-
-    <div class="band soft">
-      <section class="section report">
-        <div class="section-head">
-          <div><p class="kicker">Channel mix</p><h2>小红书贡献一半可归因注册</h2></div>
-          <p class="section-lead">官方内容与KOL/KOC合计贡献719名新增注册，占全部可归因注册的50%。科技网站与观猹带来规模较小但意图明确的产品发现流量。</p>
-        </div>
-        <div class="split-grid">
-          <div class="chart-frame">
-            <div class="chart-title">新增注册来源贡献</div>
-            <div class="chart-subtitle">n=1,438；A级与B级来源；不重复计算用户自报来源</div>
-            <div class="bar-chart" data-animate-bars>
-              <div class="bar-row"><span class="bar-label">小红书官方内容</span><span class="bar-track"><span class="bar-fill" style="--value:39.6%"></span></span><span class="bar-value mono">39.6%</span></div>
-              <div class="bar-row"><span class="bar-label">小红书KOL/KOC</span><span class="bar-track"><span class="bar-fill" style="--value:10.4%"></span></span><span class="bar-value mono">10.4%</span></div>
-              <div class="bar-row"><span class="bar-label">科技网站与观猹</span><span class="bar-track"><span class="bar-fill" style="--value:14.6%"></span></span><span class="bar-value mono">14.6%</span></div>
-              <div class="bar-row"><span class="bar-label">公众号</span><span class="bar-track"><span class="bar-fill" style="--value:11.5%"></span></span><span class="bar-value mono">11.5%</span></div>
-              <div class="bar-row"><span class="bar-label">知乎</span><span class="bar-track"><span class="bar-fill" style="--value:10.1%"></span></span><span class="bar-value mono">10.1%</span></div>
-              <div class="bar-row"><span class="bar-label">社群</span><span class="bar-track"><span class="bar-fill" style="--value:8.3%"></span></span><span class="bar-value mono">8.3%</span></div>
-              <div class="bar-row"><span class="bar-label">豆瓣</span><span class="bar-track"><span class="bar-fill" style="--value:1.4%"></span></span><span class="bar-value mono">1.4%</span></div>
-              <div class="bar-row"><span class="bar-label">直接访问及其他</span><span class="bar-track"><span class="bar-fill" style="--value:4.1%"></span></span><span class="bar-value mono">4.1%</span></div>
-            </div>
-          </div>
-          <div class="channel-decision" aria-label="渠道决策">
-            <div class="decision-row"><div class="decision-status">重点投入</div><div class="decision-copy"><strong>小红书官方、科技垂类达人</strong><p>扩大场景内容、功能教程和科技垂类合作。</p></div></div>
-            <div class="decision-row"><div class="decision-status">持续经营</div><div class="decision-copy"><strong>KOC、知乎、科技网站</strong><p>承担低成本长尾、搜索和产品收录。</p></div></div>
-            <div class="decision-row"><div class="decision-status">辅助教育</div><div class="decision-copy"><strong>公众号、社群</strong><p>解释产品价值、发布FAQ并收集反馈。</p></div></div>
-            <div class="decision-row"><div class="decision-status">停止投入</div><div class="decision-copy"><strong>豆瓣、泛金融达人</strong><p>发布不稳定或受众与产品场景匹配不足。</p></div></div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <div class="band">
-      <section class="section report">
-        <div class="section-head">
-          <div><p class="kicker">Distribution network</p><h2>社媒之外，建立产品分发长尾</h2></div>
-          <p class="section-lead">科技网站不承担短期爆量，而是增加产品被发现、搜索和收录的入口。DeepSeek等AI推荐仅记录为用户自报的自然发现信号，不作为可直接购买的渠道。</p>
-        </div>
-        <div class="distribution-grid">
-          <article class="distribution-item"><span>01 · PRODUCT COMMUNITY</span><h3>观猹</h3><p>约100元完成产品上新展示，触达AI产品早期用户。</p></article>
-          <article class="distribution-item"><span>02 · AI DIRECTORY</span><h3>AI工具导航</h3><p>提交产品定位、功能和入口，获得分类收录与搜索长尾。</p></article>
-          <article class="distribution-item"><span>03 · KNOWLEDGE SEARCH</span><h3>知乎</h3><p>围绕AI资讯效率、工具体验和行业追踪发布回答。</p></article>
-          <article class="distribution-item"><span>04 · OWNED MEDIA</span><h3>公众号</h3><p>承接行业解读、产品教程与新用户教育。</p></article>
-          <article class="distribution-item"><span>05 · COMMUNITY</span><h3>社群</h3><p>进行试用反馈、专题模板分发和功能答疑。</p></article>
-          <article class="distribution-item"><span>06 · ASSISTED DISCOVERY</span><h3>AI推荐信号</h3><p>通过问卷记录用户最初认知来源，不与直接归因数据混算。</p></article>
-        </div>
-      </section>
-    </div>
-
-    <div class="band" id="campaigns">
-      <section class="section report">
-        <div class="section-head">
-          <div><p class="kicker">Integrated campaign</p><h2>从线下科技社群，<br>承接到线上用户激活</h2></div>
-          <p class="section-lead">参与科技社群线下活动及线上直播传播，协助梳理产品展示内容、互动话术与现场物料；活动后用产品体验、新用户权益、社群答疑和问卷反馈承接现场兴趣，形成一条可执行、可复盘的活动路径。</p>
-        </div>
-
-        <div class="campaign-loop" aria-label="线上线下活动运营闭环">
-          <div class="campaign-stage"><span>01 · PREPARE</span><strong>活动准备</strong><p>确定目标人群、产品卖点、流程与物料。</p></div>
-          <div class="campaign-stage"><span>02 · OFFLINE</span><strong>线下体验</strong><p>现场展示专题追踪、AI解读与日报。</p></div>
-          <div class="campaign-stage"><span>03 · LIVE</span><strong>线上直播</strong><p>同步活动内容，扩大科技人群触达。</p></div>
-          <div class="campaign-stage"><span>04 · ACTIVATE</span><strong>新用户激活</strong><p>引导注册并完成首次专题创建。</p></div>
-          <div class="campaign-stage"><span>05 · COMMUNITY</span><strong>社群承接</strong><p>产品内测、功能答疑与体验反馈。</p></div>
-          <div class="campaign-stage"><span>06 · REVIEW</span><strong>问卷复盘</strong><p>记录需求、阻碍和后续优化建议。</p></div>
-        </div>
-
-        <div class="event-brief">
-          <div>
-            <p class="kicker">Activity brief</p>
-            <h3>科技社群线下体验 × 线上直播传播</h3>
-            <p>以“减少信息焦虑、建立长期追踪”为核心沟通主题，让用户在活动现场理解产品，再由线上内容和社群完成后续激活。</p>
-          </div>
-          <div class="event-facts">
-            <div class="event-fact"><span>OBJECTIVE</span><strong>活动目标</strong><p>提升产品认知，推动首次专题创建并收集真实反馈。</p></div>
-            <div class="event-fact"><span>AUDIENCE</span><strong>目标人群</strong><p>科技从业者、AI关注者、内容创作者与研究用户。</p></div>
-            <div class="event-fact"><span>COORDINATION</span><strong>资源协同</strong><p>活动方、产品、内容、设计、直播与社群运营。</p></div>
-            <div class="event-fact"><span>MEASUREMENT</span><strong>评估指标</strong><p>现场与直播触达、产品访问、专题创建、入群和有效问卷。</p></div>
-          </div>
-        </div>
-
-        <div class="asset-copy">
-          <div class="asset-heading"><p class="kicker">Field execution</p><h3>现场执行与直播承接</h3></div>
-          <p class="asset-intro">线下场景承担产品体验和用户交流，直播承担扩大触达与线上互动。两端统一产品卖点、演示顺序与后续入群路径。</p>
-        </div>
-        <div class="field-evidence" aria-label="科技社群线下活动与直播现场">
-          <figure class="event-evidence offline">
-            <div class="event-visual"><img src="event-materials/01-offline-event.jpg" alt="原点学堂Vibe之夜科技社群线下活动现场" loading="lazy"></div>
-            <figcaption><b>01</b><div><strong>科技社群线下活动</strong><span>参与产品展示、现场交流和活动内容采集，把AI资讯追踪功能转化为可理解的使用场景。</span></div></figcaption>
-          </figure>
-          <figure class="event-evidence live">
-            <div class="event-visual"><img src="event-materials/02-live-stream.jpg" alt="AI资讯产品线下活动线上直播画面" loading="lazy"></div>
-            <figcaption><b>02</b><div><strong>线上直播同步传播</strong><span>围绕产品演示与活动现场进行直播，承接评论互动和后续社群触达。</span></div></figcaption>
-          </figure>
-        </div>
-
         <div class="journey-materials">
-          <div class="asset-copy">
-            <div class="asset-heading"><p class="kicker">Campaign materials</p><h3>活动传播物料</h3></div>
-            <p class="asset-intro">活动路径：产品认知 → 首次体验 → 社群承接 → 反馈回收</p>
-            <div class="asset-list">
-              <div class="asset-row"><b>01</b><strong>产品认知</strong><span>呈现用户痛点与核心功能</span></div>
-              <div class="asset-row"><b>02</b><strong>体验激活</strong><span>引导用户创建追踪专题</span></div>
-              <div class="asset-row"><b>03</b><strong>社群承接</strong><span>提供内测、答疑与体验权益</span></div>
-              <div class="asset-row"><b>04</b><strong>问卷反馈</strong><span>收集问题与优化建议</span></div>
-            </div>
+          <div class="subsection-heading"><h3>四类传播物料</h3><span>产品介绍 → 首次体验 → 社群沟通 → 反馈收集</span></div>
+          <div class="journey-material-grid">
+            <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/03-awareness.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：产品介绍海报：信息焦虑自救计划"><img src="event-materials/03-awareness.jpg" alt="产品介绍海报：信息焦虑自救计划" loading="lazy"></a></div><figcaption><b>01</b><div><strong>产品介绍</strong><span>说明适用场景、主要功能及使用入口。</span></div></figcaption></figure>
+            <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/04-activation.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：新用户体验与权益说明海报"><img src="event-materials/04-activation.jpg" alt="新用户体验与权益说明海报" loading="lazy"></a></div><figcaption><b>02</b><div><strong>首次体验</strong><span>介绍新用户权益与专题创建方式。</span></div></figcaption></figure>
+            <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/05-community.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：用户社群招募海报"><img src="event-materials/05-community.jpg" alt="用户社群招募海报" loading="lazy"></a></div><figcaption><b>03</b><div><strong>社群沟通</strong><span>提供产品交流、答疑和反馈入口。</span></div></figcaption></figure>
+            <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/06-survey.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：产品体验问卷反馈海报"><img src="event-materials/06-survey.jpg" alt="产品体验问卷反馈海报" loading="lazy"></a></div><figcaption><b>04</b><div><strong>反馈收集</strong><span>邀请用户反馈使用体验和改进建议。</span></div></figcaption></figure>
           </div>
-          <div class="journey-material-grid" aria-label="AI资讯产品线上线下活动四张核心物料">
-            <figure class="campaign-material">
-              <div class="campaign-material-visual"><img src="event-materials/03-awareness.jpg" alt="AI资讯产品信息焦虑与产品功能说明海报" loading="lazy"></div>
-              <figcaption><b>01</b><div><strong>产品认知海报</strong><span>从信息分散、重复搜索和长期追踪困难切入，解释专题追踪、信息聚合与AI摘要价值。</span></div></figcaption>
-            </figure>
-            <figure class="campaign-material">
-              <div class="campaign-material-visual"><img src="event-materials/04-activation.jpg" alt="AI资讯产品新用户专属福利海报" loading="lazy"></div>
-              <figcaption><b>02</b><div><strong>新用户激活海报</strong><span>展示专题创建、AI深度解读和日报权益，引导新用户完成首次专题创建。</span></div></figcaption>
-            </figure>
-            <figure class="campaign-material">
-              <div class="campaign-material-visual"><img src="event-materials/05-community.jpg" alt="AI资讯产品用户群招募海报" loading="lazy"></div>
-              <figcaption><b>03</b><div><strong>社群招募海报</strong><span>用产品内测、成长权益和专人答疑承接活动用户，建立持续沟通入口。</span></div></figcaption>
-            </figure>
-            <figure class="campaign-material">
-              <div class="campaign-material-visual"><img src="event-materials/06-survey.jpg" alt="AI资讯产品体验问卷活动海报" loading="lazy"></div>
-              <figcaption><b>04</b><div><strong>问卷反馈海报</strong><span>明确参与对象、反馈内容与领取方式，收集使用体验、功能问题和优化建议。</span></div></figcaption>
-            </figure>
-          </div>
-          <div class="cost-note"><strong>执行与复盘口径</strong><p>自有账号与社群发布不计媒介采购费；问卷激励按10元/份有效样本核算。线下活动、直播和线上物料统一记录触达、产品访问、首次专题创建、入群与有效反馈，用于评估活动承接效果。</p></div>
-        </div>
-      </section>
-    </div>
-
-    <div class="band soft" id="creators">
-      <section class="section report">
-        <div class="section-head">
-          <div><p class="kicker">Creator selection</p><h2 class="tight-title">先筛选，再用小预算<br>验证流量质量</h2></div>
-          <p class="section-lead">候选账号集中在AI工具、科技效率、金融资讯和职场学习方向。重点比较最近10篇内容的阅读中位数、评论质量、内容契合度、商业占比与报价。</p>
-        </div>
-        <div class="screening-funnel" aria-label="KOL KOC筛选漏斗">
-          <div class="screening-step"><strong>36</strong><span>候选账号</span></div>
-          <div class="screening-step"><strong>15</strong><span>数据评估</span></div>
-          <div class="screening-step"><strong>9</strong><span>沟通报价</span></div>
-          <div class="screening-step"><strong>6</strong><span>分周试投</span></div>
-        </div>
-        <div class="funnel-model" aria-label="创作者评分模型">
-          <div class="funnel-step"><div><strong>30%</strong><span>目标用户匹配</span></div></div>
-          <div class="funnel-step"><div><strong>25%</strong><span>内容与互动质量</span></div></div>
-          <div class="funnel-step"><div><strong>25%</strong><span>流量稳定性</span></div></div>
-          <div class="funnel-step"><div><strong>20%</strong><span>报价与风险</span></div></div>
-        </div>
-        <div class="cadence" aria-label="分周投放节奏">
-          <div class="cadence-item"><time>WEEK 5</time><strong>金融垂类达人</strong><p>约1万粉 · ¥1,000</p></div>
-          <div class="cadence-item"><time>WEEK 6</time><strong>KOC 01</strong><p>低粉真实体验 · ¥100</p></div>
-          <div class="cadence-item"><time>WEEK 7</time><strong>科技垂类达人</strong><p>约1万粉 · ¥1,000</p></div>
-          <div class="cadence-item"><time>WEEK 8</time><strong>KOC 02</strong><p>复用工具效率场景 · ¥150</p></div>
-          <div class="cadence-item"><time>WEEK 9</time><strong>KOC 03</strong><p>复用行业追踪场景 · ¥200</p></div>
-          <div class="cadence-item"><time>WEEK 10</time><strong>KOC 04</strong><p>内容选题场景 · ¥150</p></div>
         </div>
       </section>
     </div>
 
     <div class="band">
-      <section class="section report">
+      <section class="section report" id="research">
         <div class="section-head">
-          <div><p class="kicker">Creator performance</p><h2>科技垂类达人兼顾规模与激活质量</h2></div>
-          <p class="section-lead">金融垂类达人曝光不到科技垂类达人的十分之一；KOC单位成本最低但规模分散；科技垂类达人既带来更大访问量，也带来更高的专题创建率。</p>
+          <div><p class="kicker">05 / RESEARCH & REVIEW</p><h2>数据记录<br>与复盘</h2></div>
+          <p class="section-lead">整理各渠道的内容发布记录、投放费用和效果数据，关注用户从访问、注册到首次创建专题的变化。结合问卷和使用反馈，区分可以通过内容说明改善的问题，以及需要反馈给产品团队的问题。</p>
         </div>
-        <div class="comparison">
-          <article class="comparison-panel">
-            <div class="comparison-head"><div><h3>金融垂类达人</h3><span>约1万粉 · ¥1,000</span></div><span>停止复投</span></div>
-            <div class="comparison-metrics">
-              <div class="compare-row"><span class="compare-label">曝光</span><span class="compare-track"><span class="compare-fill" style="--value:9.5%"></span></span><span class="compare-value mono">3,100</span></div>
-              <div class="compare-row"><span class="compare-label">访问</span><span class="compare-track"><span class="compare-fill" style="--value:6.8%"></span></span><span class="compare-value mono">72</span></div>
-              <div class="compare-row"><span class="compare-label">注册</span><span class="compare-track"><span class="compare-fill" style="--value:6.8%"></span></span><span class="compare-value mono">6</span></div>
-              <div class="compare-row"><span class="compare-label">专题创建</span><span class="compare-track"><span class="compare-fill" style="--value:2.4%"></span></span><span class="compare-value mono">1</span></div>
-            </div>
-            <p class="comparison-caption">内容偏金融观点，产品使用场景连接不足。</p>
-          </article>
-          <article class="comparison-panel focus">
-            <div class="comparison-head"><div><h3>科技垂类达人</h3><span>约1万粉 · ¥1,000</span></div><span>进入复投池</span></div>
-            <div class="comparison-metrics">
-              <div class="compare-row"><span class="compare-label">曝光</span><span class="compare-track"><span class="compare-fill" style="--value:100%"></span></span><span class="compare-value mono">32,800</span></div>
-              <div class="compare-row"><span class="compare-label">访问</span><span class="compare-track"><span class="compare-fill" style="--value:100%"></span></span><span class="compare-value mono">1,060</span></div>
-              <div class="compare-row"><span class="compare-label">注册</span><span class="compare-track"><span class="compare-fill" style="--value:100%"></span></span><span class="compare-value mono">88</span></div>
-              <div class="compare-row"><span class="compare-label">专题创建</span><span class="compare-track"><span class="compare-fill" style="--value:100%"></span></span><span class="compare-value mono">42</span></div>
-            </div>
-            <p class="comparison-caption">完整演示专题创建、AI摘要与提醒，用户更容易理解产品价值。</p>
-          </article>
-          <article class="comparison-panel">
-            <div class="comparison-head"><div><h3>4名KOC合计</h3><span>低粉账号 · ¥600</span></div><span>持续铺量</span></div>
-            <div class="comparison-metrics">
-              <div class="compare-row"><span class="compare-label">曝光</span><span class="compare-track"><span class="compare-fill" style="--value:56.7%"></span></span><span class="compare-value mono">18,600</span></div>
-              <div class="compare-row"><span class="compare-label">访问</span><span class="compare-track"><span class="compare-fill" style="--value:45.3%"></span></span><span class="compare-value mono">480</span></div>
-              <div class="compare-row"><span class="compare-label">注册</span><span class="compare-track"><span class="compare-fill" style="--value:63.6%"></span></span><span class="compare-value mono">56</span></div>
-              <div class="compare-row"><span class="compare-label">专题创建</span><span class="compare-track"><span class="compare-fill" style="--value:66.7%"></span></span><span class="compare-value mono">28</span></div>
-            </div>
-            <p class="comparison-caption">单篇规模小，但低成本、真实体验和搜索长尾表现稳定。</p>
-          </article>
+        <div class="review-map" aria-label="数据与反馈的整理流程">
+          <div class="review-inputs">
+            <div><span>内容记录</span><p>发布渠道、时间、阅读与互动</p></div>
+            <div><span>产品数据</span><p>访问、注册、首次专题创建</p></div>
+            <div><span>问卷反馈</span><p>产品需求、付费意愿、价格接受度</p></div>
+          </div>
+          <div class="review-center"><span class="map-label">复盘整理</span><h3>用户停在哪里？<br>反馈说明了什么？</h3><p>结合行为数据与使用反馈<br>整理问题及后续建议</p></div>
+          <div class="review-outputs">
+            <div><span>内容调整建议</span><p>产品说明、教程、FAQ与选题</p></div>
+            <div><span>产品反馈建议</span><p>功能理解、操作步骤与使用体验</p></div>
+          </div>
+        </div>
+        <div class="subsection-heading"><h3>注册与首次专题创建情况</h3><span>指标关系示意</span></div>
+        <div class="measurement-flow">
+          <div><span class="measurement-number">01</span><h4>访问产品</h4><p>记录能够追踪的访问</p></div>
+          <div><span class="measurement-number">02</span><h4>完成注册</h4><p>注册人数 ÷ 同口径访问人数</p></div>
+          <div><span class="measurement-number">03</span><h4>首次创建专题</h4><p>首次创建人数 ÷ 同批注册人数</p></div>
+        </div>
+        <p class="provenance">各节点需使用一致的统计口径和明确的观察窗口；此处仅展示分析方法，不展示内部转化数据。</p>
+        <div class="subsection-heading"><h3>根据反馈进行的调整</h3><span>处理思路示意</span></div>
+        <div class="feedback-rows">
+          <div><span>功能不理解</span><p>整理产品说明与使用示例</p><strong>内容侧</strong></div>
+          <div><span>不知道如何操作</span><p>补充教程与常见问题解答</p><strong>内容侧</strong></div>
+          <div><span>操作步骤或功能体验问题</span><p>记录问题场景，反馈产品团队</p><strong>产品侧</strong></div>
         </div>
       </section>
     </div>
 
-    <div class="band soft" id="research">
-      <section class="section report">
+    <div class="band dark">
+      <section class="section report" id="sop">
         <div class="section-head">
-          <div><p class="kicker">User research</p><h2>价格问卷与行为数据共同解释用户决策</h2></div>
-          <p class="section-lead">行为数据告诉团队用户停在哪里；问卷进一步回答用户的核心需求、付费意愿、价格接受度，以及为什么没有完成首次专题创建。</p>
+          <div><p class="kicker">06 / ANALYSIS DEMO</p><h2>运营复盘工具</h2></div>
+          <p class="section-lead">围绕用户路径、问卷反馈和日常指标整理的分析演示。当前内置模拟数据，用于呈现查看指标、整理问题和形成建议的方法。</p>
         </div>
-        <div class="survey-grid">
-          <div class="survey-summary">
-            <strong class="mono">88</strong>
-            <h3>有效问卷</h3>
-            <p>向新增用户和未完成首次专题创建的用户发放120份问卷，回收92份，清洗重复与无效回答后保留88份。</p>
-            <dl><dt>需求维度</dt><dd>场景与核心功能</dd><dt>价格维度</dt><dd>付费意愿与接受区间</dd><dt>体验维度</dt><dd>首次使用阻碍</dd><dt>阶段维度</dt><dd>注册与激活状态</dd></dl>
-          </div>
-          <div class="chart-frame">
-            <div class="chart-title">首次体验的主要阻碍</div>
-            <div class="chart-subtitle">n=88；每位用户选择一个主要问题</div>
-            <div class="issue-chart">
-              <div class="issue-row"><span class="issue-label">不知道创建什么专题</span><span class="issue-track"><span class="issue-fill" style="--value:100%"></span></span><span class="issue-value mono">25</span></div>
-              <div class="issue-row"><span class="issue-label">不知道如何设置关键词</span><span class="issue-track"><span class="issue-fill" style="--value:72%"></span></span><span class="issue-value mono">18</span></div>
-              <div class="issue-row"><span class="issue-label">不清楚与普通订阅的区别</span><span class="issue-track"><span class="issue-fill" style="--value:64%"></span></span><span class="issue-value mono">16</span></div>
-              <div class="issue-row"><span class="issue-label">找不到AI摘要结果</span><span class="issue-track"><span class="issue-fill" style="--value:48%"></span></span><span class="issue-value mono">12</span></div>
-              <div class="issue-row"><span class="issue-label">提醒入口不明显</span><span class="issue-track"><span class="issue-fill" style="--value:36%"></span></span><span class="issue-value mono">9</span></div>
-            </div>
-            <p class="chart-note">其余8份反馈归入其他问题。专题模板和关键词示例因此被列为P1动作。</p>
-          </div>
-        </div>
-        <div class="source-confidence" aria-label="用户阶段触达策略">
-          <div class="confidence"><strong>访问未注册</strong><p>用产品价值、真实场景和结果预览回答“为什么现在使用”。</p></div>
-          <div class="confidence"><strong>注册未创建</strong><p>用行业模板、关键词示例和清晰 CTA 降低首次配置成本。</p></div>
-          <div class="confidence"><strong>已创建待留存</strong><p>用摘要提醒、周报与持续追踪内容推动回访和价值感知。</p></div>
-        </div>
+        <a class="dashboard-shot" href="operations_dashboard.html" aria-label="打开运营复盘工具，内置模拟数据"><img src="../../works/covers/sohu-dashboard.png" alt="运营复盘工具演示界面，使用模拟数据" loading="lazy"></a>
+        <div class="demo-footer"><span>模拟数据演示 · 不代表项目实际业绩</span><a class="primary-link" href="operations_dashboard.html">打开复盘工具 <span aria-hidden="true">↗</span></a></div>
       </section>
     </div>
 
     <div class="band">
-      <section class="section report">
+      <section class="section report" id="results">
         <div class="section-head">
-          <div><p class="kicker">Activation analysis</p><h2>增长不仅是注册数量，也是用户质量</h2></div>
-          <p class="section-lead">科技垂类达人发布周新增注册从136人增长至204人；完成首次专题创建的用户从56人增长至96人，专题创建率由41.2%提升至47.1%，相对提升约15%。专属链接直接归因88名注册，其中42人完成首次专题创建。</p>
+          <div><p class="kicker">07 / PROJECT OUTCOME</p><h2>项目结果</h2></div>
+          <p class="section-lead">实习期间参与公众号、小红书及社群内容制作，跟进达人合作与活动传播，并整理用户需求、使用问题和发布效果，为后续内容调整及产品改进提供参考。</p>
         </div>
-        <div class="before-after">
-          <div class="period">
-            <span class="period-label">发布前一周 · KOC 01</span>
-            <div class="period-metrics"><div class="period-metric"><strong class="mono">136</strong><span>新增注册</span></div><div class="period-metric"><strong class="mono">56</strong><span>创建专题</span></div></div>
-            <div class="lift-note">专题创建率 <strong>41.2%</strong></div>
-          </div>
-          <div class="lift-arrow" aria-hidden="true">→</div>
-          <div class="period after">
-            <span class="period-label">科技垂类达人发布周</span>
-            <div class="period-metrics"><div class="period-metric"><strong class="mono">204</strong><span>新增注册 · +50%</span></div><div class="period-metric"><strong class="mono">96</strong><span>创建专题</span></div></div>
-            <div class="lift-note">专题创建率 <strong>47.1%</strong> · 相对提升约15%</div>
-          </div>
+        <div class="outcome-summary">
+          <div class="outcome-count"><strong class="mono">100<span>+</span></strong><p>公众号、小红书及社群内容</p></div>
+          <ul class="outcome-list">
+            <li><span>内容与传播</span><p>产品介绍、功能教程、FAQ及活动物料</p></li>
+            <li><span>合作与执行</span><p>达人内容准备、上线跟进及活动传播</p></li>
+            <li><span>调研与复盘</span><p>需求与价格问卷、使用反馈及运营建议</p></li>
+          </ul>
         </div>
-        <div class="activation-impact" aria-label="增长与投放效率指标">
-          <div class="impact-metric"><strong class="mono">+68</strong><span>周新增注册净增</span><small>204 - 136</small></div>
-          <div class="impact-metric"><strong class="mono">+40</strong><span>专题创建净增</span><small>96 - 56</small></div>
-          <div class="impact-metric"><strong class="mono">¥11.4</strong><span>达人单注册成本</span><small>¥1,000 / 88</small></div>
-          <div class="impact-metric"><strong class="mono">¥23.8</strong><span>达人单激活成本</span><small>¥1,000 / 42</small></div>
-        </div>
+        <p class="disclosure">本项目根据本人实际参与的工作整理，涉及公司内部数据及未公开业务信息的材料不作展示。内容对比为重新整理的示意，复盘工具使用模拟数据，均不代表历史投放结果或项目实际业绩。</p>
+        <a class="back-link" href="../../">返回项目经历 <span aria-hidden="true">↗</span></a>
       </section>
     </div>
-
-    <div class="band soft">
-      <section class="section report">
-        <div class="section-head">
-          <div><p class="kicker">Decision system</p><h2>每个结论都对应下一步动作</h2></div>
-          <p class="section-lead">渠道、创作者、问卷和产品行为不分开汇报，而是在同一张决策表中完成“信号—判断—动作—验证指标”的闭环。</p>
-        </div>
-        <div class="table-scroll">
-          <table class="decision-table">
-            <thead><tr><th>数据信号</th><th>运营判断</th><th>下一步动作</th><th>验证指标</th></tr></thead>
-            <tbody>
-              <tr><td>小红书贡献50%可归因注册</td><td>场景内容与产品目标用户匹配</td><td>增加教程、行业专题和KOC长尾</td><td>注册转化率</td></tr>
-              <tr><td>科技垂类达人曝光约为金融垂类达人10倍</td><td>科技受众与产品需求更一致</td><td>扩大科技垂类候选池，停止泛金融复投</td><td>单个激活成本</td></tr>
-              <tr><td>25/88用户不知道创建什么专题</td><td>首次体验缺少明确起点</td><td>增加行业专题模板和结果预览</td><td>专题创建率</td></tr>
-              <tr><td>18/88用户不会设置关键词</td><td>配置成本阻碍首次价值</td><td>发布关键词示例，反馈产品增加推荐</td><td>有效激活率</td></tr>
-              <tr><td>豆瓣帖子多次被删或限制</td><td>渠道稳定性不足</td><td>停止投入，将时间转向知乎与导航收录</td><td>运营人效</td></tr>
-              <tr><td>用户自报AI推荐来源</td><td>属于辅助发现而非直接归因</td><td>统一官网、知乎和导航中的产品说明</td><td>来源趋势</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-    </div>
-
-    <div class="band dark" id="sop">
-      <section class="section report">
-        <div class="sop-layout">
-          <div class="sop-copy">
-            <p class="kicker">Operations SOP</p>
-            <h2>把重复复盘沉淀成轻量工具</h2>
-            <p>分析页面不是独立项目，而是AI资讯产品增长过程中形成的个人工作SOP。它整合渠道、用户路径、行为埋点、问卷和日报，自动完成字段识别、漏斗计算、问题归因与数据预览。</p>
-            <div class="sop-steps" aria-label="复盘SOP">
-              <div class="sop-step"><span>01</span><strong>导入数据</strong></div><div class="sop-step"><span>02</span><strong>质量检查</strong></div><div class="sop-step"><span>03</span><strong>渠道归因</strong></div><div class="sop-step"><span>04</span><strong>激活分析</strong></div><div class="sop-step"><span>05</span><strong>问题编码</strong></div><div class="sop-step"><span>06</span><strong>下周实验</strong></div>
-            </div>
-            <a class="primary-link" href="operations_dashboard.html">打开交互式复盘工具</a>
-          </div>
-          <a class="dashboard-shot" href="operations_dashboard.html" aria-label="打开AI资讯追踪App运营复盘工具">
-            <img src="../../works/covers/sohu-dashboard.png" alt="AI资讯追踪App运营复盘工具界面">
-          </a>
-        </div>
-      </section>
-    </div>
-
-    <div class="band" id="results">
-      <section class="section report">
-        <div class="result-band">
-          <div class="result-grid">
-            <div><p class="kicker" style="color:#6edbd2">Project outcome</p><h2>线上线下活动、渠道与数据复盘形成闭环</h2><p>从单次内容发布升级为可复用的市场运营流程：先明确活动目标、现场流程和物料分工，再通过线下体验、直播、社群及渠道合作触达用户，最后用注册、专题创建、反馈和单位成本调整资源投入。</p></div>
-            <div class="result-list">
-              <div class="result-item"><strong class="mono">100+</strong><span>公众号、小红书及社群内容</span></div>
-              <div class="result-item"><strong class="mono">58万</strong><span>十周内容与创作者累计曝光</span></div>
-              <div class="result-item"><strong class="mono">1,438</strong><span>多渠道可归因新增注册</span></div>
-              <div class="result-item"><strong class="mono">630</strong><span>完成首次专题创建的用户</span></div>
-              <div class="result-item"><strong class="mono">+50%</strong><span>科技垂类达人发布周新增注册环比</span></div>
-              <div class="result-item"><strong class="mono">+15%</strong><span>首次专题创建率相对提升</span></div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-
   </main>
-
-  <footer class="footer report">AI资讯产品线上线下活动与渠道运营 · Sylvia Li Market Operations</footer>
+  <footer class="footer report">AI资讯产品线上线下活动与渠道运营 · 2025.12–2026.02</footer>
 
   <script>
-    const sections = [...document.querySelectorAll('main [id]')];
-    const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
-    const navObserver = new IntersectionObserver((entries) => {
-      const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (!visible) return;
-      links.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${visible.target.id}`));
-    }, { rootMargin: '-20% 0px -68% 0px', threshold: [0, 0.2, 0.6] });
-    sections.forEach((section) => navObserver.observe(section));
-
-    const barObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add('in-view');
+    const testExamples = {
+      title: {
+        names: ['功能介绍', '使用场景'],
+        copies: ['用专题追踪、关键词监测和 AI 摘要整理资讯', '每天反复搜索行业动态？把关注的信息建成一个专题'],
+        notes: ['先介绍功能，让用户知道产品可以做什么。', '先提出使用场景，再说明产品如何提供帮助。'],
+        variable: '标题的表达角度',
+        controls: '尽量保持封面、正文与观察时长一致',
+        metric: '阅读与互动；有曝光、点击记录时比较点击率'
+      },
+      cover: {
+        names: ['功能信息优先', '用户问题优先'],
+        copies: ['专题追踪 · 关键词监测 · AI 摘要', '信息太多、反复搜索，怎么持续追踪？'],
+        notes: ['同一张素材，优先呈现功能名称。', '同一张素材，优先呈现用户的使用问题。'],
+        variable: '封面中的信息重点',
+        controls: '尽量保持标题、正文与观察时长一致',
+        metric: '有曝光、点击记录时比较点击率；结合阅读表现'
+      },
+      copy: {
+        names: ['按功能说明', '按操作步骤说明'],
+        copies: ['创建专题，设置关键词，聚合相关资讯并查看 AI 摘要。', '选择关注的行业 → 填写关键词 → 创建专题 → 查看相关资讯。'],
+        notes: ['围绕产品能提供的功能展开介绍。', '围绕用户第一次使用时的操作顺序展开介绍。'],
+        variable: '正文的信息组织方式',
+        controls: '尽量保持标题、封面与观察时长一致',
+        metric: '阅读、收藏及评论中的理解与操作问题'
+      }
+    };
+    const tabs = [...document.querySelectorAll('[data-test]')];
+    const panel = document.getElementById('test-panel');
+    function selectTest(tab) {
+      const example = testExamples[tab.dataset.test];
+      tabs.forEach((item) => {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
       });
-    }, { threshold: 0.25 });
-    document.querySelectorAll('[data-animate-bars]').forEach((chart) => barObserver.observe(chart));
+      panel.setAttribute('aria-labelledby', tab.id);
+      panel.classList.toggle('cover-mode', tab.dataset.test === 'cover');
+      ['a', 'b'].forEach((letter, index) => {
+        document.getElementById('version-' + letter + '-name').textContent = example.names[index];
+        document.getElementById('version-' + letter + '-copy').textContent = example.copies[index];
+        document.getElementById('version-' + letter + '-note').textContent = example.notes[index];
+      });
+      document.getElementById('test-variable').textContent = example.variable;
+      document.getElementById('test-controls').textContent = example.controls;
+      document.getElementById('test-metric').textContent = example.metric;
+      panel.querySelectorAll('.cover-example').forEach((img) => { img.hidden = tab.dataset.test !== 'cover'; });
+    }
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => selectTest(tab));
+      tab.addEventListener('keydown', (event) => {
+        let next;
+        if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+        if (event.key === 'Home') next = 0;
+        if (event.key === 'End') next = tabs.length - 1;
+        if (next === undefined) return;
+        event.preventDefault();
+        selectTest(tabs[next]);
+        tabs[next].focus();
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+      const navigation = new IntersectionObserver((entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (!visible) return;
+        links.forEach((link) => {
+          const active = link.getAttribute('href') === '#' + visible.target.id;
+          link.classList.toggle('active', active);
+          if (active) link.setAttribute('aria-current', 'location');
+          else link.removeAttribute('aria-current');
+        });
+      }, { rootMargin: '-12% 0px -45% 0px', threshold: [0, 0.1, 0.4] });
+      document.querySelectorAll('main section[id]').forEach((section) => navigation.observe(section));
+    }
   </script>
 </body>
 </html>
