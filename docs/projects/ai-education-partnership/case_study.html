@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="东南亚 AI 教育产品战略合作推进与签约落地项目案例" />
+  <title>东南亚 AI 教育产品战略合作推进与签约落地 | Shiyi Li</title>
+  <style>
+    :root {
+      --ink: #0b1f3a;
+      --ink-soft: #52627a;
+      --paper: #f4f7fb;
+      --white: #ffffff;
+      --line: #cfdaea;
+      --blue: #1769e0;
+      --teal: #18a7a0;
+      --orange: #f47b3a;
+      --green: #278a68;
+      --navy: #0a2242;
+      --max: 1240px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 64px;
+      color: #fff;
+      background: rgba(10, 34, 66, .97);
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
+    }
+    .topbar__inner {
+      width: min(var(--max), calc(100% - 48px));
+      height: 100%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { font-weight: 800; font-size: 15px; }
+    .back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #dfe9f7;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .back:hover { color: #fff; }
+
+    .hero {
+      color: #fff;
+      background: var(--navy);
+      border-bottom: 8px solid var(--blue);
+    }
+.hero__inner {
+  width: min(var(--max), calc(100% - 48px));
+  min-height: 600px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(420px, .95fr);
+      align-items: center;
+      gap: 72px;
+  padding: 72px 0;
+}
+
+.hero__copy,
+.hero__visual {
+  min-width: 0;
+}
+    .eyebrow,
+    .section-kicker {
+      margin: 0 0 18px;
+      color: #70ddd6;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 790px;
+      margin: 0;
+      font-size: clamp(48px, 5.2vw, 76px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+    .hero__lead {
+      max-width: 720px;
+      margin: 28px 0 34px;
+      color: #c6d3e5;
+      font-size: 20px;
+    }
+    .hero__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+.hero__meta span {
+  padding: 9px 12px;
+  border: 1px solid rgba(255,255,255,.28);
+  font-size: 13px;
+  font-weight: 750;
+  max-width: 100%;
+}
+    .hero__visual {
+      position: relative;
+      min-height: 470px;
+      border-left: 1px solid rgba(255,255,255,.22);
+      padding-left: 30px;
+    }
+    .hero__visual img {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+      object-position: center;
+      border: 1px solid rgba(255,255,255,.28);
+    }
+    .hero__note {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: min(390px, 88%);
+      padding: 18px 20px;
+      color: var(--ink);
+      background: #fff;
+      border-top: 5px solid var(--orange);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    main section { padding: 88px 0; }
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin: auto; }
+    .section-head {
+      display: grid;
+      grid-template-columns: 330px minmax(0, 1fr);
+      gap: 64px;
+      align-items: start;
+      margin-bottom: 48px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+    .section-head p {
+      max-width: 760px;
+      margin: 4px 0 0;
+      color: var(--ink-soft);
+      font-size: 18px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .overview-item {
+      min-height: 200px;
+      padding: 30px;
+      border-right: 1px solid var(--line);
+    }
+    .overview-item:last-child { border-right: 0; }
+    .overview-item strong {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--blue);
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+    .overview-item h3 { margin: 0 0 12px; font-size: 23px; }
+    .overview-item p { margin: 0; color: var(--ink-soft); }
+
+    .process-section { color: #fff; background: var(--navy); }
+    .process-section .section-head p { color: #bdcbe0; }
+    .process {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+    }
+    .step {
+      position: relative;
+      min-height: 310px;
+      padding: 28px 34px 28px 28px;
+      background: #12335f;
+      clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 50%, calc(100% - 24px) 100%, 0 100%, 24px 50%);
+    }
+    .step:first-child { clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 50%, calc(100% - 24px) 100%, 0 100%); }
+    .step:nth-child(2) { background: #1769e0; }
+    .step:nth-child(3) { background: #179b98; }
+    .step:nth-child(4) { background: #ef7540; }
+    .step:nth-child(5) { background: #24795e; }
+    .step__no { display: block; margin-bottom: 40px; font-size: 13px; font-weight: 900; opacity: .8; }
+    .step h3 { margin: 0 0 16px; font-size: 22px; line-height: 1.25; }
+    .step p { margin: 0; color: rgba(255,255,255,.83); font-size: 14px; }
+
+    .decision-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .decision-copy { padding: 42px; border-right: 1px solid var(--line); }
+    .decision-copy h3 { margin: 0 0 20px; font-size: 30px; }
+    .decision-copy p { margin: 0 0 22px; color: var(--ink-soft); }
+    .principle {
+      display: grid;
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 16px;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+    .principle b { color: var(--blue); font-size: 14px; }
+    .principle h4 { margin: 0 0 5px; font-size: 18px; }
+    .principle p { margin: 0; font-size: 14px; }
+    .terms { display: grid; grid-template-rows: repeat(4, 1fr); }
+    .term {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 16px;
+      align-content: center;
+      padding: 24px 30px;
+      border-bottom: 1px solid var(--line);
+    }
+    .term:last-child { border-bottom: 0; }
+    .term span { color: var(--orange); font-weight: 900; }
+    .term h4 { margin: 0 0 4px; font-size: 17px; }
+    .term p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+
+    .evidence-section { background: #eaf0f8; }
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .evidence-card { margin: 0; background: #fff; border: 1px solid var(--line); }
+    .evidence-card img { width: 100%; height: 390px; object-fit: cover; object-position: top center; }
+    .evidence-card figcaption { padding: 22px 24px 26px; }
+    .evidence-card b { display: block; margin-bottom: 7px; font-size: 18px; }
+    .evidence-card p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+    .evidence-card--wide { grid-column: 1 / -1; }
+    .evidence-card--wide img { height: 330px; object-position: center 42%; }
+
+    .result-band {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      color: #fff;
+      background: var(--navy);
+      border-top: 7px solid var(--teal);
+    }
+    .result-band__visual img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; }
+    .result-band__copy { padding: 54px; }
+    .result-band__copy h2 { margin: 0 0 22px; font-size: clamp(36px, 4vw, 54px); line-height: 1.14; }
+    .result-band__copy > p { margin: 0 0 34px; color: #c6d3e5; font-size: 18px; }
+    .result-list { display: grid; gap: 1px; background: rgba(255,255,255,.18); }
+    .result-item { padding: 20px 22px; background: #12335f; }
+    .result-item strong { display: block; margin-bottom: 4px; color: #70ddd6; }
+
+    .boundary {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 50px;
+      padding: 36px 0 0;
+      border-top: 1px solid var(--line);
+    }
+    .boundary h3 { margin: 0; font-size: 23px; }
+    .boundary p { margin: 0; color: var(--ink-soft); font-size: 17px; }
+
+    footer {
+      padding: 34px 0;
+      color: #aebdd0;
+      background: #071a32;
+      font-size: 13px;
+    }
+    footer .wrap { display: flex; justify-content: space-between; gap: 20px; }
+
+    @media (max-width: 960px) {
+      .hero__inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero__visual { min-height: 380px; padding-left: 20px; }
+      .hero__visual img { height: 360px; }
+      .section-head { grid-template-columns: 1fr; gap: 18px; }
+      .process { grid-template-columns: 1fr; gap: 10px; }
+      .step, .step:first-child {
+        min-height: 0;
+        padding: 26px 28px 34px;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), 50% 100%, 0 calc(100% - 18px));
+      }
+      .step__no { margin-bottom: 16px; }
+      .decision-grid, .result-band { grid-template-columns: 1fr; }
+      .decision-copy { border-right: 0; border-bottom: 1px solid var(--line); }
+      .result-band__visual img { min-height: 340px; }
+    }
+
+@media (max-width: 680px) {
+      .topbar__inner, .hero__inner, .wrap { width: min(100% - 28px, var(--max)); }
+      .topbar { height: 58px; }
+  h1 {
+    font-size: clamp(34px, 10.7vw, 43px);
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .hero__meta span {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+      .hero__inner { min-height: 0; padding: 52px 0 60px; }
+      .hero__lead { font-size: 17px; }
+      .hero__visual { min-height: 310px; padding-left: 12px; }
+      .hero__visual img { height: 300px; }
+      .hero__note { font-size: 12px; }
+      main section { padding: 64px 0; }
+      .section-head h2 { font-size: 38px; }
+      .section-head p { font-size: 16px; }
+      .overview-grid { grid-template-columns: 1fr; }
+      .overview-item { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .overview-item:last-child { border-bottom: 0; }
+      .decision-copy, .result-band__copy { padding: 30px 24px; }
+      .evidence-grid { grid-template-columns: 1fr; }
+      .evidence-card--wide { grid-column: auto; }
+      .evidence-card img, .evidence-card--wide img { height: 300px; }
+      .boundary { grid-template-columns: 1fr; gap: 12px; }
+      footer .wrap { display: block; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="../../">Shiyi Li · Market Operations</a>
+      <a class="back" href="../../"><span aria-hidden="true">←</span> 返回项目主页</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__inner">
+      <div>
+        <p class="eyebrow">B2B Partnership · Southeast Asia</p>
+        <h1>东南亚 AI 教育产品战略合作推进与签约落地</h1>
+        <p class="hero__lead">在双方已有合作接触的基础上，将市场设想转化为可执行的合作方案，完成条款协商、跨团队对齐、合同推进与签约落地。</p>
+        <div class="hero__meta">
+          <span>2025.01-2025.03</span>
+          <span>商务合作与项目推进</span>
+          <span>东南亚市场</span>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <img src="assets/06-signing.jpg" alt="战略合作签约现场" />
+        <div class="hero__note">项目起点并非陌生拓展，而是已有接触后的方案深化与签约推进。</div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">01 · Project Context</p>
+            <h2>把合作意向转成可执行框架</h2>
+          </div>
+          <p>合作讨论涉及市场、产品、技术、运营和商业安排。推进重点不是单次沟通，而是让双方明确“做什么、谁负责、何时交付、如何承担风险”。</p>
+        </div>
+        <div class="overview-grid">
+          <article class="overview-item">
+            <strong>市场重点</strong>
+            <h3>区域与场景聚焦</h3>
+            <p>围绕东南亚教育市场，梳理本地用户、课程场景、渠道资源及后续拓展方向。</p>
+          </article>
+          <article class="overview-item">
+            <strong>合作结构</strong>
+            <h3>资源与职责互补</h3>
+            <p>本地团队负责市场与渠道，中国团队提供产品、技术与运营支持，减少执行边界模糊。</p>
+          </article>
+          <article class="overview-item">
+            <strong>推进目标</strong>
+            <h3>从共识到签署</h3>
+            <p>将口头意向沉淀为合作方案、商务条款、交付节点及正式协议。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">02 · Working Flow</p>
+            <h2>五步推进路径</h2>
+          </div>
+          <p>每一步都有明确输入与输出：方案定义合作范围，条款平衡风险，协同确保可交付，合同固定承诺，签约进入执行。</p>
+        </div>
+        <div class="process" aria-label="合作推进五步流程">
+          <article class="step">
+            <span class="step__no">STEP 01</span>
+            <h3>合作方案梳理</h3>
+            <p>整理市场重点、课程方向、渠道资源及双方职责，形成可讨论的合作框架。</p>
+          </article>
+          <article class="step">
+            <span class="step__no">STEP 02</span>
+            <h3>商务条款协商</h3>
+            <p>围绕技术服务、阶段付款、收益分配、目标门槛与责任边界进行多轮对齐。</p>
+          </article>
+          <article class="step">
+            <span class="step__no">STEP 03</span>
+            <h3>内外部协同</h3>
+            <p>同步合作方与产品、技术、运营团队，确认课程资料、部署条件和交付要求。</p>
+          </article>
+          <article class="step">
+            <span class="step__no">STEP 04</span>
+            <h3>合同推进</h3>
+            <p>核对付款资料、时间节点和手续，跟进双语合同版本与修改意见。</p>
+          </article>
+          <article class="step">
+            <span class="step__no">STEP 05</span>
+            <h3>签约落地</h3>
+            <p>完成战略合作协议与配套合同签署，建立后续产品、技术与运营协作框架。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">03 · Negotiation Logic</p>
+            <h2>条款不是压价，而是分配风险</h2>
+          </div>
+          <p>商业可行性取决于现金流、交付能力与市场不确定性是否被合理拆分。分阶段推进，让合作方保留启动空间，也让交付团队拥有清晰边界。</p>
+        </div>
+        <div class="decision-grid">
+          <div class="decision-copy">
+            <h3>核心判断</h3>
+            <p>不把单一价格作为唯一结论，而是同时评估合作方的本地渠道能力、项目投入意愿、内部交付成本和长期扩展空间。</p>
+            <div class="principle">
+              <b>01</b>
+              <div><h4>启动可承受</h4><p>通过分阶段付款降低合作初期现金流压力，并匹配实际推进节点。</p></div>
+            </div>
+            <div class="principle">
+              <b>02</b>
+              <div><h4>交付可管理</h4><p>明确产品、技术、运营与本地市场团队的职责，避免承诺超出交付范围。</p></div>
+            </div>
+            <div class="principle">
+              <b>03</b>
+              <div><h4>合作可延续</h4><p>将后续合作与阶段目标连接，为市场验证后的扩大投入留下空间。</p></div>
+            </div>
+          </div>
+          <div class="terms">
+            <div class="term"><span>01</span><div><h4>服务与交付</h4><p>技术支持、部署条件、课程与运营资料。</p></div></div>
+            <div class="term"><span>02</span><div><h4>付款安排</h4><p>按阶段与里程碑拆分，匹配双方现金流。</p></div></div>
+            <div class="term"><span>03</span><div><h4>收益机制</h4><p>明确收益分配方式与结算边界。</p></div></div>
+            <div class="term"><span>04</span><div><h4>目标与退出</h4><p>设置阶段目标、复盘节点与调整机制。</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="evidence-section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">04 · Working Evidence</p>
+            <h2>从沟通记录到正式文件</h2>
+          </div>
+          <p>页面仅使用已脱敏材料，保留推进节点和工作过程；具体主体、金额、账户、人员与合同内容不公开。</p>
+        </div>
+        <div class="evidence-grid">
+          <figure class="evidence-card">
+            <img src="assets/01-alignment.jpg" alt="合作方案对齐记录，敏感信息已遮挡" />
+            <figcaption><b>方案与治理结构对齐</b><p>确认合作框架、组织安排和待讨论事项，为后续条款沟通建立共同底稿。</p></figcaption>
+          </figure>
+          <figure class="evidence-card">
+            <img src="assets/02-negotiation.jpg" alt="商务条款协商记录，敏感信息已遮挡" />
+            <figcaption><b>商务条款多轮协商</b><p>围绕价格、阶段目标、付款与风险分担形成可落地的协商方案。</p></figcaption>
+          </figure>
+          <figure class="evidence-card">
+            <img src="assets/03-coordination.jpg" alt="内部与合作方信息同步记录，敏感信息已遮挡" />
+            <figcaption><b>产品、技术与运营协同</b><p>同步资料、部署与支持安排，将商务承诺拆解为团队可执行事项。</p></figcaption>
+          </figure>
+          <figure class="evidence-card">
+            <img src="assets/04-contract.jpg" alt="合同文件推进记录，敏感信息已遮挡" />
+            <figcaption><b>合同版本与材料跟进</b><p>核对双语协议、付款资料和版本反馈，推进文件进入签署流程。</p></figcaption>
+          </figure>
+          <figure class="evidence-card evidence-card--wide">
+            <img src="assets/05-meeting.jpg" alt="项目会议现场，参与人员已遮挡" />
+            <figcaption><b>跨团队项目会议</b><p>围绕市场进入、产品支持与后续协作进行面对面对齐，推动关键问题闭环。</p></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="result-band">
+          <div class="result-band__visual"><img src="assets/06-signing.jpg" alt="合作协议签署现场" /></div>
+          <div class="result-band__copy">
+            <p class="section-kicker">05 · Outcome</p>
+            <h2>完成签约，并建立后续执行框架</h2>
+            <p>项目结果不是停留在合作意向，而是形成正式协议及面向东南亚市场的协作安排。</p>
+            <div class="result-list">
+              <div class="result-item"><strong>合作文件</strong>战略合作协议与配套合同进入正式签署。</div>
+              <div class="result-item"><strong>执行边界</strong>市场、产品、技术与运营职责得到明确。</div>
+              <div class="result-item"><strong>后续机制</strong>形成阶段交付、沟通与复盘的协作框架。</div>
+            </div>
+          </div>
+        </div>
+        <div class="boundary">
+          <h3>个人职责边界</h3>
+          <p>参与合作方案整理、条款沟通、内部信息同步、合同细节核对与材料归档；合作方接触与最终决策由项目负责人共同推进。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><span>Shiyi Li · Market Operations Portfolio</span><span>Selected B2B Partnership Case</span></div>
+  </footer>
+</body>
+</html>
