@@ -1,4 +1,5 @@
 import { Suspense, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Canvas } from '@react-three/fiber'
 import { motion, useScroll, useTransform, type MotionValue } from 'framer-motion'
 import * as THREE from 'three'
@@ -73,12 +74,17 @@ function Hero({ lang, cueOpacity }: { lang: Lang; cueOpacity: MotionValue<number
           ))}
         </div>
       </motion.div>
-      <motion.div className="scroll-cue" style={{ opacity: cueOpacity }} aria-hidden="true">
-        <span className="scroll-cue-label">{lang === 'en' ? 'SCROLL' : '向下滚动'}</span>
-        <span className="scroll-cue-track">
-          <span className="scroll-cue-dot" />
-        </span>
-      </motion.div>
+      <div className="scroll-cue-space" aria-hidden="true" />
+      {/* Keep the hint above the film grain without changing the other content layers. */}
+      {createPortal(
+        <motion.div className="scroll-cue" style={{ opacity: cueOpacity }} aria-hidden="true">
+          <span className="scroll-cue-label">
+            {lang === 'en' ? 'Scroll down · View projects' : '向下滑动 · 查看项目'}
+          </span>
+          <span className="scroll-cue-arrow">↓</span>
+        </motion.div>,
+        document.body
+      )}
     </section>
   )
 }
