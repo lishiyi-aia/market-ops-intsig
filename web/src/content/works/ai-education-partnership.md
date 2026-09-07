@@ -1,10 +1,10 @@
 ---
 title: 东南亚 AI 教育产品战略合作推进与签约落地
-banner: 已有合作接触后的方案对齐、商务协商、合同推进与签约落地
+banner: works/covers/ai-partnership.jpg
 year: 2025.01-2025.03
 role: 商务合作与项目推进
-tags: B2B合作推进, 合作方案, 商务条款, 合同跟进, 跨团队协同, 海外项目
-link: /projects/ai-education-partnership/case_study.html
+tags: [B2B合作推进, 合作方案, 商务条款, 合同跟进, 跨团队协同, 海外项目]
+link: projects/ai-education-partnership/case_study.html
 ---
 
 ## 项目概述
