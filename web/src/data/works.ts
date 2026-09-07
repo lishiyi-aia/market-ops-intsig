@@ -44,7 +44,7 @@ export type WorksCopy = WorksLang
 
 export const WORKS: Record<WorkLanguage, WorksLang> = {
   zh: {
-    title: '四个项目，覆盖市场运营核心链路',
+    title: '项目经历',
     closeLabel: '返回',
     openLabel: '展开作品',
     hint: '继续下滑',
@@ -134,7 +134,7 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
     ],
   },
   en: {
-    title: 'Four Projects Across the Market Operations Lifecycle',
+    title: 'Project Experience',
     closeLabel: 'Back',
     openLabel: 'Open case',
     hint: 'Scroll to continue',
