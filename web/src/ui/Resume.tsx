@@ -27,7 +27,7 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
         points: [
           'Researched new-product communication using audience preferences, social feedback, and competitor campaign patterns, then distilled launch messages and content angles.',
           'Contributed to 50 Instagram assets across planning, shooting, editing, English copywriting, publishing schedules, and material organization.',
-          'Supported online launch activity and FamilyMart retail communication, completing 15+ review cycles by reach, engagement, and follower growth; the account reached 11k+ followers during the project period.',
+          'Supported online launch activity and FamilyMart retail communication, completing 15+ review cycles by reach, engagement, and follower growth; the account gained 11k+ followers during the project period.',
         ],
       },
       {
@@ -80,7 +80,7 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
         points: [
           '参与新品传播调研，结合用户偏好、社媒反馈与竞品活动拆解提炼首发卖点和内容方向。',
           '参与完成50条Instagram内容的选题、拍摄、剪辑、英文文案、发布排期与素材整理。',
-          '配合新品线上首发及FamilyMart线下渠道传播，完成15+轮数据复盘并根据触达、互动与粉丝增长优化内容，项目期账号粉丝规模达到1.1万+。',
+          '配合新品线上首发及FamilyMart线下渠道传播，完成15+轮数据复盘并根据触达、互动与粉丝增长优化内容，项目期账号粉丝增长1.1w+。',
         ],
       },
       {
