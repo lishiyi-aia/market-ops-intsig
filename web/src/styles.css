@@ -1233,42 +1233,60 @@ canvas {
   position: fixed;
   inset: clamp(16px, 5vh, 56px) clamp(16px, 6vw, 120px);
   z-index: 70;
+  display: flex;
+  flex-direction: column;
   /* 指定背景色 #1d2124（深炭蓝灰） */
   background: rgba(29, 33, 36, 0.98);
   border: 1px solid var(--line);
   border-radius: 20px;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
   box-shadow: 0 50px 140px rgba(0, 0, 0, 0.6);
+}
+
+/* Keep the close control outside the scrolling content. */
+.wk-detail-toolbar {
+  display: flex;
+  flex: 0 0 auto;
+  justify-content: flex-end;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.wk-detail-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
   /* 弱化滚动条（Firefox） */
   scrollbar-width: thin;
   scrollbar-color: rgba(244, 241, 234, 0.16) transparent;
 }
 /* 弱化滚动条（WebKit）：细、透明轨道、半透明圆角滑块，hover 略显 */
-.wk-detail::-webkit-scrollbar {
+.wk-detail-scroll::-webkit-scrollbar {
   width: 8px;
 }
-.wk-detail::-webkit-scrollbar-track {
+.wk-detail-scroll::-webkit-scrollbar-track {
   background: transparent;
 }
-.wk-detail::-webkit-scrollbar-thumb {
+.wk-detail-scroll::-webkit-scrollbar-thumb {
   background: rgba(244, 241, 234, 0.14);
   border-radius: 999px;
   border: 2px solid transparent;
   background-clip: padding-box;
 }
-.wk-detail::-webkit-scrollbar-thumb:hover {
+.wk-detail-scroll::-webkit-scrollbar-thumb:hover {
   background: rgba(244, 241, 234, 0.28);
   background-clip: padding-box;
 }
 
 .wk-detail-close {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 2;
-  width: 42px;
-  height: 42px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   border-radius: 50%;
   border: 1px solid var(--line);
   background: rgba(10, 13, 20, 0.55);
@@ -1278,6 +1296,10 @@ canvas {
   font-size: 15px;
   cursor: pointer;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.wk-detail-close:focus-visible {
+  outline: 2px solid #ffd9b3;
+  outline-offset: 3px;
 }
 .wk-detail-close:hover {
   background: rgba(20, 26, 38, 0.8);

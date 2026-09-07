@@ -184,65 +184,75 @@ function WorkDetail({
         exit={{ opacity: 0, scale: 0.99, y: 6 }}
         transition={{ duration: 0.42, ease: EASE }}
       >
-        <button className="wk-detail-close" onClick={onClose} aria-label={data.closeLabel}>
-          ✕
-        </button>
+        <div className="wk-detail-toolbar">
+          <button
+            type="button"
+            className="wk-detail-close"
+            onClick={onClose}
+            aria-label={data.closeLabel}
+            title={data.closeLabel}
+          >
+            ✕
+          </button>
+        </div>
 
-        {banner && !bannerError ? (
-          <div className="wk-detail-banner">
-            <img src={banner} alt={title} onError={() => setBannerError(true)} />
-          </div>
-        ) : (
-          <div className="wk-detail-banner is-ph" aria-hidden="true">
-            <span className="wk-detail-ph-text">{title}</span>
-          </div>
-        )}
-
-        <article className="wk-detail-article">
-          <header className="wk-detail-head">
-            <h3 className="wk-detail-title">{title}</h3>
-            {sub && <div className="wk-detail-sub">{sub}</div>}
-            {tags && tags.length > 0 && (
-              <div className="wk-detail-tags">
-                {tags.map((t, i) => (
-                  <span key={i} className="wk-badge">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            )}
-          </header>
-
-          {doc && doc.body ? (
-            <div className="wk-md">
-              <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
-                {doc.body}
-              </ReactMarkdown>
+        <div className="wk-detail-scroll">
+          {banner && !bannerError ? (
+            <div className="wk-detail-banner">
+              <img src={banner} alt={title} onError={() => setBannerError(true)} />
             </div>
           ) : (
-            // 无 md：演示详情页支持的组件 —— 介绍文本 + 图片/视频占位 + 跳转按钮
-            <>
-              <p className="wk-detail-desc">{data.detailPlaceholder}</p>
-              <div className="wk-detail-ph-img" aria-hidden="true">
-                <span className="wk-detail-ph-img-label">{data.phImageLabel}</span>
-              </div>
-              <span className="wk-detail-link is-ph" role="button" aria-disabled="true">
-                {data.phButtonLabel} <span aria-hidden="true">↗</span>
-              </span>
-            </>
+            <div className="wk-detail-banner is-ph" aria-hidden="true">
+              <span className="wk-detail-ph-text">{title}</span>
+            </div>
           )}
 
-          {link && (
-            <a
-              className="wk-detail-link"
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {data.visitLabel} <span aria-hidden="true">↗</span>
-            </a>
-          )}
-        </article>
+          <article className="wk-detail-article">
+            <header className="wk-detail-head">
+              <h3 className="wk-detail-title">{title}</h3>
+              {sub && <div className="wk-detail-sub">{sub}</div>}
+              {tags && tags.length > 0 && (
+                <div className="wk-detail-tags">
+                  {tags.map((t, i) => (
+                    <span key={i} className="wk-badge">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </header>
+
+            {doc && doc.body ? (
+              <div className="wk-md">
+                <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+                  {doc.body}
+                </ReactMarkdown>
+              </div>
+            ) : (
+              // 无 md：演示详情页支持的组件 —— 介绍文本 + 图片/视频占位 + 跳转按钮
+              <>
+                <p className="wk-detail-desc">{data.detailPlaceholder}</p>
+                <div className="wk-detail-ph-img" aria-hidden="true">
+                  <span className="wk-detail-ph-img-label">{data.phImageLabel}</span>
+                </div>
+                <span className="wk-detail-link is-ph" role="button" aria-disabled="true">
+                  {data.phButtonLabel} <span aria-hidden="true">↗</span>
+                </span>
+              </>
+            )}
+
+            {link && (
+              <a
+                className="wk-detail-link"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {data.visitLabel} <span aria-hidden="true">↗</span>
+              </a>
+            )}
+          </article>
+        </div>
       </motion.div>
     </>
   )
