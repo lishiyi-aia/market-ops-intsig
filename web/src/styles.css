@@ -1427,7 +1427,8 @@ canvas {
 }
 
 .wk-md .partnership-disclosure,
-.wk-md .education-disclosure {
+.wk-md .education-disclosure,
+.wk-md .zus-disclosure {
   margin: 24px 0;
   padding: 22px 24px;
   border-left: 5px solid #b77500;
@@ -1437,18 +1438,21 @@ canvas {
   line-height: 1.8;
 }
 .wk-md .partnership-disclosure strong,
-.wk-md .education-disclosure strong {
+.wk-md .education-disclosure strong,
+.wk-md .zus-disclosure strong {
   display: block;
   margin-bottom: 8px;
   color: #362807;
   font-size: 18px;
 }
 .wk-md .partnership-disclosure p,
-.wk-md .education-disclosure p {
+.wk-md .education-disclosure p,
+.wk-md .zus-disclosure p {
   margin: 0;
 }
 .wk-md .partnership-disclosure p + p,
-.wk-md .education-disclosure p + p {
+.wk-md .education-disclosure p + p,
+.wk-md .zus-disclosure p + p {
   margin-top: 6px;
   font-size: 12px;
 }

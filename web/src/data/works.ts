@@ -115,18 +115,18 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
       {
         id: 'project-4',
         no: '04',
-        title: '新品上市与全渠道传播',
-        tagline: '上市节奏｜内容物料｜零售渠道｜传播复盘',
+        title: '新品社媒运营与渠道传播',
+        tagline: '内容调研｜拍摄剪辑｜英文文案｜渠道传播',
         items: [
           {
-            name: 'ZUS Everywhere 新品上市活动与市场传播',
-            meta: 'New Product Launch & Market Communication',
+            name: 'ZUS Coffee 新品社媒运营与渠道传播',
+            meta: 'New Product Social Media & Channel Communication',
             slug: 'zus-everywhere',
             tags: [
-              '活动节奏：参与COFFIZZ等新品预热、发布、品类教育和零售到货传播',
-              '物料执行：完成50条Instagram内容的选题、拍摄、剪辑、英文文案与排期',
-              '渠道协同：配合FamilyMart线下传播，统一产品信息、购买入口和发布时间',
-              '效果复盘：完成15+轮内容复盘；项目期账号粉丝增长1.1w+',
+              '内容调研：结合用户偏好、互动反馈与竞品内容，整理新品传播卖点',
+              '内容执行：参与50条Instagram内容发布，涉及拍摄、剪辑、英文文案与素材整理',
+              '渠道协同：配合线上首发及FamilyMart传播，整理素材、门店信息与发布排期',
+              '内容复盘：累计完成15+次复盘；项目期账号粉丝增长1.1w+，为账号整体结果',
             ],
           },
         ],
@@ -205,18 +205,18 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
       {
         id: 'project-4',
         no: '04',
-        title: 'Product Launch & Omnichannel Communication',
-        tagline: 'Launch · Materials · Retail · Review',
+        title: 'New Product Social Media & Channel Communication',
+        tagline: 'Research · Shooting & Editing · English Copy · Channels',
         items: [
           {
-            name: 'ZUS Everywhere Product Launch & Market Communication',
-            meta: 'New Product Launch & Market Communication',
+            name: 'ZUS Coffee New Product Social Media & Channel Communication',
+            meta: 'Instagram Content, English Copy & Retail Communication',
             slug: 'zus-everywhere',
             tags: [
-              'Supported launch communication for COFFIZZ and other RTD/FMCG products',
-              'Contributed to 50 Instagram assets across planning, shooting, editing, and English copy',
-              'Aligned product information, retail access, and publishing schedules for FamilyMart communication',
-              'Completed 15+ review cycles; the account gained 11k+ followers during the project period',
+              'Researched audience preferences, social feedback, and competitor content to inform product messaging',
+              'Contributed to 50 Instagram posts through shooting, editing, English copy, and material organization',
+              'Supported online launch and FamilyMart communication with materials, store information, and schedules',
+              'Completed 15+ content reviews; the account gained 11k+ followers, an account-level result',
             ],
           },
         ],
