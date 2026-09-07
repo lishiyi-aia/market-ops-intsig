@@ -1,17 +1,4 @@
-// 项目数据（双语）。各板块 → 点击展开项目详情。
-// 纯数据驱动：增删板块 / 作品只改本文件，Works.jsx 仅负责渲染。
-//
-// 板块字段：
-//   id        唯一标识（用于 framer layoutId 共享元素动画）
-//   no        编号 '01'…'05'
-//   title     板块标题
-//   tagline   索引行右侧一句话
-//   items[]   扁平作品列表：{ name, meta?, tags?, link? }
-//             点击 item 弹出全屏详情，可补充可选媒体/文案字段：
-//             { image?, video?, year?, desc? }（缺省时媒体用占位、简介回退 meta/标签）
-//   groups[]  分组作品（与 items 二选一）：{ heading, items: string[] }
-//   awards[]  奖项 chip（可选）
-//   footer    底部技术/备注一行（可选）
+export type WorkLanguage = 'zh' | 'en'
 
 export interface WorkListItem {
   name: string
@@ -20,6 +7,8 @@ export interface WorkListItem {
   link?: string
   slug?: string
 }
+
+export type WorkItem = WorkListItem
 
 export interface WorkGroup {
   heading: string
@@ -51,41 +40,24 @@ export interface WorksLang {
   sections: WorkSection[]
 }
 
-export const WORKS: Record<'zh' | 'en', WorksLang> = {
+export type WorksCopy = WorksLang
+
+export const WORKS: Record<WorkLanguage, WorksLang> = {
   zh: {
-    title: '三个项目，三类岗位证据',
+    title: '四个项目，覆盖市场运营核心链路',
     closeLabel: '返回',
     openLabel: '展开作品',
     hint: '继续下滑',
-    awardsLabel: '获奖',
-    visitLabel: '打开完整项目',
-    detailPlaceholder: '你的作品介绍',
-    phImageLabel: '图片 / 视频',
-    phButtonLabel: '跳转按钮',
-    countLabel: (n) => `${n} 件作品`,
+    awardsLabel: '项目成果',
+    visitLabel: '查看完整项目',
+    detailPlaceholder: '项目详情',
+    phImageLabel: '项目预览',
+    phButtonLabel: '打开项目',
+    countLabel: (n) => `${n} 个项目`,
     sections: [
       {
         id: 'project-1',
         no: '01',
-        title: '机构合作与高校试点',
-        tagline: '合作资源｜宣讲资料｜试点执行｜反馈闭环',
-        items: [
-          {
-            name: '生成式AI教育产品高校试点与机构合作',
-            meta: 'Generative AI Education Partnerships & Pilots',
-            slug: 'ai-education-product',
-            tags: [
-              '合作对象：高校教师、学生与教育机构试点团队；整理100+条需求与反馈',
-              '合作资料：产品演示、教师案例、课程方案、FAQ及30+篇使用内容',
-              '执行协同：连接产品、内容与业务团队，支持海内外高校试点沟通和推进',
-              '项目复盘：沉淀10+项产品与运营建议，推动核心功能使用率提升30%',
-            ],
-          },
-        ],
-      },
-      {
-        id: 'project-2',
-        no: '02',
         title: '线上线下活动与渠道运营',
         tagline: '活动方案｜现场执行｜直播传播｜数据复盘',
         items: [
@@ -103,8 +75,46 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
         ],
       },
       {
+        id: 'project-2',
+        no: '02',
+        title: '战略合作与签约落地',
+        tagline: '合作方案｜条款协商｜合同推进｜跨团队协同',
+        items: [
+          {
+            name: '东南亚 AI 教育产品战略合作推进与签约落地',
+            meta: 'Southeast Asia AI Education Strategic Partnership',
+            slug: 'ai-education-partnership',
+            tags: [
+              '方案对齐：在既有合作接触基础上，梳理市场、产品、技术与运营的职责边界',
+              '条款协商：围绕服务费、分期付款、利润分成和阶段目标整理谈判方案',
+              '协同推进：同步海外合作方与产品、技术团队，跟进课程、部署和协议修改',
+              '签约落地：核对双语合同、付款节点与执行材料，推动合作进入落地阶段',
+            ],
+          },
+        ],
+      },
+      {
         id: 'project-3',
         no: '03',
+        title: '机构合作与高校试点',
+        tagline: '合作资源｜宣讲资料｜试点执行｜反馈闭环',
+        items: [
+          {
+            name: '生成式AI教育产品高校试点与机构合作',
+            meta: 'Generative AI Education Partnerships & Pilots',
+            slug: 'ai-education-product',
+            tags: [
+              '合作对象：高校教师、学生与教育机构试点团队；整理100+条需求与反馈',
+              '合作资料：产品演示、教师案例、课程方案、FAQ及30+篇使用内容',
+              '执行协同：连接产品、内容与业务团队，支持海内外高校试点沟通和推进',
+              '项目复盘：沉淀10+项产品与运营建议，推动核心功能使用率提升30%',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'project-4',
+        no: '04',
         title: '新品上市与全渠道传播',
         tagline: '上市节奏｜内容物料｜零售渠道｜传播复盘',
         items: [
@@ -124,45 +134,26 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
     ],
   },
   en: {
-    title: 'Three Projects, Three Role Proofs',
+    title: 'Four Projects Across the Market Operations Lifecycle',
     closeLabel: 'Back',
-    openLabel: 'Explore',
-    hint: 'Keep scrolling',
-    awardsLabel: 'Awards',
-    visitLabel: 'Open full case',
-    detailPlaceholder: 'Your work description',
-    phImageLabel: 'Image / Video',
-    phButtonLabel: 'Link button',
-    countLabel: (n) => `${n} works`,
+    openLabel: 'Open case',
+    hint: 'Scroll to continue',
+    awardsLabel: 'Outcomes',
+    visitLabel: 'View full case',
+    detailPlaceholder: 'Project details',
+    phImageLabel: 'Project preview',
+    phButtonLabel: 'Open project',
+    countLabel: (n) => `${n} projects`,
     sections: [
       {
         id: 'project-1',
         no: '01',
-        title: 'Institution Partnerships & University Pilots',
-        tagline: 'Resources · Materials · Execution · Review',
-        items: [
-          {
-            name: 'Generative AI Education Partnerships & Pilots',
-            meta: '生成式AI教育产品高校试点与机构合作',
-            slug: 'ai-education-product',
-            tags: [
-              'Organized 100+ university-user and pilot feedback items across teaching and learning scenarios',
-              'Produced 30+ guides, FAQs, tutorials, and instructor-facing cases for product communication',
-              'Prepared demos, course materials, and cooperation materials for university and institution pilots',
-              'Delivered 10+ recommendations and supported a 30% increase in core-feature adoption',
-            ],
-          },
-        ],
-      },
-      {
-        id: 'project-2',
-        no: '02',
         title: 'Integrated Event & Channel Operations',
         tagline: 'Offline · Livestream · Activation · Review',
         items: [
           {
-            name: 'AI Information Product Event & Channel Operations',
-            meta: 'AI资讯产品线上线下活动与渠道运营',
+            name: 'AI Information Product Integrated Campaign Operations',
+            meta: 'AI Information Product Integrated Campaign Operations',
             slug: 'ai-news-dashboard',
             tags: [
               'Connected a tech-community event, livestream, product activation, and feedback review into one journey',
@@ -174,14 +165,52 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
         ],
       },
       {
+        id: 'project-2',
+        no: '02',
+        title: 'Strategic Partnership & Contract Execution',
+        tagline: 'Proposal · Terms · Contract · Coordination',
+        items: [
+          {
+            name: 'Southeast Asia AI Education Strategic Partnership',
+            meta: 'Proposal Alignment, Commercial Negotiation & Contract Execution',
+            slug: 'ai-education-partnership',
+            tags: [
+              'Scope: Clarified market, product, technology, and operations responsibilities after initial partner contact',
+              'Terms: Structured service-fee, staged-payment, revenue-share, and milestone options',
+              'Coordination: Synced overseas partner updates with product and engineering teams',
+              'Execution: Checked bilingual agreements, payment milestones, and delivery materials',
+            ],
+          },
+        ],
+      },
+      {
         id: 'project-3',
         no: '03',
+        title: 'Institution Partnerships & University Pilots',
+        tagline: 'Resources · Materials · Execution · Review',
+        items: [
+          {
+            name: 'Generative AI Education Partnerships & Pilots',
+            meta: 'Generative AI Education Partnerships & Pilots',
+            slug: 'ai-education-product',
+            tags: [
+              'Organized 100+ university-user and pilot feedback items across teaching and learning scenarios',
+              'Produced 30+ guides, FAQs, tutorials, and instructor-facing cases for product communication',
+              'Prepared demos, course materials, and cooperation materials for university and institution pilots',
+              'Delivered 10+ recommendations and supported a 30% increase in core-feature adoption',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'project-4',
+        no: '04',
         title: 'Product Launch & Omnichannel Communication',
         tagline: 'Launch · Materials · Retail · Review',
         items: [
           {
             name: 'ZUS Everywhere Product Launch & Market Communication',
-            meta: 'ZUS Everywhere 新品上市活动与市场传播',
+            meta: 'New Product Launch & Market Communication',
             slug: 'zus-everywhere',
             tags: [
               'Supported launch communication for COFFIZZ and other RTD/FMCG products',
@@ -196,17 +225,11 @@ export const WORKS: Record<'zh' | 'en', WorksLang> = {
   },
 }
 
-// 板块配图（横向画廊每张卡片左侧的整高封面）。放到 public/works/covers/ 下。
-// 缺图时左栏用大编号渐变占位，放入图片后自动点亮。
-export const SECTION_COVERS: Record<string, string> = {
-  'project-1': `${import.meta.env.BASE_URL}works/covers/education-pilot.png`,
-  'project-2': `${import.meta.env.BASE_URL}works/covers/sohu-dashboard.png`,
-  'project-3': `${import.meta.env.BASE_URL}works/covers/zus-everywhere.jpg`,
-}
+export const WORKS_CONTENT = WORKS
 
-// 统计一个板块的作品数（items 或 groups 求和），用于索引行 hover 显示
-export function sectionCount(section: WorkSection): number {
-  if (section.items) return section.items.length
-  if (section.groups) return section.groups.reduce((n, g) => n + g.items.length, 0)
-  return 0
+export const SECTION_COVERS: Record<string, string> = {
+  'project-1': `${import.meta.env.BASE_URL}works/covers/sohu-dashboard.png`,
+  'project-2': `${import.meta.env.BASE_URL}works/covers/ai-partnership.jpg`,
+  'project-3': `${import.meta.env.BASE_URL}works/covers/education-pilot.png`,
+  'project-4': `${import.meta.env.BASE_URL}works/covers/zus-everywhere.jpg`,
 }
