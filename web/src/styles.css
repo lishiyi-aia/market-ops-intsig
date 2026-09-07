@@ -1426,6 +1426,29 @@ canvas {
   background: rgba(255, 255, 255, 0.06);
 }
 
+.wk-md .partnership-disclosure {
+  margin: 24px 0;
+  padding: 22px 24px;
+  border-left: 5px solid #b77500;
+  background: #ffe083;
+  color: #362807;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.wk-md .partnership-disclosure strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #362807;
+  font-size: 18px;
+}
+.wk-md .partnership-disclosure p {
+  margin: 0;
+}
+.wk-md .partnership-disclosure p + p {
+  margin-top: 6px;
+  font-size: 12px;
+}
+
 /* 访问外链按钮 */
 .wk-detail-link {
   display: inline-flex;
