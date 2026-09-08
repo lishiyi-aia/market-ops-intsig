@@ -125,12 +125,31 @@
     figcaption b { color: var(--blue); font-size: 11px; }
     figcaption strong { display: block; font-size: 14px; }
     figcaption span { display: block; font-size: 12px; color: var(--muted); margin-top: 4px; }
-    .journey-materials { margin-top: 42px; }
+    .journey-materials { margin-top: 48px; padding-top: 32px; border-top: 1px solid #cdd5dd; scroll-margin-top: 120px; }
+    .materials-credit { margin-top: 12px; color: #111; font-size: 14px; font-weight: 700; }
+    .materials-intro { max-width: 820px; margin-top: 12px; color: var(--muted); font-size: 14px; }
+    .material-group { margin-top: 32px; }
+    .material-group + .material-group { margin-top: 38px; padding-top: 28px; border-top: 1px solid #cdd5dd; }
+    .material-group-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 22px; }
+    .material-group-head > span { color: var(--cyan); font: 12px/1.5 "SFMono-Regular", Consolas, monospace; }
+    .material-group-head h4 { font-size: 18px; }
     .journey-material-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
-    .campaign-material-visual { aspect-ratio: 1104 / 1464; background: #e5e9ed; }
+    .campaign-material { min-width: 0; }
+    .campaign-material-visual { width: 100%; max-width: 210px; height: 260px; margin-inline: auto; }
     .campaign-material-visual img { height: 100%; object-fit: contain; }
+    .campaign-material figcaption { grid-template-columns: 22px minmax(0, 1fr); gap: 8px; }
+    .campaign-material figcaption span { font-size: 13px; line-height: 1.75; }
     .event-visual a, .campaign-material-visual a { display: block; height: 100%; }
     .event-visual a:hover, .campaign-material-visual a:hover { outline: 3px solid var(--cyan); outline-offset: -3px; }
+    .campaign-material-visual a { cursor: zoom-in; }
+    .material-lightbox { width: min(880px, calc(100% - 32px)); max-height: calc(100dvh - 32px); padding: 0; border: 0; border-radius: 6px; background: #fff; color: var(--ink); overflow: hidden; }
+    .material-lightbox::backdrop { background: #101a24c7; }
+    .material-lightbox header { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 64px; padding: 10px 16px 10px 24px; border-bottom: 1px solid var(--line); }
+    .material-lightbox h2 { font-size: 16px; line-height: 1.5; }
+    .material-close { flex: 0 0 44px; width: 44px; height: 44px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 4px; background: var(--soft); color: var(--ink); font-size: 28px; line-height: 1; }
+    .material-close:hover { background: #e5e9ed; }
+    .material-lightbox-body { max-height: calc(100dvh - 112px); overflow: auto; padding: 16px; }
+    .material-lightbox-body img { width: auto; max-width: 100%; max-height: calc(100dvh - 144px); margin-inline: auto; object-fit: contain; }
     .review-map { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 1fr); align-items: center; gap: 52px; padding: 32px 0; }
     .review-inputs, .review-outputs { display: grid; gap: 16px; }
     .review-inputs > div, .review-outputs > div { position: relative; padding: 18px; background: var(--soft); border-left: 3px solid var(--blue); }
@@ -239,6 +258,14 @@
       .field-evidence { grid-template-columns: 1fr; gap: 28px; }
       .event-visual img { height: auto; max-height: 490px; object-fit: contain; }
       .journey-material-grid { gap: 24px 14px; }
+      .journey-materials { margin-top: 36px; padding-top: 26px; }
+      .material-group-head { gap: 9px; margin-bottom: 18px; }
+      .material-group-head h4 { font-size: 16px; }
+      .campaign-material-visual { max-width: 180px; height: 214px; }
+      .campaign-material figcaption { display: block; margin-top: 12px; padding-top: 12px; }
+      .campaign-material figcaption b { display: none; }
+      .campaign-material figcaption span { font-size: 12px; }
+      .material-lightbox header { padding-left: 16px; }
       figcaption strong { font-size: 13px; } figcaption span { font-size: 11px; }
       .review-map { grid-template-columns: 1fr; gap: 30px; padding: 0; }
       .review-inputs { gap: 10px; }
@@ -394,14 +421,29 @@
           <figure class="event-evidence offline"><div class="event-visual"><a href="event-materials/01-offline-event.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：原点学堂 Vibe之夜科技社群活动现场"><img src="event-materials/01-offline-event.jpg" alt="原点学堂 Vibe之夜科技社群活动现场" loading="lazy"></a></div><figcaption><b>01</b><div><strong>科技社群线下活动</strong><span>参与产品介绍、现场交流与活动内容采集。</span></div></figcaption></figure>
           <figure class="event-evidence live"><div class="event-visual"><a href="event-materials/02-live-stream.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：活动线上直播画面"><img src="event-materials/02-live-stream.jpg" alt="活动线上直播画面" loading="lazy"></a></div><figcaption><b>02</b><div><strong>线上直播传播</strong><span>配合活动内容传播与互动反馈收集。</span></div></figcaption></figure>
         </div>
-        <div class="journey-materials">
-          <div class="subsection-heading"><h3>四类传播物料</h3><span>产品介绍 → 首次体验 → 社群沟通 → 反馈收集</span></div>
-          <div class="journey-material-grid">
-            <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/03-awareness.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：产品介绍海报：信息焦虑自救计划"><img src="event-materials/03-awareness.jpg" alt="产品介绍海报：信息焦虑自救计划" loading="lazy"></a></div><figcaption><b>01</b><div><strong>产品介绍</strong><span>说明适用场景、主要功能及使用入口。</span></div></figcaption></figure>
-            <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/04-activation.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：新用户体验与权益说明海报"><img src="event-materials/04-activation.jpg" alt="新用户体验与权益说明海报" loading="lazy"></a></div><figcaption><b>02</b><div><strong>首次体验</strong><span>介绍新用户权益与专题创建方式。</span></div></figcaption></figure>
-            <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/05-community.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：用户社群招募海报"><img src="event-materials/05-community.jpg" alt="用户社群招募海报" loading="lazy"></a></div><figcaption><b>03</b><div><strong>社群沟通</strong><span>提供产品交流、答疑和反馈入口。</span></div></figcaption></figure>
-            <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/06-survey.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：产品体验问卷反馈海报"><img src="event-materials/06-survey.jpg" alt="产品体验问卷反馈海报" loading="lazy"></a></div><figcaption><b>04</b><div><strong>反馈收集</strong><span>邀请用户反馈使用体验和改进建议。</span></div></figcaption></figure>
+        <div class="journey-materials" id="materials">
+          <h3>产品上新与用户运营内容</h3>
+          <p class="materials-credit">以下海报均由本人制作。</p>
+          <p class="materials-intro">围绕用户从了解产品到实际使用的过程，内容分为两组：一组把产品功能讲清楚，一组引导体验、提供答疑入口并收集反馈。</p>
+          <div class="material-group">
+            <div class="material-group-head"><span>01</span><h4>产品上新：把功能讲清楚</h4></div>
+            <div class="journey-material-grid">
+              <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/07-product-launch.png" target="_blank" rel="noopener noreferrer" aria-label="查看原图：YouNews正式上线海报"><img src="event-materials/07-product-launch.png" alt="YouNews正式上线海报" loading="lazy"></a></div><figcaption><b>01</b><div><strong>YouNews正式上线</strong><span>介绍产品定位与核心功能，让用户知道它是一款专属信息追踪助手。</span></div></figcaption></figure>
+              <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/08-topic-creation.png" target="_blank" rel="noopener noreferrer" aria-label="查看原图：创建专题功能海报"><img src="event-materials/08-topic-creation.png" alt="创建专题功能海报" loading="lazy"></a></div><figcaption><b>02</b><div><strong>创建专题</strong><span>展示输入话题、创建专题的操作入口，让用户知道如何开始追踪。</span></div></figcaption></figure>
+              <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/09-topic-explanation.png" target="_blank" rel="noopener noreferrer" aria-label="查看原图：专题解读功能海报"><img src="event-materials/09-topic-explanation.png" alt="专题解读功能海报" loading="lazy"></a></div><figcaption><b>03</b><div><strong>专题解读</strong><span>对比概览、大白话与深度解读，说明不同阅读需求对应的使用方式。</span></div></figcaption></figure>
+              <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/10-daily-digest.png" target="_blank" rel="noopener noreferrer" aria-label="查看原图：专属日报功能海报"><img src="event-materials/10-daily-digest.png" alt="专属日报功能海报" loading="lazy"></a></div><figcaption><b>04</b><div><strong>专属日报</strong><span>展示关注内容如何汇成每日更新，说明产品在日常阅读中的用途。</span></div></figcaption></figure>
+            </div>
           </div>
+          <div class="material-group">
+            <div class="material-group-head"><span>02</span><h4>体验推广：从愿意尝试到留下反馈</h4></div>
+            <div class="journey-material-grid">
+              <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/03-awareness.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：信息焦虑自救计划海报"><img src="event-materials/03-awareness.jpg" alt="信息焦虑自救计划海报" loading="lazy"></a></div><figcaption><b>01</b><div><strong>信息焦虑自救计划</strong><span>从信息分散、反复搜索等困扰切入，帮助用户判断产品是否适合自己。</span></div></figcaption></figure>
+              <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/04-activation.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：新用户专属福利海报"><img src="event-materials/04-activation.jpg" alt="新用户专属福利海报" loading="lazy"></a></div><figcaption><b>02</b><div><strong>新用户专属福利</strong><span>说明体验功能、活动权益与参与方式，给有兴趣的用户一个尝试理由。</span></div></figcaption></figure>
+              <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/05-community.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：YouNews用户群招募海报"><img src="event-materials/05-community.jpg" alt="YouNews用户群招募海报" loading="lazy"></a></div><figcaption><b>03</b><div><strong>YouNews用户群招募</strong><span>说明答疑、功能体验与交流支持，为使用中遇到问题的用户提供沟通入口。</span></div></figcaption></figure>
+              <figure class="campaign-material"><div class="campaign-material-visual"><a href="event-materials/06-survey.jpg" target="_blank" rel="noopener noreferrer" aria-label="查看原图：产品体验问卷海报"><img src="event-materials/06-survey.jpg" alt="产品体验问卷海报" loading="lazy"></a></div><figcaption><b>04</b><div><strong>产品体验问卷</strong><span>说明参与对象、填写方式与奖励规则，邀请体验用户反馈问题和建议。</span></div></figcaption></figure>
+            </div>
+          </div>
+          <p class="case-takeaway"><strong>内容上的考虑</strong>产品介绍回答“对我有什么用”，功能说明回答“怎么开始”，活动与社群内容讲清参与方式和后续支持，分别回应用户在了解、尝试和使用中的问题。</p>
         </div>
       </section>
     </div>
@@ -486,7 +528,41 @@
   </main>
   <footer class="footer report">AI资讯产品线上线下活动与渠道运营 · 2025.12–2026.02</footer>
 
+  <dialog class="material-lightbox" aria-labelledby="material-lightbox-title">
+    <header><h2 id="material-lightbox-title">传播物料</h2><button class="material-close" type="button" aria-label="关闭海报" title="关闭海报" autofocus><span aria-hidden="true">×</span></button></header>
+    <div class="material-lightbox-body"><img alt=""></div>
+  </dialog>
+
   <script>
+    const materialLightbox = document.querySelector('.material-lightbox');
+    if (typeof materialLightbox.showModal === 'function') {
+      const lightboxImage = materialLightbox.querySelector('img');
+      const lightboxTitle = document.getElementById('material-lightbox-title');
+      let previousOverflow = '';
+      document.querySelectorAll('.campaign-material-visual a').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+          event.preventDefault();
+          const thumbnail = link.querySelector('img');
+          lightboxImage.src = link.href;
+          lightboxImage.alt = thumbnail.alt;
+          lightboxTitle.textContent = link.closest('figure').querySelector('figcaption strong').textContent;
+          previousOverflow = document.documentElement.style.overflow;
+          document.documentElement.style.overflow = 'hidden';
+          materialLightbox.showModal();
+        });
+      });
+      materialLightbox.querySelector('.material-close').addEventListener('click', () => materialLightbox.close());
+      materialLightbox.addEventListener('click', (event) => {
+        if (event.target !== materialLightbox) return;
+        const bounds = materialLightbox.getBoundingClientRect();
+        if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) materialLightbox.close();
+      });
+      materialLightbox.addEventListener('close', () => {
+        document.documentElement.style.overflow = previousOverflow;
+      });
+    }
+
     const testExamples = {
       title: {
         names: ['功能介绍', '使用场景'],
