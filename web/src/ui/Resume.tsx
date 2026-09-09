@@ -37,8 +37,8 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
         points: [
           'Organized 100+ feedback items from teachers, students, and pilot users by issue type to identify common usage questions.',
           'Produced 30+ guides, FAQs, tutorials, and instructor-facing cases for product communication and pilot onboarding.',
-          'Prepared product demos, course materials, and cooperation materials; coordinated feedback with product, content, and business teams.',
-          'Developed 10+ product and operations suggestions and shared them with relevant teams to support university and education-institution pilots.',
+          'Independently wrote a Southeast Asia AI education cooperation proposal and drafted the agreement; incorporated feedback for management review and followed up on signing and handoff.',
+          'Prepared product demos and course materials, and developed 10+ product and operations suggestions with relevant teams to support university and education-institution pilots.',
         ],
       },
       {
@@ -55,9 +55,9 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
         role: 'AI Product Operations Intern',
         points: [
           'Organized user feedback and surveys on product needs, willingness to pay, pricing, and usage problems.',
-          'Contributed to 100+ WeChat, Xiaohongshu, and community posts, comparing headlines, covers, and copy.',
+          'Independently designed selected acquisition campaigns and promotional posters; contributed to 100+ WeChat, Xiaohongshu, and community posts.',
           'Supported finance and technology creator selection, content preparation, and publishing; assisted with community events and livestream communication.',
-          'Reviewed content performance, registrations, and first-topic creation, and prepared content suggestions and product feedback.',
+          'Independently published and distributed relevant channel content; reviewed content performance, registrations, first-topic creation, and user feedback to inform follow-up improvements.',
         ],
       },
     ],
@@ -90,8 +90,8 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
         points: [
           '整理教师、学生及试点用户100余条反馈，按问题类型归类，汇总常见使用问题。',
           '输出30余篇使用指南、FAQ、功能教程与教师案例，支持产品宣讲和试点用户上手。',
-          '整理产品演示、课程方案与合作资料，协同产品、内容和业务团队处理一线问题。',
-          '形成10余项产品与运营优化建议，反馈给相关团队，支持高校及教育机构试点沟通。',
+          '独立撰写东南亚AI教育产品合作方案及协议初稿，经负责人审阅确认后，跟进双方沟通、协议签署与项目交接。',
+          '整理产品演示与课程方案，形成10余项产品与运营优化建议，协同相关团队支持高校及教育机构试点沟通。',
         ],
       },
       {
@@ -108,9 +108,9 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
         role: 'AI产品运营实习生',
         points: [
           '整理用户反馈并开展需求与价格问卷，了解产品需求、付费意愿、价格接受度和使用问题。',
-          '参与制作100+条公众号、小红书及社群内容，尝试不同标题、封面和内容表达。',
+          '独立设计部分拉新活动并制作宣传海报，参与100+条公众号、小红书及社群内容制作。',
           '参与金融、科技类达人筛选、合作内容准备与上线跟进，配合科技社群活动及线上直播传播。',
-          '整理内容表现、注册及首次专题创建情况，结合用户反馈提出内容调整和产品改进建议。',
+          '独立完成相关渠道内容的发布与分发，结合内容表现、注册、首次专题创建及用户反馈，提出后续调整建议。',
         ],
       },
     ],

@@ -59,15 +59,15 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
         id: 'project-1',
         no: '01',
         title: '线上线下活动与渠道运营',
-        tagline: '用户调研｜内容制作｜达人合作｜数据复盘',
+        tagline: '拉新策划｜物料制作｜渠道分发｜数据复盘',
         items: [
           {
             name: 'AI资讯产品线上线下活动与渠道运营',
             meta: 'AI Information Product Integrated Campaign Operations',
             slug: 'ai-news-dashboard',
             tags: [
-              '用户调研：整理使用反馈与需求、价格问卷，了解用户关心的问题',
-              '内容制作：参与100+条公众号、小红书及社群内容，尝试不同标题、封面和表达',
+              '活动与物料：独立设计部分拉新活动并制作宣传海报，参与100+条内容制作',
+              '渠道分发：独立完成相关内容在公众号、小红书及社群的发布与分发',
               '合作与活动：参与达人筛选和发布跟进，配合线下活动与线上直播传播',
               '数据复盘：整理内容表现、注册与首次专题创建情况，提出后续调整建议',
             ],
@@ -78,17 +78,17 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
         id: 'project-2',
         no: '02',
         title: '战略合作与签约落地',
-        tagline: '需求整理｜沟通跟进｜协议签署｜项目交接',
+        tagline: '方案撰写｜协议起草｜签署跟进｜项目交接',
         items: [
           {
             name: '东南亚 AI 教育产品战略合作推进与签约落地',
             meta: 'Southeast Asia AI Education Strategic Partnership',
             slug: 'ai-education-partnership',
             tags: [
-              '需求整理：梳理合作方需求、产品服务范围及待确认事项',
+              '方案撰写：独立完成合作方案，梳理服务范围、双方分工与实施安排',
               '沟通跟进：汇总双方反馈，同步产品、技术和业务团队',
-              '文件核对：跟进方案版本、协议修改及签署流程',
-              '项目交接：整理签约后的待办事项，配合后续部署准备',
+              '协议起草：独立撰写协议初稿，根据反馈修改，提交负责人审阅确认',
+              '签署与交接：跟进正式签约，整理后续待办，衔接部署与市场准备',
             ],
           },
         ],
@@ -149,15 +149,15 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
         id: 'project-1',
         no: '01',
         title: 'Integrated Event & Channel Operations',
-        tagline: 'Research · Content · Creators · Review',
+        tagline: 'Campaigns · Creative · Distribution · Review',
         items: [
           {
             name: 'AI Information Product Integrated Campaign Operations',
             meta: 'AI Information Product Integrated Campaign Operations',
             slug: 'ai-news-dashboard',
             tags: [
-              'Organized user feedback and surveys on product needs, willingness to pay, and pricing',
-              'Contributed to 100+ WeChat, Xiaohongshu, and community posts, comparing headlines, covers, and copy',
+              'Independently designed selected acquisition campaigns and promotional posters; contributed to 100+ content pieces',
+              'Independently published and distributed relevant content across WeChat, Xiaohongshu, and user communities',
               'Supported creator selection and publishing, community events, and livestream communication',
               'Reviewed content performance, registrations, and first-topic creation to inform follow-up suggestions',
             ],
@@ -168,17 +168,17 @@ export const WORKS: Record<WorkLanguage, WorksLang> = {
         id: 'project-2',
         no: '02',
         title: 'Strategic Partnership & Contract Execution',
-        tagline: 'Requirements · Coordination · Signing · Handoff',
+        tagline: 'Proposal Writing · Agreement Drafting · Signing · Handoff',
         items: [
           {
             name: 'Southeast Asia AI Education Strategic Partnership',
-            meta: 'Requirements, Team Coordination & Agreement Follow-up',
+            meta: 'Proposal Writing, Agreement Drafting & Signing Follow-up',
             slug: 'ai-education-partnership',
             tags: [
-              'Requirements: Organized partner needs, product scope, and questions requiring confirmation',
+              'Proposal: Independently wrote the cooperation proposal covering scope, responsibilities, and implementation',
               'Coordination: Consolidated feedback for product, engineering, and business teams',
-              'Documents: Followed up on proposal versions, agreement revisions, and signing',
-              'Handoff: Organized post-signing action items and supported deployment preparation',
+              'Agreement: Independently drafted the agreement, incorporated feedback, and submitted it for management review',
+              'Signing and handoff: Followed up on signing and organized next steps for deployment and market preparation',
             ],
           },
         ],
