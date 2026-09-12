@@ -1,4 +1,15 @@
 .creator-route-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; }
+.campaign-briefs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+.campaign-brief { padding-top: 22px; border-top: 3px solid var(--blue); }
+.campaign-brief:nth-child(2) { border-top-color: var(--cyan); }
+.brief-label { font-size: 11px; font-weight: 750; color: var(--muted); }
+.campaign-brief h3 { margin-block: 10px 22px; font-size: 23px; }
+.campaign-brief dl { margin: 0; }
+.campaign-brief dl > div { display: grid; grid-template-columns: 68px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-top: 1px solid var(--line); }
+.campaign-brief dt { font-size: 13px; font-weight: 700; }
+.campaign-brief dd { margin: 0; font-size: 13px; line-height: 1.9; color: var(--muted); }
+.campaign-note { margin: 26px 0 32px; padding-block: 18px; border-block: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+.campaign-note strong { color: var(--ink); margin-right: 12px; }
 .case-takeaway { margin-top: 32px; padding: 18px 0 18px 20px; border-left: 3px solid var(--cyan); font-size: 14px; }
 .case-takeaway strong { display: block; margin-bottom: 7px; color: var(--cyan); font-size: 12px; }
 .review-journey { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; padding: 0; margin: 0; list-style: none; }
@@ -46,6 +57,9 @@
   .project-outcomes h3 { font-size: 15px; }
 }
 @media (max-width: 720px) {
+  .campaign-briefs { grid-template-columns: 1fr; gap: 28px; }
+  .campaign-brief h3 { font-size: 21px; margin-bottom: 18px; }
+  .campaign-note { font-size: 13px; }
   .creator-route-compact { grid-template-columns: 1fr; gap: 18px; }
   .case-takeaway { font-size: 13px; padding-left: 16px; margin-top: 26px; }
   .review-journey { grid-template-columns: 1fr; gap: 0; }

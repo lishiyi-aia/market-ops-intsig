@@ -36,9 +36,9 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
         role: 'AI Product Marketing Intern',
         points: [
           'Organized 100+ feedback items from teachers, students, and pilot users by issue type to identify common usage questions.',
-          'Produced 30+ guides, FAQs, tutorials, and instructor-facing cases for product communication and pilot onboarding.',
+          'Built the product WeChat content program from scratch, producing 30+ guides, FAQs, tutorials, and use cases. Core-feature usage rate increased 30% during the period.',
           'Independently wrote a Southeast Asia AI education cooperation proposal and drafted the agreement; incorporated feedback for management review and followed up on signing and handoff.',
-          'Prepared product demos and course materials, and developed 10+ product and operations suggestions with relevant teams to support university and education-institution pilots.',
+          'Liaised with universities, planned presentation and trial sessions, coordinated demo and course materials, and organized onsite activities and Q&A. Developed 10+ improvement suggestions from teacher and student feedback for pilot follow-up.',
         ],
       },
       {
@@ -54,10 +54,10 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
         place: 'Beijing Sohu New Media',
         role: 'AI Product Operations Intern',
         points: [
-          'Organized user feedback and surveys on product needs, willingness to pay, pricing, and usage problems.',
-          'Independently designed selected acquisition campaigns and promotional posters; contributed to 100+ WeChat, Xiaohongshu, and community posts.',
-          'Supported finance and technology creator selection, content preparation, and publishing; assisted with community events and livestream communication.',
-          'Independently published and distributed relevant channel content; reviewed content performance, registrations, first-topic creation, and user feedback to inform follow-up improvements.',
+          'Conducted user and pricing research to inform outreach; independently designed selected online acquisition campaigns and supported promotion and execution at offline technology events.',
+          'Tracked core metrics and built a lightweight AI-assisted operations dashboard to identify drop-off points in the user journey.',
+          'Created promotional posters and 100+ WeChat, Xiaohongshu, and community posts. Supported finance and AI creator screening, content preparation, and publishing.',
+          'Independently distributed relevant channel content, compared titles, covers, and copy, and reviewed performance to adjust channel spending. Registrations rose 50% versus the prior week; first-topic creation rate rose approximately 15% relatively. These were overall period results.',
         ],
       },
     ],
@@ -85,13 +85,13 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
       },
       {
         period: '2024.10–2025.05',
-        place: '玄华智能（北京）科技有限公司',
+        place: '北京织知玄华智能科技有限公司',
         role: 'AI产品营销实习生',
         points: [
           '整理教师、学生及试点用户100余条反馈，按问题类型归类，汇总常见使用问题。',
-          '输出30余篇使用指南、FAQ、功能教程与教师案例，支持产品宣讲和试点用户上手。',
+          '从0到1开展产品公众号内容建设，累计输出30+篇使用指南、FAQ、功能教程与场景案例；期间核心功能使用率提升30%。',
           '独立撰写东南亚AI教育产品合作方案及协议初稿，经负责人审阅确认后，跟进双方沟通、协议签署与项目交接。',
-          '整理产品演示与课程方案，形成10余项产品与运营优化建议，协同相关团队支持高校及教育机构试点沟通。',
+          '对接高校，安排产品宣讲与体验流程，协同准备演示、FAQ及课程材料，负责现场组织与使用答疑；结合师生反馈提出10余项优化建议，支持后续试点推进。',
         ],
       },
       {
@@ -107,10 +107,10 @@ const RESUME: Record<'en' | 'zh', { title: string; entries: ResumeEntry[] }> = {
         place: '北京搜狐新媒体信息有限公司',
         role: 'AI产品运营实习生',
         points: [
-          '整理用户反馈并开展需求与价格问卷，了解产品需求、付费意愿、价格接受度和使用问题。',
-          '独立设计部分拉新活动并制作宣传海报，参与100+条公众号、小红书及社群内容制作。',
-          '参与金融、科技类达人筛选、合作内容准备与上线跟进，配合科技社群活动及线上直播传播。',
-          '独立完成相关渠道内容的发布与分发，结合内容表现、注册、首次专题创建及用户反馈，提出后续调整建议。',
+          '整理反馈并开展价格问卷，按用户使用阶段制定触达策略；独立设计部分线上拉新活动，参与线下科技活动的宣传准备、产品推广与执行。',
+          '跟踪核心指标，运用AI辅助搭建轻量级运营分析看板，识别用户路径中的流失节点。',
+          '制作宣传海报，累计输出100+条公众号、小红书及社群内容；根据粉丝画像、内容方向和互动表现筛选金融、AI博主，参与内容准备与上线跟进。',
+          '独立完成相关渠道分发，对标题、首图和内容进行对比测试，结合效果优化渠道预算；投放期新增注册较前一周提升50%，首次专题创建率相对提升约15%，为期间整体结果。',
         ],
       },
     ],

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AI 教育产品用户运营与高校试点支持：师生反馈整理、使用指南与FAQ、产品资料及试点沟通。">
-  <title>AI 教育产品用户运营与高校试点支持 | Shiyi Li</title>
+  <meta name="description" content="AI 教育产品公众号运营与高校活动：从0到1建设公众号内容，对接高校、安排宣讲与体验流程，负责现场组织、使用答疑和反馈跟进。">
+  <title>AI 教育产品公众号运营与高校活动 | Shiyi Li</title>
   <style>
     :root {
       --ink: #202e36; --dark: #20343d; --blue: #2462c8; --teal: #087b70;
@@ -51,10 +51,11 @@
     .disclosure strong { display: block; font-size: 15px; }
     .disclosure p { margin-top: 5px; font-size: 12px; }
     .snapshot { border-bottom: 1px solid var(--line); }
-    .metric-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .metric { --accent: var(--blue); display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 22px; padding: 27px 28px; border-right: 1px solid var(--line); }
+    .metric-row { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .metric { --accent: var(--blue); display: grid; grid-template-columns: 1fr; align-content: start; gap: 12px; padding: 27px 24px; border-right: 1px solid var(--line); }
     .metric:first-child { padding-left: 0; }
     .metric:nth-child(2) { --accent: var(--teal); }
+    .metric:nth-child(3) { --accent: var(--gold); }
     .metric:last-child { --accent: var(--pink); border: 0; }
     .metric strong { color: var(--accent); font: 48px/1.2 "SFMono-Regular", Consolas, monospace; }
     .metric b { display: block; font-size: 14px; }
@@ -125,10 +126,15 @@
     .outline-steps li span { color: var(--blue); font-size: 11px; }
     .outline-steps li strong { font-size: 14px; }
     .outline-steps li p { color: var(--muted); font-size: 12px; }
-    .pilot-stages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-bottom: 42px; }
+    .pilot-stages { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px; margin-bottom: 32px; }
     .pilot-stage { --accent: var(--blue); padding-top: 24px; border-top: 3px solid var(--accent); }
     .pilot-stage:nth-child(2) { --accent: var(--teal); }
     .pilot-stage:nth-child(3) { --accent: var(--pink); }
+    .pilot-stage:nth-child(4) { --accent: var(--gold); }
+    .workflow-summary { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 30px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 13px; font-weight: 650; }
+    .workflow-summary b { color: var(--teal); }
+    .practice-note { margin: 0 0 32px; padding: 18px 0; border-block: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+    .practice-note strong { color: var(--ink); margin-right: 12px; }
     .pilot-stage span { color: var(--accent); font-size: 10px; font-weight: 750; }
     .pilot-stage h3 { margin-top: 16px; font-size: 23px; }
     .pilot-stage p { color: var(--muted); font-size: 13px; margin-top: 13px; }
@@ -172,6 +178,7 @@
       .content-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .content-item { padding: 24px; } .content-item p { min-height: 48px; }
       .document-outline { gap: 34px; }
+      .pilot-stages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .field-evidence { grid-template-columns: 1.4fr 1fr; gap: 26px; }
       .evidence-context { padding-top: 16px; } .evidence-context h3 { font-size: 20px; }
     }
@@ -193,7 +200,9 @@
       .disclosure-inner { grid-template-columns: 1fr; gap: 10px; padding-block: 20px; }
       .disclosure h2 { font-size: 18px; } .disclosure strong { font-size: 13px; } .disclosure p { font-size: 11px; }
       .metric, .metric:first-child { padding: 20px 12px; gap: 9px; }
-      .metric:first-child { padding-left: 0; } .metric:last-child { padding-right: 0; }
+      .metric-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .metric:nth-child(odd) { padding-left: 0; } .metric:nth-child(even) { border-right: 0; }
+      .metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
       .metric strong { font-size: 34px; } .metric b { font-size: 12px; } .metric span { font-size: 10px; }
       .section { padding-block: 50px; }
       .section-head { grid-template-columns: 1fr; gap: 18px; margin-bottom: 28px; }
@@ -229,6 +238,8 @@
       .outline-steps li { grid-template-columns: 22px 76px 1fr; gap: 12px; }
       .outline-steps li strong { font-size: 13px; } .outline-steps li p { font-size: 11px; }
       .pilot-stages { grid-template-columns: 1fr; gap: 23px; margin-bottom: 30px; }
+      .workflow-summary { gap: 8px 12px; font-size: 12px; }
+      .practice-note { font-size: 13px; }
       .pilot-stage { padding-top: 17px; } .pilot-stage h3 { margin-top: 10px; font-size: 21px; } .pilot-stage p { margin-top: 9px; }
       .field-evidence { grid-template-columns: 1fr; gap: 25px; }
       .field-evidence figcaption { font-size: 11px; }
@@ -246,43 +257,45 @@
   <a class="skip-link" href="#overview">跳至项目内容</a>
   <nav class="nav" aria-label="页面导航">
     <a class="brand" href="../../index.html" aria-label="返回作品集首页"><span class="brand-mark">SL</span><span>Shiyi Li · Market Operations</span></a>
-    <div class="nav-links"><a href="#overview">我的职责</a><a href="#feedback">反馈判断</a><a href="#content">使用内容</a><a href="#pilot">试点支持</a><a href="#results">工作结果</a></div>
+    <div class="nav-links"><a href="#overview">我的职责</a><a href="#feedback">用户需求</a><a href="#content">公众号内容</a><a href="#pilot">高校活动</a><a href="#results">工作结果</a></div>
   </nav>
   <main>
     <header class="hero">
       <div class="wrap hero-inner">
-        <p class="eyebrow">PROJECT 03 / AI EDUCATION · USER OPERATIONS</p>
-        <h1>AI 教育产品用户运营<br>与高校试点支持</h1>
-        <p class="hero-copy">整理师生使用反馈，制作指南、FAQ和教学案例，配合产品介绍与高校试点沟通。</p>
+        <p class="eyebrow">PROJECT 03 / AI EDUCATION · CONTENT & EVENTS</p>
+        <h1>AI 教育产品<br>公众号运营与高校活动</h1>
+        <p class="hero-copy">从0到1开展公众号内容建设，对接高校并安排宣讲与体验流程，负责现场组织、使用答疑和后续反馈整理。</p>
         <div class="hero-meta"><span>2024.10–2025.05</span><span>AI产品营销实习生</span><span>教学 / 备课 / 自学</span></div>
-        <div class="hero-foot"><p>用户反馈 / 使用指导 / 产品资料 / 试点支持</p><a href="#feedback">反馈与处理思路 <span aria-hidden="true">↓</span></a></div>
+        <div class="hero-foot"><p>需求调研 / 公众号内容 / 活动组织 / 反馈跟进</p><a href="#pilot">高校活动与执行 <span aria-hidden="true">↓</span></a></div>
       </div>
     </header>
     <aside class="disclosure" aria-labelledby="disclosure-title">
       <div class="wrap disclosure-inner"><h2 id="disclosure-title">材料与保密说明</h2><div><strong>涉及个人信息的反馈原文及内部数据明细不公开。</strong><p>流程和问题示例用于说明工作方法，不代表原始后台记录或用户原话。</p></div></div>
     </aside>
     <div class="snapshot">
-      <div class="wrap metric-row" aria-label="项目工作量">
+      <div class="wrap metric-row" aria-label="项目工作与期间结果">
         <div class="metric"><strong>100+</strong><div><b>用户反馈</b><span>师生及试点用户反馈条数</span></div></div>
         <div class="metric"><strong>30+</strong><div><b>使用内容</b><span>指南、FAQ、教程与案例篇数</span></div></div>
         <div class="metric"><strong>10+</strong><div><b>改进建议</b><span>提出的产品与运营建议项数</span></div></div>
+        <div class="metric"><strong>+30%</strong><div><b>核心功能使用率</b><span>期间整体提升，非单场活动效果</span></div></div>
       </div>
     </div>
 
     <div class="band">
       <section class="wrap section" id="overview" aria-labelledby="overview-title">
-        <div class="section-head"><div><p class="kicker">01 / 项目背景与职责</p><h2 id="overview-title">帮助师生理解产品<br>支持高校试点沟通</h2></div><div class="lead"><p>产品面向高校教师、学生及教育机构，涉及教学、备课与自学等使用场景。不同用户对AI工具的熟悉程度和使用需求有所不同。</p><p>我的工作围绕反馈整理、使用内容和试点支持展开：记录用户问题，准备产品资料，并配合相关团队跟进反馈。</p></div></div>
+        <div class="section-head"><div><p class="kicker">01 / 项目背景与职责</p><h2 id="overview-title">让师生了解产品<br>也能实际用起来</h2></div><div class="lead"><p>产品面向高校教师、学生及教育机构，涉及教学、备课与自学。推广既需要说明产品价值，也需要提供具体的操作指导。</p><p>我把需求整理、公众号内容与高校活动衔接起来：了解师生的问题，准备内容和演示，组织现场体验与答疑，再将反馈带回内容更新及试点跟进。</p></div></div>
         <div class="responsibilities">
           <article class="responsibility"><span>01</span><div><h3>整理使用反馈</h3><p>汇总师生及试点用户的问题，按类型归类，整理高频需求与改进建议。</p></div></article>
-          <article class="responsibility"><span>02</span><div><h3>制作使用内容</h3><p>编写使用指南、FAQ、功能教程与案例，补充常见问题的说明。</p></div></article>
-          <article class="responsibility"><span>03</span><div><h3>支持试点沟通</h3><p>准备产品介绍和课程相关资料，协助同步产品、内容与业务团队。</p></div></article>
+          <article class="responsibility"><span>02</span><div><h3>建设公众号内容</h3><p>从0到1开展产品公众号内容建设，围绕使用需求编写指南、FAQ、教程与案例。</p></div></article>
+          <article class="responsibility"><span>03</span><div><h3>组织高校活动</h3><p>对接高校、安排宣讲与体验流程，协同准备材料，负责现场组织和使用答疑。</p></div></article>
         </div>
+        <p class="workflow-summary" aria-label="项目工作主线"><span>师生需求</span><b aria-hidden="true">→</b><span>内容与材料</span><b aria-hidden="true">→</b><span>宣讲与体验</span><b aria-hidden="true">→</b><span>问题收集</span><b aria-hidden="true">→</b><span>更新内容、跟进试点</span></p>
       </section>
     </div>
 
     <div class="band soft">
       <section class="wrap section" id="feedback" aria-labelledby="feedback-title">
-        <div class="section-head"><div><p class="kicker">02 / 用户反馈与判断</p><h2 id="feedback-title">先看用户卡在哪里<br>再决定怎样跟进</h2></div><p class="lead">整理反馈时，先区分用户遇到的现象和仍需确认的原因。使用说明能提供帮助的，补充教程与FAQ；涉及功能和产品体验的问题，汇总后反馈给相关团队。</p></div>
+        <div class="section-head"><div><p class="kicker">02 / 用户需求与反馈</p><h2 id="feedback-title">先了解使用问题<br>再准备内容与演示</h2></div><p class="lead">结合用户社群、宣讲体验及试点沟通，整理100+条反馈。使用说明能解决的，转化为公众号选题、教程与FAQ；涉及功能和体验的问题，保留具体场景，汇总给产品团队。</p></div>
         <div class="subheading"><h3>用户使用过程</h3><span class="example-label">流程示意 · 非后台行为或转化数据</span></div>
         <ol class="usage-path" aria-label="用户使用过程示意">
           <li><span class="path-number">01</span><h4>了解功能</h4><p>知道产品适合哪些任务</p></li>
@@ -322,7 +335,7 @@
 
     <div class="band">
       <section class="wrap section" id="content" aria-labelledby="content-title">
-        <div class="section-head"><div><p class="kicker">03 / 使用内容与产品资料</p><h2 id="content-title">把常见问题<br>写成清楚的使用说明</h2></div><p class="lead">根据师生使用中的常见问题，整理指南、FAQ、功能教程与场景案例。内容重点是说明产品能做什么、操作从哪里开始，以及遇到问题时需要补充哪些信息。</p></div>
+        <div class="section-head"><div><p class="kicker">03 / 公众号运营与用户教育</p><h2 id="content-title">从0到1<br>建设产品公众号内容</h2></div><p class="lead">围绕教学、备课与自学需求，累计输出30+篇指南、FAQ、功能教程与场景案例。内容不止介绍功能，还要讲清适用场景、操作步骤与常见问题，帮助师生掌握核心功能。</p></div>
         <div class="content-grid">
           <article class="content-item"><span>01</span><h3>使用指南</h3><p>介绍产品入口、主要功能与开始使用的步骤。</p><small>从哪里开始</small></article>
           <article class="content-item"><span>02</span><h3>功能教程</h3><p>整理具体操作、输入要求和结果查看方式。</p><small>怎样完成操作</small></article>
@@ -330,12 +343,12 @@
           <article class="content-item"><span>04</span><h3>场景案例</h3><p>结合备课、教学和自学需求，说明功能的使用场景。</p><small>适合什么任务</small></article>
         </div>
         <div class="document-outline">
-          <div class="outline-intro"><h3>一份使用说明的组织方式</h3><span class="example-label">内容结构示意 · 非历史文档截图</span><p>围绕一个具体任务组织信息，把使用背景、操作步骤和需要注意的问题放在一起。</p></div>
-          <ol class="outline-steps" aria-label="使用说明结构示意">
-            <li><span class="mono">01</span><strong>适用场景</strong><p>说明要完成什么任务</p></li>
-            <li><span class="mono">02</span><strong>操作步骤</strong><p>按顺序说明需要做什么</p></li>
-            <li><span class="mono">03</span><strong>结果说明</strong><p>说明结果如何查看与理解</p></li>
-            <li><span class="mono">04</span><strong>常见问题</strong><p>补充疑问与使用注意事项</p></li>
+          <div class="outline-intro"><h3>内容与活动怎样衔接</h3><span class="example-label">工作内容归纳 · 非历史后台截图</span><p>公众号提供可持续查阅的说明，现场演示帮助理解操作；把体验中出现的新问题带回后续内容。</p></div>
+          <ol class="outline-steps" aria-label="公众号内容与活动衔接">
+            <li><span class="mono">01</span><strong>确定选题</strong><p>从高频问题与使用场景中整理内容方向</p></li>
+            <li><span class="mono">02</span><strong>编写内容</strong><p>将功能说明写成可理解的步骤与案例</p></li>
+            <li><span class="mono">03</span><strong>配合宣讲</strong><p>围绕相同需求准备演示、FAQ及课程材料</p></li>
+            <li><span class="mono">04</span><strong>补充更新</strong><p>归类现场和社群问题，调整后续说明</p></li>
           </ol>
         </div>
       </section>
@@ -343,32 +356,35 @@
 
     <div class="band soft">
       <section class="wrap section" id="pilot" aria-labelledby="pilot-title">
-        <div class="section-head"><div><p class="kicker">04 / 高校试点支持</p><h2 id="pilot-title">沟通前准备资料<br>使用中收集反馈</h2></div><p class="lead">试点支持围绕资料准备、使用问题和后续沟通展开。我配合整理产品介绍与课程相关材料，并将师生反馈同步给产品、内容及业务团队。</p></div>
+        <div class="section-head"><div><p class="kicker">04 / 高校活动组织与执行</p><h2 id="pilot-title">从高校对接<br>到现场组织与答疑</h2></div><p class="lead">围绕产品宣讲与体验，对接高校、安排活动流程，协同产品和业务团队准备材料，负责现场组织与使用答疑，并将活动反馈用于后续内容完善和试点跟进。</p></div>
         <div class="pilot-stages">
-          <article class="pilot-stage"><span>01 / BEFORE</span><h3>沟通前</h3><p>配合准备产品介绍、演示材料、教师案例及课程相关资料。</p></article>
-          <article class="pilot-stage"><span>02 / DURING</span><h3>使用中</h3><p>收集师生的使用问题与场景需求，协助同步相关团队。</p></article>
-          <article class="pilot-stage"><span>03 / FOLLOW-UP</span><h3>沟通后</h3><p>整理需要补充的说明与改进建议，支持后续试点沟通。</p></article>
+          <article class="pilot-stage"><span>01 / CONTACT</span><h3>高校对接</h3><p>沟通宣讲与体验安排，结合师生需求明确产品介绍的重点。</p></article>
+          <article class="pilot-stage"><span>02 / PREPARE</span><h3>流程与材料</h3><p>安排活动流程，协同准备产品演示、FAQ、教师案例和课程材料。</p></article>
+          <article class="pilot-stage"><span>03 / EXECUTE</span><h3>现场组织</h3><p>推进宣讲与体验流程，解答使用问题，记录师生的具体反馈。</p></article>
+          <article class="pilot-stage"><span>04 / FOLLOW-UP</span><h3>反馈与跟进</h3><p>补充使用说明，向相关团队提交改进建议，支持后续高校试点。</p></article>
         </div>
+        <p class="practice-note"><strong>我的考虑</strong>宣讲要讲清产品价值，体验要帮助师生开始操作；活动结束后，还要把问题整理成能继续使用的内容和待跟进事项。</p>
         <div class="field-evidence">
           <figure><a class="photo-link" href="../../works/covers/education-pilot.png" target="_blank" rel="noopener noreferrer" aria-label="查看高校交流与合作活动原图" title="查看原图"><img src="../../works/covers/education-pilot.png" width="1448" height="1086" loading="lazy" alt="已有脱敏拼图，包含高校交流合影及合作活动记录"></a><figcaption>高校交流与合作活动记录，沿用已有脱敏图片。</figcaption></figure>
-          <div class="evidence-context"><h3>交流与合作背景</h3><p>拼图保留了不同场景的活动记录，不将其合并解释为同一次高校试点。</p><dl><div><dt>高校交流合影</dt><dd>呈现高校交流相关活动背景。</dd></div><div><dt>签约与合作展示</dt><dd>呈现其他合作场景，不等同于师生实际使用情况。</dd></div><div><dt>本项目展示重点</dt><dd>用户反馈整理、使用内容制作与试点沟通支持。</dd></div></dl><aside class="image-note">图片用于说明活动背景，不作为单个试点成效或使用指标的证明。</aside></div>
+          <div class="evidence-context"><h3>交流与合作背景</h3><p>拼图保留了不同场景的活动记录，不将其合并解释为同一次高校试点。</p><dl><div><dt>高校交流合影</dt><dd>呈现高校交流相关活动背景。</dd></div><div><dt>签约与合作展示</dt><dd>呈现其他合作场景，不等同于师生实际使用情况。</dd></div><div><dt>本项目展示重点</dt><dd>公众号内容建设、高校活动组织与使用反馈跟进。</dd></div></dl><aside class="image-note">图片用于说明活动背景，不作为单个试点成效或使用指标的证明。</aside></div>
         </div>
       </section>
     </div>
 
     <div class="band results-band">
       <section class="wrap section" id="results" aria-labelledby="results-title">
-        <div class="section-head"><div><p class="kicker">05 / 工作结果</p><h2 id="results-title">反馈整理、内容制作<br>与试点支持</h2></div><p class="lead">工作结果主要体现在整理后的反馈、补充的使用内容和提交的改进建议。相关资料用于产品介绍、用户上手和后续试点沟通。</p></div>
+        <div class="section-head"><div><p class="kicker">05 / 工作结果</p><h2 id="results-title">从宣传介绍<br>到体验、答疑与跟进</h2></div><p class="lead">完成公众号内容建设和高校活动组织工作，将师生反馈转化为使用说明及改进建议，支持产品推广与后续试点。期间核心功能使用率提升30%，为整体运营结果。</p></div>
         <ul class="result-list">
           <li><span>01</span><h3>整理师生使用问题</h3><p>按问题类型归类反馈，汇总常见疑问与需要进一步确认的事项。</p></li>
-          <li><span>02</span><h3>补充产品使用资料</h3><p>制作指南、FAQ、功能教程和场景案例，配合产品介绍与使用指导。</p></li>
-          <li><span>03</span><h3>提出产品与运营建议</h3><p>将整理后的问题与改进建议反馈给相关团队，支持后续沟通。</p></li>
+          <li><span>02</span><h3>建立公众号内容基础</h3><p>从0到1开展内容建设，累计输出30+篇指南、FAQ、教程与场景案例。</p></li>
+          <li><span>03</span><h3>组织高校宣讲与体验</h3><p>完成高校对接、流程安排、材料协调、现场组织与使用答疑。</p></li>
+          <li><span>04</span><h3>提出产品与运营建议</h3><p>结合使用反馈形成10+项建议，补充内容说明，并向相关团队反馈待优化问题。</p></li>
         </ul>
-        <p class="scope-note"><strong>统计说明</strong>页面数字分别为反馈条数、内容篇数与建议项数；建议数量不代表全部已实施。</p>
+        <p class="scope-note"><strong>统计与保密说明</strong>数字按本人提供的实习期汇总整理，内部明细不公开。核心功能使用率的提升为期间整体变化，不单独归因于公众号或某场活动；建议数量不代表全部已实施。</p>
       </section>
     </div>
   </main>
-  <footer class="footer"><div class="wrap"><span>Shiyi Li · AI Education User Operations · 2024.10–2025.05</span><a href="../../index.html">返回项目首页 ↑</a></div></footer>
+  <footer class="footer"><div class="wrap"><span>Shiyi Li · AI Education Content & University Events · 2024.10–2025.05</span><a href="../../index.html">返回项目首页 ↑</a></div></footer>
   <script>
     const tabs = [...document.querySelectorAll('[data-feedback]')];
     const panels = [...document.querySelectorAll('.decision-panel')];
